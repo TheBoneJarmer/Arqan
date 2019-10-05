@@ -1,0 +1,8 @@
+# Dotnet core and Visual Studio code specific
+bin/
+obj/
+.vscode/
+
+# TilarGL specific
+output/
+src-tilargl/
