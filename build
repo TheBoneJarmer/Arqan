@@ -1,0 +1,7 @@
+#!/bin/bash
+
+rm -r ./output/ &> /dev/null
+rm -r ./src-tilargl &> /dev/null
+
+./bin/Generator ./src-base ./src-tilargl
+dotnet publish -c Release -o ./output/linux/ ./src-tilargl/linux/TilarGL.csproj
