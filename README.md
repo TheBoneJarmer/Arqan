@@ -46,8 +46,8 @@ sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev
 You can just download the pre-compiled binaries from https://www.glfw.org/download.html.
 
 #### Linux
-The developers did not provide a pre-compiled library for Linux because that would not be applicable for all distros. Luckily, some people did this for you already so on some distros, glfw is included in
-the package repository. To install glfw on ubuntu, run the following commands:
+The developers did not provide a pre-compiled library for Linux because that would not be applicable for all distros. However, on some distros glfw can be installed from your package repository.
+ To install glfw on Ubuntu for example, run the following commands:
 
 ```bash
 sudo apt-get update
