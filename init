@@ -1,4 +1,4 @@
 #!/bin/bash
 
 rm -r ./bin/ &> /dev/null
-dotnet publish -c Release -r linux-x64 -o bin /p:PublishSingleFile=true ./src-tools/generator/Generator.csproj
+dotnet publish -c Release -r linux-x64 -o tools /p:PublishSingleFile=true ./src-tools/generator/Generator.csproj
