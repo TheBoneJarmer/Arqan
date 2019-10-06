@@ -16,7 +16,7 @@ To build this library you need dotnet core 2.1 or newer. I recommend going with 
 ### Sources
 Instead of having a solution file with several class libraries added to it, which each contains more or less the same content, I decided to use one 'base' source, which contains all C# class files with
 placholders. This repository contains a tool to generate the actual source for you. From there on, you can use the dotnet cli to do whatever you want. The reason why I did it is to prevent having to
-maintain multiple library projects for multiple operating systems with code that is for like 95% similar. Now I need to modify only one source and let the generator do everything else for me.
+maintain multiple library projects for multiple operating systems with code that is like 95% similar. Now I need to modify only one source and let the generator do everything else for me.
 
 ### Step-By-Step
 Without further ado, this is how you build the project:
@@ -30,24 +30,29 @@ After succesfully building the library, you will have a DLL file which you can r
 
 ### OpenGL
 #### Windows
-Most Windows system ship a dll called "opengl32.dll". If not, make sure your hardware supports OpenGL and that your drives are up-to-date.
+Most Windows system ship a dll called "opengl32.dll". If not, make sure your hardware supports OpenGL and that your drivers are up-to-date.
 
 #### Linux
 I cannot provide instructions for all distros because I don't know all of them. Nor would that be doable. So I just go along with the most popular one, which in this case is Ubuntu. Run below commands to
 install OpenGL on your system, if you have not done so already.
 
 ```bash
-$ sudo apt-get update
-$ sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev
+sudo apt-get update
+sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev
 ```
 
 ### GLFW
 #### Windows
-In theory you can just download the pre-compiled binaries from https://www.glfw.org/download.html. But for the sake of easyness, I decided to include them in 'lib/windows'.
+You can just download the pre-compiled binaries from https://www.glfw.org/download.html.
 
 #### Linux
-The developers did not provide a pre-compiled library for Linux because that would not be applicable for all distros. However, I still decided to go ahead and compile it for Ubuntu only,
-because it is currently the most popular distro out there. You can find it in the folder 'lib/ubuntu'.
+The developers did not provide a pre-compiled library for Linux because that would not be applicable for all distros. Luckily, some people did this for you already so on some distros, glfw is included in
+the package repository. To install glfw on ubuntu, run the following commands:
+
+```bash
+sudo apt-get update
+sudo apt-get install libglfw3 libglfw3-dev
+```
 
 ## Contributing
 I would highly appreciate it if you would help me polish this library. I have not had the chance yet to test all wrapped methods in the classes since there are over like 30000. I actually generated
