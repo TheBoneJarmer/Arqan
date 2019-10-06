@@ -26,7 +26,17 @@ Without further ado, this is how you build the project:
 * Now cd into the 'src-tilargl' folder and use the dotnet cli the build the solution
 
 ## Usage
-After succesfully building the library, you will have a DLL file which you can refer to in your projects. However, that is not enough. You will need to make sure you got the right dependencies in place.
+After succesfully building the library, you will have a DLL file which you can refer to in your projects. From there on you can call OpenGL and GLFW functions like this:
+
+```C#
+GL10.glColorMask();
+GL10.glFlush();
+GL20.glCreateProgram();
+GLFW.glfwInit();
+```
+
+## Dependencies
+Just refering the library wont cut it. You also need to make sure you got the right 3rd-party libraries.
 
 ### OpenGL
 #### Windows
