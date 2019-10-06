@@ -4,5 +4,5 @@ obj/
 .vscode/
 
 # TilarGL specific
-output/
 src-tilargl/
+tools/
