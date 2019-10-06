@@ -1,5 +1,5 @@
-# Tilar
-Tilar is a classlib which basically serves as a C# wrapper for OpenGL functions and enums as well as GLFW functions and enums.
+# TilarGL
+TilarGL is a classlib which basically serves as a C# wrapper for OpenGL functions and enums as well as GLFW functions and enums.
 
 ## Important note
 As you can see there are just bash scripts in the repository. Please forgive me if you are a Windows user, I have not had the chance yet to provide myself with a Windows computer in order to give 
