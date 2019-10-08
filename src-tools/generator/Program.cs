@@ -131,8 +131,8 @@ namespace Generator
             }
             if (os == SupportedOperatingSystem.Windows)
             {
-                contents = contents.Replace("<LIB_OPENGL>", "opengl32.dll");
-                contents = contents.Replace("<LIB_GLFW>", "glfw3.dll");
+                contents = contents.Replace("<LIB_OPENGL>", "\"opengl32.dll\"");
+                contents = contents.Replace("<LIB_GLFW>", "\"glfw3.dll\"");
                 contents = contents.Replace("<METHOD_GETPROCADDRESS>", "WGL.wglGetProcAddress");
             }
 
