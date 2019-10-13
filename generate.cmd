@@ -1,3 +1,3 @@
 @echo off
 
-.\tools\Generator .\src-base .\src-tilargl
+.\tools\srcgen .\src-base .\src-tilargl

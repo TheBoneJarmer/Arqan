@@ -1,6 +1,6 @@
 using System;
 
-namespace Generator
+namespace SourceGenerator
 {
     public enum SupportedOperatingSystem
     {

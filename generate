@@ -3,4 +3,4 @@
 rm -r ./output/ &> /dev/null
 rm -r ./src-tilargl &> /dev/null
 
-./tools/Generator ./src-base ./src-tilargl
+./tools/srcgen ./src-base ./src-tilargl
