@@ -1,6 +1,4 @@
 #!/bin/bash
 
-rm -r ./output/ &> /dev/null
-rm -r ./src-tilargl &> /dev/null
-
-./tools/srcgen ./src-base ./src-tilargl
+rm -rf src-tilargl &> /dev/null
+dotnet run -p ./src-tools/source-generator/SourceGenerator.csproj ./src-base ./src-tilargl

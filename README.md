@@ -21,7 +21,6 @@ maintain multiple library projects for multiple operating systems with code that
 ### Step-By-Step
 Without further ado, this is how you build the project:
 
-* Run ./init on Linux or ./init.cmd on Windows to build the tools and setup your workspace.
 * Run ./generate on Linux or ./generate.cmd on Windows to generate an entire solution from the 'src-base' folder.
 * Now cd into the 'src-tilargl' folder and use the dotnet cli the build the solution
 
