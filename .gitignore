@@ -1,10 +1,5 @@
-# Dotnet core and Visual Studio code specific
 bin/
 obj/
 .vs/
 .vscode/
 packages/
-
-# TilarGL specific
-src/
-tools/
