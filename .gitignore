@@ -6,5 +6,5 @@ obj/
 packages/
 
 # TilarGL specific
-src-tilargl/
+src/
 tools/
