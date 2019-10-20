@@ -1,4 +1,0 @@
-#!/bin/bash
-
-rm -rf src &> /dev/null
-dotnet run -p ./src-tools/source-generator/SourceGenerator.csproj ./src-base ./src

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
@@ -11,7 +11,7 @@ namespace TilarGL
 		{
 			Type delegateType = typeof(T);
 			string name = delegateType.Name.Replace("Delegate","");
-			IntPtr proc = <METHOD_GETPROCADDRESS>(name);
+			IntPtr proc = WGL.wglGetProcAddress(name);
 			Delegate del = Marshal.GetDelegateForFunctionPointer(proc, delegateType);
 			
 			return del as T;

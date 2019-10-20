@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
@@ -542,65 +542,65 @@ namespace TilarGL
 		
 		#region Commands
 		
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glDrawArrays(uint mode, int first, int count);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glDrawElements(uint mode, int count, uint type, IntPtr indices);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glGetPointerv(uint pname, IntPtr @params);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glPolygonOffset(float factor, float units);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glCopyTexImage1D(uint target, int level, uint internalformat, int x, int y, int width, int border);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glCopyTexImage2D(uint target, int level, uint internalformat, int x, int y, int width, int height, int border);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glCopyTexSubImage1D(uint target, int level, int xoffset, int x, int y, int width);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glCopyTexSubImage2D(uint target, int level, int xoffset, int yoffset, int x, int y, int width, int height);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glTexSubImage1D(uint target, int level, int xoffset, int width, uint format, uint type, IntPtr pixels);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glTexSubImage2D(uint target, int level, int xoffset, int yoffset, int width, int height, uint format, uint type, IntPtr pixels);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glBindTexture(uint target, uint texture);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glDeleteTextures(int n, uint[] textures);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glGenTextures(int n, uint[] textures);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern bool glIsTexture(uint texture);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glArrayElement(int i);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glColorPointer(int size, uint type, int stride, IntPtr pointer);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glDisableClientState(uint array);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glEdgeFlagPointer(int stride, IntPtr pointer);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glEnableClientState(uint array);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glIndexPointer(uint type, int stride, IntPtr pointer);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glInterleavedArrays(uint format, int stride, IntPtr pointer);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glNormalPointer(uint type, int stride, IntPtr pointer);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glTexCoordPointer(int size, uint type, int stride, IntPtr pointer);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glVertexPointer(int size, uint type, int stride, IntPtr pointer);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern bool glAreTexturesResident(int n, uint[] textures, bool[] residences);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glPrioritizeTextures(int n, uint[] textures, float[] priorities);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glIndexub(byte c);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glIndexubv(byte[] c);
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glPopClientAttrib();
-		[DllImport(<LIB_OPENGL>, SetLastError = true)]
+		[DllImport("opengl32.dll", SetLastError = true)]
 		public static extern void glPushClientAttrib(uint mask);
 		#endregion
 	}

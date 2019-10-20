@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
@@ -9,14 +9,14 @@ namespace TilarGL
 	{
 		public static bool IsExtensionFunctionSupported(string extensionFunctionName)
 		{
-			return <METHOD_GETPROCADDRESS>(extensionFunctionName) != IntPtr.Zero;
+			return WGL.wglGetProcAddress(extensionFunctionName) != IntPtr.Zero;
 		}
 		
 		private static T GetDelegateFor<T>() where T : class
 		{
 			Type delegateType = typeof(T);
 			string name = delegateType.Name.Replace("Delegate","");
-			IntPtr proc = <METHOD_GETPROCADDRESS>(name);
+			IntPtr proc = WGL.wglGetProcAddress(name);
 			Delegate del = Marshal.GetDelegateForFunctionPointer(proc, delegateType);
 			
 			return del as T;
