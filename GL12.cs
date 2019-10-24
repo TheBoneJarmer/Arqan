@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 
-namespace TilarGL
+namespace Arqan
 {
 	public static class GL12
 	{

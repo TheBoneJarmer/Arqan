@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace TilarGL
+namespace Arqan
 {
     public unsafe static class GLFW
     {
