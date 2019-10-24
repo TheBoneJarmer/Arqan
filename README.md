@@ -1,8 +1,8 @@
-# TilarGL
-TilarGL is a classlib which basically serves as a C# wrapper for OpenGL functions and enums as well as GLFW functions and enums.
+# Arqan
+Arqan is a classlib which basically serves as a C# wrapper for OpenGL functions and enums as well as GLFW functions and enums.
 
 ## Installation
-TilarGL does not have a NuGet library available yet. Once I feel like the library has reached a solid state, I will start pushing packages. For now, just refer to the DLL file in your project.
+Arqan does not have a NuGet library available yet. Once I feel like the library has reached a solid state, I will start pushing packages. For now, just refer to the DLL file in your project.
 
 ## Building
 
@@ -42,7 +42,7 @@ sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev
 ### GLFW
 #### Windows
 You can just download the pre-compiled binaries from https://www.glfw.org/download.html. Once you downloaded the zip, you will notice several subfolders. Just pick one and copy the glfw3.dll file. The .lib
-and .a files are only interesting for c++ devs, which I am not and nor are you required to be in order to use TilarGL.
+and .a files are only interesting for c++ devs, which I am not and nor are you required to be in order to use Arqan.
 
 #### Linux
 The developers did not provide a pre-compiled library for Linux because that would not be applicable for all distros. So by default they suggest to compile the library on your machine using cmake and such.
