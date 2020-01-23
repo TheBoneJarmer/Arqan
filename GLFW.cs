@@ -427,7 +427,7 @@ namespace Arqan
         [DllImport("glfw3.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr glfwGetJoystickAxes(int joy, ref int count);
         [DllImport("glfw3.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern double glfwGetTime();
+        public static extern float glfwGetTime();
 
         [DllImport("glfw3.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern GLFWerrorfun glfwSetErrorCallback(GLFWerrorfun cbfun);
