@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-        <id>Arqan</id>
+        <id>Arqan-Windows</id>
         <version>1.0.0</version>
         <description>Arqan is a wrapper library for the OpenGL and GLFW commands</description>
         <authors>Ruben Labruyere</authors>
