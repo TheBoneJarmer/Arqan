@@ -45,7 +45,7 @@ sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev
 
 ### GLFW
 #### Windows
-For convenience sake I included the dll file in the the repo, it is located right here in the master branch. **Make sure that it gets included in the folder where your application runs from.**
+I included the glfw3.dll in the windows branch. Be aware this is a **64 bit** dll. You won't need to manually copy and paste it in your bin folder by the way. The dll file is included in the nuget package and will be copied to your output folder upon building your application.
 
 #### Linux
 The developers did not provide a pre-compiled library for Linux because that would not be applicable for all distros. So by default they suggest to compile the library on your machine using cmake and such.
