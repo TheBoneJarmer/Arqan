@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Arqan.Linux" Version="0.2.1" Condition=" '$(OS)' == 'UNIX' " />
+    <PackageReference Include="Arqan.Windows" Version="0.2.4" Condition=" '$(OS)' == 'Windows_NT' " />
+  </ItemGroup>
+
+</Project>
