@@ -174,6 +174,9 @@ namespace Arqan
         public const int GLFW_JOYSTICK_15 = 14;
         public const int GLFW_JOYSTICK_16 = 15;
         public const int GLFW_JOYSTICK_LAST = GLFW_JOYSTICK_16;
+        public const int GLFW_TRUE = 1;
+        public const int GLFW_FALSE = 0;
+        public const int GLFW_MAXIMIZED = 0x00020008;
         public const int GLFW_NOT_INITIALIZED = 0x00010001;
         public const int GLFW_NO_CURRENT_CONTEXT = 0x00010002;
         public const int GLFW_INVALID_ENUM = 0x00010003;
