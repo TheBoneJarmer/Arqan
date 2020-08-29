@@ -1,9 +1,35 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	
 	<PropertyGroup>
-		<PackageId Condition="'$(Platform)'=='x86'">Arqan.Windows.x86</PackageId>
-		<PackageId Condition="'$(Platform)'=='x64'">Arqan.Windows.x64</PackageId>
-		<Version>0.4.0</Version>
+		<IsWindows Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</IsWindows>
+		<IsOSX Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</IsOSX>
+		<IsLinux Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</IsLinux>
+    </PropertyGroup>
+	
+	<PropertyGroup Condition="'$(IsWindows)' == 'true'">
+		<PackageId Condition="'$(Configuration)' == 'x86'">Arqan.Windows.x86</PackageId>
+		<PackageId Condition="'$(Configuration)' == 'x64'">Arqan.Windows.x64</PackageId>		
+		<DefineConstants>Windows</DefineConstants>
+	</PropertyGroup>
+		
+	<ItemGroup Condition="'$(IsWindows)' == 'true'">
+		<Content Include="x86/glfw3.dll" Condition="'$(Configuration)' == 'x86'">
+            <Pack>True</Pack>
+			<PackagePath>lib/netstandard2.0</PackagePath>
+        </Content>
+		<Content Include="x64/glfw3.dll" Condition="'$(Configuration)' == 'x64'">
+			<Pack>True</Pack>
+			<PackagePath>lib/netstandard2.0</PackagePath>
+		</Content>
+	</ItemGroup>
+	
+	<PropertyGroup Condition="'$(IsLinux)' == 'true'">
+		<PackageId>Arqan.Linux</PackageId>
+		<DefineConstants>Linux</DefineConstants>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<Version>0.5.0</Version>
 		<Authors>Ruben Labruyere</Authors>
 		<Company>Ruben Labruyere</Company>
 		<Description>
@@ -12,24 +38,13 @@
 		</Description>
 		<RepositoryUrl>https://github.com/TheBoneJarmer/arqan.git</RepositoryUrl>
 		<PackageTags>Arqan OpenGL Windows</PackageTags>
-		<AssemblyVersion>0.4.0.0</AssemblyVersion>
-        <FileVersion>0.4.0.0</FileVersion>
+		<AssemblyVersion>0.5.0.0</AssemblyVersion>
+        <FileVersion>0.5.0.0</FileVersion>
 	</PropertyGroup>
 	
 	<PropertyGroup>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<TargetFramework>netstandard2.0</TargetFramework>
 	</PropertyGroup>
-	
-	<ItemGroup>
-        <Content Include="x86/glfw3.dll" Condition="'$(Platform)'=='x86'">
-            <Pack>True</Pack>
-			<PackagePath>lib/netstandard2.0</PackagePath>
-        </Content>
-		<Content Include="x64/glfw3.dll" Condition="'$(Platform)'=='x64'">
-			<Pack>True</Pack>
-			<PackagePath>lib/netstandard2.0</PackagePath>
-		</Content>
-    </ItemGroup>
 
 </Project>
