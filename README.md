@@ -2,11 +2,10 @@
 Arqan is a classlib which basically serves as a C# wrapper for OpenGL functions and enums as well as GLFW 3.3.2 functions and enums.
 
 ## Installation
-Due to the differences between how OpenGL works per operating system I maintain two versions of Arqan. One for Windows and one for Linux. Also for Windows I maintain two versions per architecture as I was able to include the Windows dll files within the NuGet package.
+Due to the differences between how OpenGL works per operating system I maintain two versions of Arqan. One for Windows and one for Linux.
 
 ```
-dotnet add package Arqan.Windows.x86
-dotnet add package Arqan.Windows.x64
+dotnet add package Arqan.Windows
 dotnet add package Arqan.Linux
 ```
 
@@ -46,7 +45,7 @@ sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev
 
 ### GLFW
 #### Windows
-I included the glfw3.dll files for x64 and x86 in the windows branch. You _do not_ need to manually copy and paste it in your bin folder. The dll file is included in the nuget package and will be copied to your output folder upon building your application.
+I included the glfw3.dll in the windows branch. You _do not_ need to manually copy and paste it in your bin folder. The dll file is included in the nuget package and will be copied to your output folder upon building your application.
 
 #### Linux
 The developers did not provide a pre-compiled library for Linux because that would not be applicable for all distros. So by default they suggest to compile the library on your machine using cmake. A tutorial on how to do this can be found at https://www.glfw.org/docs/latest/compile.html.
