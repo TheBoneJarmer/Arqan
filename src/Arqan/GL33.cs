@@ -11,7 +11,7 @@ namespace Arqan
 		{
 			Type delegateType = typeof(T);
 			string name = delegateType.Name.Replace("Delegate","");
-			IntPtr proc = XWGL.wglGetProcAddress(name);
+			IntPtr proc = XWGL.GetProcAddress(name);
 			Delegate del = Marshal.GetDelegateForFunctionPointer(proc, delegateType);
 			
 			return del as T;

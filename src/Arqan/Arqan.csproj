@@ -12,7 +12,7 @@
 	</PropertyGroup>
 	
 	<PropertyGroup>
-		<Version>1.0.0</Version>
+		<Version>1.0.1</Version>
 		<Authors>Ruben Labruyere</Authors>
 		<Company>Ruben Labruyere</Company>
 		<Description>
@@ -21,8 +21,8 @@
 		</Description>
 		<RepositoryUrl>https://github.com/TheBoneJarmer/arqan.git</RepositoryUrl>
 		<PackageTags>Arqan OpenGL GLFW</PackageTags>
-		<AssemblyVersion>1.0.0.0</AssemblyVersion>
-        <FileVersion>1.0.0.0</FileVersion>
+		<AssemblyVersion>1.0.1.0</AssemblyVersion>
+        <FileVersion>1.0.1.0</FileVersion>
 	</PropertyGroup>
 	
 	<PropertyGroup>
