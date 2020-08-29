@@ -2,10 +2,11 @@
 Arqan is a classlib which basically serves as a C# wrapper for OpenGL functions and enums as well as GLFW 3.3.2 functions and enums.
 
 ## Installation
-Due to the differences between how OpenGL works per operating system I maintain two versions of Arqan. One for Windows and one for Linux.
+Due to the differences between how OpenGL works per operating system I maintain two versions of Arqan. One for Windows and one for Linux. And for Windows I maintain a version per architecture. See the commands below.
 
 ```
-dotnet add package Arqan.Windows
+dotnet add package Arqan.Windows.x64
+dotnet add package Arqan.Windows.x86
 dotnet add package Arqan.Linux
 ```
 
@@ -13,12 +14,6 @@ dotnet add package Arqan.Linux
 
 ### Requirements
 To build this library you need dotnet core 2.1 or newer. I recommend going with the latest version when possible.
-
-### Sources
-> **I am busy restructuring the two sources into one using MSBuild conditions. The Linux and Windows branches will be removed asap.**
-
-This git repository is divided in two branches. One for the Linux source files and one for the Windows source files. The difference between them is where they get their window handling stuff from.
-On Linux this is glX from the X windowing system and on Windows it is wGL because of, well, Windows. 
 
 ## Usage
 
@@ -47,10 +42,10 @@ sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev
 
 ### GLFW
 #### Windows
-I included the glfw3.dll in the windows branch. You _do not_ need to manually copy and paste it in your bin folder. The dll file is included in the nuget package and will be copied to your output folder upon building your application.
+I included the pre-compiled glfw3 dll files in. You _do not_ need to manually copy and paste it in your bin folder. The dll file is included in the nuget package and will be copied to your output folder upon building your application.
 
 #### Linux
-The developers did not provide a pre-compiled library for Linux because that would not be applicable for all distros. So by default they suggest to compile the library on your machine using cmake. A tutorial on how to do this can be found at https://www.glfw.org/docs/latest/compile.html.
+The developers did not provide a pre-compiled library for Linux because that would not be appliable for all distros. So by default they suggest to compile the library on your machine using cmake. A tutorial on how to do this can be found at https://www.glfw.org/docs/latest/compile.html.
 However, on some distros glfw can be installed from your package repository. To install glfw on Ubuntu for example, run the following commands:
 
 ```bash
