@@ -21,10 +21,14 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
-        <Content Include="glfw3.dll">
+        <Content Include="x86/glfw3.dll" Condition="'$(Platform)'=='x86'">
             <Pack>True</Pack>
 			<PackagePath>lib/netstandard2.0</PackagePath>
         </Content>
+		<Content Include="x64/glfw3.dll" Condition="'$(Platform)'=='x64'">
+			<Pack>True</Pack>
+			<PackagePath>lib/netstandard2.0</PackagePath>
+		</Content>
     </ItemGroup>
 
 </Project>
