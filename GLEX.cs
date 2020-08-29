@@ -9,14 +9,14 @@ namespace Arqan
 	{
 		public static bool IsExtensionFunctionSupported(string extensionFunctionName)
 		{
-			return WGL.wglGetProcAddress(extensionFunctionName) != IntPtr.Zero;
+			return XWGL.wglGetProcAddress(extensionFunctionName) != IntPtr.Zero;
 		}
 		
 		private static T GetDelegateFor<T>() where T : class
 		{
 			Type delegateType = typeof(T);
 			string name = delegateType.Name.Replace("Delegate","");
-			IntPtr proc = WGL.wglGetProcAddress(name);
+			IntPtr proc = XWGL.wglGetProcAddress(name);
 			Delegate del = Marshal.GetDelegateForFunctionPointer(proc, delegateType);
 			
 			return del as T;
