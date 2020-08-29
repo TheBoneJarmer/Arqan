@@ -15,6 +15,8 @@ dotnet add package Arqan.Linux
 To build this library you need dotnet core 2.1 or newer. I recommend going with the latest version when possible.
 
 ### Sources
+> **I am busy restructuring the two sources into one using MSBuild conditions. The Linux and Windows branches will be removed asap.**
+
 This git repository is divided in two branches. One for the Linux source files and one for the Windows source files. The difference between them is where they get their window handling stuff from.
 On Linux this is glX from the X windowing system and on Windows it is wGL because of, well, Windows. 
 
