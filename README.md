@@ -58,7 +58,7 @@ sudo apt-get install libglfw3 libglfw3-dev
 
 ## Contributing
 I would highly appreciate it if you would help me polish this library. I have not had the chance yet to test all wrapped methods in the classes. I actually generated
-them based on an XML provided by the Khronos Group a couple of years ago. So probably there are new functions and enums already which have not been integrated yet. So feel free to send in a pull request!
+them based on an XML provided by the Khronos Group a couple of years ago. So probably there are new functions and enums already which have not been integrated yet. So feel free to send in a pull request or open up an issue.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
