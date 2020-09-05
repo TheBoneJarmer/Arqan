@@ -10,6 +10,21 @@ dotnet add package Arqan.Windows.x86
 dotnet add package Arqan.Linux
 ```
 
+### Cross-Platform usage
+Instead of maintaining multiple code sources with each different package references I recommend making use of the Condition attribute in the ItemGroup element of your csproj file like this:
+
+```
+<ItemGroup Condition="'$(OS)' == 'UNIX'">
+    <PackageReference Include="Arqan.Linux" Version="1.0.1" />
+</ItemGroup>
+<ItemGroup Condition="'$(OS)' == 'Windows_NT'">
+    <PackageReference Include="Arqan.Windows.x64" Version="1.0.1" Condition="'$(Configuration)' == 'x64'" />
+    <PackageReference Include="Arqan.Windows.x86" Version="1.0.1" Condition="'$(Configuration)' == 'x86'" />
+</ItemGroup>
+```
+
+This way you could build your application using the command **dotnet build -c x64** or **dotnet build -c x86** if you are targeting _Windows_ or simply **dotnet build** if you are targeting _Linux_.
+
 ## Building
 
 ### Requirements
@@ -41,6 +56,8 @@ sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev
 ```
 
 ### GLFW
+Arqan supports GLFW version 3.3.2. For the current installation of that version see the instructions below as it differs per operating system.
+
 #### Windows
 I included the pre-compiled glfw3 dll files so you won't have to add those manually. You _do not_ need to manually copy and paste it in your bin folder. The dll file is included in the nuget package and will be copied to your output folder upon building your application.
 
@@ -56,6 +73,13 @@ sudo apt-get install libglfw3 libglfw3-dev
 ## Contributing
 I would highly appreciate it if you would help me polish this library. I have not had the chance yet to test all wrapped methods in the classes. I actually generated
 them based on an XML provided by the Khronos Group a couple of years ago. So probably there are new functions and enums already which have not been integrated yet. So feel free to send in a pull request or open up an issue.
+
+### GitFlow branching model
+I make use of the **GitFlow branching model** in all of my repositories. Please use it if you send in pull requests. Arqan is being built by my own TeamCity server instance, which is configured to respect the GitFlow branching model. If you use a branch name that does not follow the model **the build will fail or simply not start**. Therefore I would like to ask to name your branch like this:
+
+> feature/#issue number#
+
+Where the _#issue number#_ represents the issue number on GitHub. Also please keep all your branch names in **lowercase**. This way the repository will be kept clean and structured.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
