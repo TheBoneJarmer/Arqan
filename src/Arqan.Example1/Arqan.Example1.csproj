@@ -1,8 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType Condition="'$(OS)' == 'UNIX'">Exe</OutputType>
+    <OutputType Condition="'$(OS)' == 'Windows_NT'">WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Configurations>Debug;Release;x64;x86</Configurations>
   </PropertyGroup>
   
   <ItemGroup Condition="'$(OS)' == 'Windows_NT'">

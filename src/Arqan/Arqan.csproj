@@ -3,7 +3,7 @@
 	<PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
 		<PackageId Condition="'$(Configuration)' == 'x64'">Arqan.Windows.x64</PackageId>
 		<PackageId Condition="'$(Configuration)' == 'x86'">Arqan.Windows.x86</PackageId>
-		<DefineConstants>Windows</DefineConstants>
+		<Configurations>Debug;Release;x64;x86</Configurations>
 	</PropertyGroup>
 	
 	<PropertyGroup Condition="'$(OS)' == 'UNIX'">
