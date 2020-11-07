@@ -87,7 +87,7 @@ namespace Arqan
 		private delegate void glGenBuffersDelegate(int n, uint[] buffers);
 		private delegate bool glIsBufferDelegate(uint buffer);
 		private delegate void glBufferDataDelegate(uint target, int size, float[] data, uint usage);
-		private delegate void glBufferSubDataDelegate(uint target, IntPtr offset, IntPtr size, float[] data);
+		private delegate void glBufferSubDataDelegate(uint target, int offset, int size, float[] data);
 		private delegate void glGetBufferSubDataDelegate(uint target, IntPtr offset, IntPtr size, IntPtr data);
 		private delegate void glMapBufferDelegate(uint target, uint access);
 		private delegate bool glUnmapBufferDelegate(uint target);
@@ -162,7 +162,7 @@ namespace Arqan
 			GetDelegateFor<glBufferDataDelegate>()(target, size, data, usage);
 		}
 		
-		public static void glBufferSubData(uint target, IntPtr offset, IntPtr size, float[] data)
+		public static void glBufferSubData(uint target, int offset, int size, float[] data)
 		{
 			GetDelegateFor<glBufferSubDataDelegate>()(target, offset, size, data);
 		}
