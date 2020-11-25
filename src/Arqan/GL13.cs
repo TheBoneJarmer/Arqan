@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 
 namespace Arqan
 {
+	[Obsolete("Please use the static class GL")]
 	public static class GL13
 	{	
 		#region Constants
