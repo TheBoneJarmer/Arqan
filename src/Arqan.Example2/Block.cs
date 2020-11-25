@@ -53,13 +53,13 @@ namespace Example2
 
         public void Render()
         {
-            GL10.glColor3f(r, g, b);
-            GL10.glBegin(GL11.GL_QUADS);
-            GL10.glVertex2d(X, Y);
-            GL10.glVertex2d(X + 32, Y);
-            GL10.glVertex2d(X + 32, Y + 32);
-            GL10.glVertex2d(X, Y + 32);
-            GL10.glEnd();
+            GL.glColor3f(r, g, b);
+            GL.glBegin(GL.GL_QUADS);
+            GL.glVertex2d(X, Y);
+            GL.glVertex2d(X + 32, Y);
+            GL.glVertex2d(X + 32, Y + 32);
+            GL.glVertex2d(X, Y + 32);
+            GL.glEnd();
         }
     }
 }

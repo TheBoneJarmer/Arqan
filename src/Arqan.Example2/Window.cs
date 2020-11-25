@@ -184,17 +184,17 @@ namespace Example2
                 }
 
                 // Render a background and enable some stuff for 2d rendering with alpha
-                GL10.glMatrixMode(GL11.GL_PROJECTION);
-                GL10.glLoadIdentity();
-                GL10.glOrtho(0, width, height, 0, -1, 1);
-                GL10.glMatrixMode(GL11.GL_MODELVIEW);
-                GL10.glLoadIdentity();
+                GL.glMatrixMode(GL.GL_PROJECTION);
+                GL.glLoadIdentity();
+                GL.glOrtho(0, width, height, 0, -1, 1);
+                GL.glMatrixMode(GL.GL_MODELVIEW);
+                GL.glLoadIdentity();
 
-                GL10.glEnable(GL11.GL_BLEND);
-                GL10.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-                GL10.glViewport(0, 0, Width, Height);
-                GL10.glClearColor(0, 0, 0, 1);
-                GL10.glClear(GL11.GL_COLOR_BUFFER_BIT);
+                GL.glEnable(GL.GL_BLEND);
+                GL.glBlendFunc(GL.GL_SRC_ALPHA, GL.GL_ONE_MINUS_SRC_ALPHA);
+                GL.glViewport(0, 0, Width, Height);
+                GL.glClearColor(0, 0, 0, 1);
+                GL.glClear(GL.GL_COLOR_BUFFER_BIT);
 
                 // Render
                 for (var i = 0; i < blocks.Length; i++)
