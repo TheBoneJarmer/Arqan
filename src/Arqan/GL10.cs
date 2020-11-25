@@ -16,7 +16,6 @@ namespace Arqan
 
         [DllImport(XWGL.LIBGL, SetLastError = true)]
         public static extern unsafe sbyte* glGetString(uint name);
-
         [DllImport(XWGL.LIBGL, SetLastError = true)]
 		public static extern void glCullFace(uint mode);
 		[DllImport(XWGL.LIBGL, SetLastError = true)]
