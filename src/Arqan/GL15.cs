@@ -6,17 +6,7 @@ using System.Runtime.InteropServices;
 namespace Arqan
 {
 	public static class GL15
-	{
-		private static T GetDelegateFor<T>() where T : class
-		{
-			Type delegateType = typeof(T);
-			string name = delegateType.Name.Replace("Delegate","");
-			IntPtr proc = XWGL.GetProcAddress(name);
-			Delegate del = Marshal.GetDelegateForFunctionPointer(proc, delegateType);
-			
-			return del as T;
-		}
-		
+	{	
 		#region Constants
 		
 		public const uint GL_BUFFER_SIZE = 0x8764;
@@ -86,8 +76,10 @@ namespace Arqan
 		private delegate void glDeleteBuffersDelegate(int n, uint[] buffers);
 		private delegate void glGenBuffersDelegate(int n, uint[] buffers);
 		private delegate bool glIsBufferDelegate(uint buffer);
-		private delegate void glBufferDataDelegate1(uint target, int size, float[] data, uint usage);
-		private delegate void glBufferDataDelegate2(uint target, int size, uint[] data, uint usage);
+		private delegate void glBufferDataFloatDelegate(uint target, int size, float[] data, uint usage);
+		private delegate void glBufferDataUintDelegate(uint target, int size, uint[] data, uint usage);
+		private delegate void glBufferDataIntDelegate(uint target, int size, int[] data, uint usage);
+		private delegate void glBufferDataDoubleDelegate(uint target, int size, double[] data, uint usage);
 		private delegate void glBufferSubDataDelegate(uint target, int offset, int size, float[] data);
 		private delegate void glGetBufferSubDataDelegate(uint target, IntPtr offset, IntPtr size, IntPtr data);
 		private delegate void glMapBufferDelegate(uint target, uint access);
@@ -100,102 +92,112 @@ namespace Arqan
 		
 		public static void glGenQueries(int n, uint[] ids)
 		{
-			GetDelegateFor<glGenQueriesDelegate>()(n, ids);
+			XWGL.GetDelegateFor<glGenQueriesDelegate>()(n, ids);
 		}
 		
 		public static void glDeleteQueries(int n, uint[] ids)
 		{
-			GetDelegateFor<glDeleteQueriesDelegate>()(n, ids);
+			XWGL.GetDelegateFor<glDeleteQueriesDelegate>()(n, ids);
 		}
 		
 		public static bool glIsQuery(uint id)
 		{
-			return (bool)GetDelegateFor<glIsQueryDelegate>()(id);
+			return (bool)XWGL.GetDelegateFor<glIsQueryDelegate>()(id);
 		}
 		
 		public static void glBeginQuery(uint target, uint id)
 		{
-			GetDelegateFor<glBeginQueryDelegate>()(target, id);
+			XWGL.GetDelegateFor<glBeginQueryDelegate>()(target, id);
 		}
 		
 		public static void glEndQuery(uint target)
 		{
-			GetDelegateFor<glEndQueryDelegate>()(target);
+			XWGL.GetDelegateFor<glEndQueryDelegate>()(target);
 		}
 		
 		public static void glGetQueryiv(uint target, uint pname, int[] @params)
 		{
-			GetDelegateFor<glGetQueryivDelegate>()(target, pname, @params);
+			XWGL.GetDelegateFor<glGetQueryivDelegate>()(target, pname, @params);
 		}
 		
 		public static void glGetQueryObjectiv(uint id, uint pname, int[] @params)
 		{
-			GetDelegateFor<glGetQueryObjectivDelegate>()(id, pname, @params);
+			XWGL.GetDelegateFor<glGetQueryObjectivDelegate>()(id, pname, @params);
 		}
 		
 		public static void glGetQueryObjectuiv(uint id, uint pname, uint[] @params)
 		{
-			GetDelegateFor<glGetQueryObjectuivDelegate>()(id, pname, @params);
+			XWGL.GetDelegateFor<glGetQueryObjectuivDelegate>()(id, pname, @params);
 		}
 		
 		public static void glBindBuffer(uint target, uint buffer)
 		{
-			GetDelegateFor<glBindBufferDelegate>()(target, buffer);
+			XWGL.GetDelegateFor<glBindBufferDelegate>()(target, buffer);
 		}
 		
 		public static void glDeleteBuffers(int n, uint[] buffers)
 		{
-			GetDelegateFor<glDeleteBuffersDelegate>()(n, buffers);
+			XWGL.GetDelegateFor<glDeleteBuffersDelegate>()(n, buffers);
 		}
 		
 		public static void glGenBuffers(int n, uint[] buffers)
 		{
-			GetDelegateFor<glGenBuffersDelegate>()(n, buffers);
+			XWGL.GetDelegateFor<glGenBuffersDelegate>()(n, buffers);
 		}
 		
 		public static bool glIsBuffer(uint buffer)
 		{
-			return (bool)GetDelegateFor<glIsBufferDelegate>()(buffer);
+			return (bool)XWGL.GetDelegateFor<glIsBufferDelegate>()(buffer);
 		}
 		
 		public static void glBufferData(uint target, int size, float[] data, uint usage)
 		{
-			GetDelegateFor<glBufferDataDelegate1>()(target, size, data, usage);
+			XWGL.GetDelegateFor<glBufferDataFloatDelegate>("glBufferData")(target, size, data, usage);
 		}
 
 		public static void glBufferData(uint target, int size, uint[] data, uint usage)
 		{
-			GetDelegateFor<glBufferDataDelegate2>()(target, size, data, usage);
+			XWGL.GetDelegateFor<glBufferDataUintDelegate>("glBufferData")(target, size, data, usage);
+		}
+
+		public static void glBufferData(uint target, int size, int[] data, uint usage)
+		{
+			XWGL.GetDelegateFor<glBufferDataIntDelegate>("glBufferData")(target, size, data, usage);
+		}
+
+		public static void glBufferData(uint target, int size, double[] data, uint usage)
+		{
+			XWGL.GetDelegateFor<glBufferDataDoubleDelegate>("glBufferData")(target, size, data, usage);
 		}
 		
 		public static void glBufferSubData(uint target, int offset, int size, float[] data)
 		{
-			GetDelegateFor<glBufferSubDataDelegate>()(target, offset, size, data);
+			XWGL.GetDelegateFor<glBufferSubDataDelegate>()(target, offset, size, data);
 		}
 		
 		public static void glGetBufferSubData(uint target, IntPtr offset, IntPtr size, IntPtr data)
 		{
-			GetDelegateFor<glGetBufferSubDataDelegate>()(target, offset, size, data);
+			XWGL.GetDelegateFor<glGetBufferSubDataDelegate>()(target, offset, size, data);
 		}
 		
 		public static void glMapBuffer(uint target, uint access)
 		{
-			GetDelegateFor<glMapBufferDelegate>()(target, access);
+			XWGL.GetDelegateFor<glMapBufferDelegate>()(target, access);
 		}
 		
 		public static bool glUnmapBuffer(uint target)
 		{
-			return (bool)GetDelegateFor<glUnmapBufferDelegate>()(target);
+			return (bool)XWGL.GetDelegateFor<glUnmapBufferDelegate>()(target);
 		}
 		
 		public static void glGetBufferParameteriv(uint target, uint pname, int[] @params)
 		{
-			GetDelegateFor<glGetBufferParameterivDelegate>()(target, pname, @params);
+			XWGL.GetDelegateFor<glGetBufferParameterivDelegate>()(target, pname, @params);
 		}
 		
 		public static void glGetBufferPointerv(uint target, uint pname, IntPtr @params)
 		{
-			GetDelegateFor<glGetBufferPointervDelegate>()(target, pname, @params);
+			XWGL.GetDelegateFor<glGetBufferPointervDelegate>()(target, pname, @params);
 		}
 		
 		#endregion

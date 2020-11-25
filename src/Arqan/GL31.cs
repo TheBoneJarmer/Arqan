@@ -6,17 +6,7 @@ using System.Runtime.InteropServices;
 namespace Arqan
 {
 	public static class GL31
-	{
-		private static T GetDelegateFor<T>() where T : class
-		{
-			Type delegateType = typeof(T);
-			string name = delegateType.Name.Replace("Delegate","");
-			IntPtr proc = XWGL.GetProcAddress(name);
-			Delegate del = Marshal.GetDelegateForFunctionPointer(proc, delegateType);
-			
-			return del as T;
-		}
-		
+	{		
 		#region Constants
 		
 		public const uint GL_SAMPLER_2D_RECT = 0x8B63;
@@ -106,77 +96,77 @@ namespace Arqan
 		
 		public static void glDrawArraysInstanced(uint mode, int first, int count, int instancecount)
 		{
-			GetDelegateFor<glDrawArraysInstancedDelegate>()(mode, first, count, instancecount);
+			XWGL.GetDelegateFor<glDrawArraysInstancedDelegate>()(mode, first, count, instancecount);
 		}
 		
 		public static void glDrawElementsInstanced(uint mode, int count, uint type, IntPtr indices, int instancecount)
 		{
-			GetDelegateFor<glDrawElementsInstancedDelegate>()(mode, count, type, indices, instancecount);
+			XWGL.GetDelegateFor<glDrawElementsInstancedDelegate>()(mode, count, type, indices, instancecount);
 		}
 		
 		public static void glTexBuffer(uint target, uint internalformat, uint buffer)
 		{
-			GetDelegateFor<glTexBufferDelegate>()(target, internalformat, buffer);
+			XWGL.GetDelegateFor<glTexBufferDelegate>()(target, internalformat, buffer);
 		}
 		
 		public static void glPrimitiveRestartIndex(uint index)
 		{
-			GetDelegateFor<glPrimitiveRestartIndexDelegate>()(index);
+			XWGL.GetDelegateFor<glPrimitiveRestartIndexDelegate>()(index);
 		}
 		
 		public static void glCopyBufferSubData(uint readTarget, uint writeTarget, IntPtr readOffset, IntPtr writeOffset, IntPtr size)
 		{
-			GetDelegateFor<glCopyBufferSubDataDelegate>()(readTarget, writeTarget, readOffset, writeOffset, size);
+			XWGL.GetDelegateFor<glCopyBufferSubDataDelegate>()(readTarget, writeTarget, readOffset, writeOffset, size);
 		}
 		
 		public static void glGetUniformIndices(uint program, int uniformCount, char[] uniformNames, uint[] uniformIndices)
 		{
-			GetDelegateFor<glGetUniformIndicesDelegate>()(program, uniformCount, uniformNames, uniformIndices);
+			XWGL.GetDelegateFor<glGetUniformIndicesDelegate>()(program, uniformCount, uniformNames, uniformIndices);
 		}
 		
 		public static void glGetActiveUniformsiv(uint program, int uniformCount, uint[] uniformIndices, uint pname, int[] @params)
 		{
-			GetDelegateFor<glGetActiveUniformsivDelegate>()(program, uniformCount, uniformIndices, pname, @params);
+			XWGL.GetDelegateFor<glGetActiveUniformsivDelegate>()(program, uniformCount, uniformIndices, pname, @params);
 		}
 		
 		public static void glGetActiveUniformName(uint program, uint uniformIndex, int bufSize, int[] length, char[] uniformName)
 		{
-			GetDelegateFor<glGetActiveUniformNameDelegate>()(program, uniformIndex, bufSize, length, uniformName);
+			XWGL.GetDelegateFor<glGetActiveUniformNameDelegate>()(program, uniformIndex, bufSize, length, uniformName);
 		}
 		
 		public static uint glGetUniformBlockIndex(uint program, char[] uniformBlockName)
 		{
-			return (uint)GetDelegateFor<glGetUniformBlockIndexDelegate>()(program, uniformBlockName);
+			return (uint)XWGL.GetDelegateFor<glGetUniformBlockIndexDelegate>()(program, uniformBlockName);
 		}
 		
 		public static void glGetActiveUniformBlockiv(uint program, uint uniformBlockIndex, uint pname, int[] @params)
 		{
-			GetDelegateFor<glGetActiveUniformBlockivDelegate>()(program, uniformBlockIndex, pname, @params);
+			XWGL.GetDelegateFor<glGetActiveUniformBlockivDelegate>()(program, uniformBlockIndex, pname, @params);
 		}
 		
 		public static void glGetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, int[] length, char[] uniformBlockName)
 		{
-			GetDelegateFor<glGetActiveUniformBlockNameDelegate>()(program, uniformBlockIndex, bufSize, length, uniformBlockName);
+			XWGL.GetDelegateFor<glGetActiveUniformBlockNameDelegate>()(program, uniformBlockIndex, bufSize, length, uniformBlockName);
 		}
 		
 		public static void glUniformBlockBinding(uint program, uint uniformBlockIndex, uint uniformBlockBinding)
 		{
-			GetDelegateFor<glUniformBlockBindingDelegate>()(program, uniformBlockIndex, uniformBlockBinding);
+			XWGL.GetDelegateFor<glUniformBlockBindingDelegate>()(program, uniformBlockIndex, uniformBlockBinding);
 		}
 		
 		public static void glBindBufferRange(uint target, uint index, uint buffer, IntPtr offset, IntPtr size)
 		{
-			GetDelegateFor<glBindBufferRangeDelegate>()(target, index, buffer, offset, size);
+			XWGL.GetDelegateFor<glBindBufferRangeDelegate>()(target, index, buffer, offset, size);
 		}
 		
 		public static void glBindBufferBase(uint target, uint index, uint buffer)
 		{
-			GetDelegateFor<glBindBufferBaseDelegate>()(target, index, buffer);
+			XWGL.GetDelegateFor<glBindBufferBaseDelegate>()(target, index, buffer);
 		}
 		
 		public static void glGetIntegeri_v(uint target, uint index, int[] data)
 		{
-			GetDelegateFor<glGetIntegeri_vDelegate>()(target, index, data);
+			XWGL.GetDelegateFor<glGetIntegeri_vDelegate>()(target, index, data);
 		}
 		
 		#endregion

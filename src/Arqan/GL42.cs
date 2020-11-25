@@ -6,17 +6,7 @@ using System.Runtime.InteropServices;
 namespace Arqan
 {
 	public static class GL42
-	{
-		private static T GetDelegateFor<T>() where T : class
-		{
-			Type delegateType = typeof(T);
-			string name = delegateType.Name.Replace("Delegate","");
-			IntPtr proc = XWGL.GetProcAddress(name);
-			Delegate del = Marshal.GetDelegateForFunctionPointer(proc, delegateType);
-			
-			return del as T;
-		}
-		
+	{		
 		#region Constants
 		
 		public const uint GL_COPY_READ_BUFFER_BINDING = 0x8F36;
@@ -154,62 +144,62 @@ namespace Arqan
 		
 		public static void glDrawArraysInstancedBaseInstance(uint mode, int first, int count, int instancecount, uint baseinstance)
 		{
-			GetDelegateFor<glDrawArraysInstancedBaseInstanceDelegate>()(mode, first, count, instancecount, baseinstance);
+			XWGL.GetDelegateFor<glDrawArraysInstancedBaseInstanceDelegate>()(mode, first, count, instancecount, baseinstance);
 		}
 		
 		public static void glDrawElementsInstancedBaseInstance(uint mode, int count, uint type, IntPtr indices, int instancecount, uint baseinstance)
 		{
-			GetDelegateFor<glDrawElementsInstancedBaseInstanceDelegate>()(mode, count, type, indices, instancecount, baseinstance);
+			XWGL.GetDelegateFor<glDrawElementsInstancedBaseInstanceDelegate>()(mode, count, type, indices, instancecount, baseinstance);
 		}
 		
 		public static void glDrawElementsInstancedBaseVertexBaseInstance(uint mode, int count, uint type, IntPtr indices, int instancecount, int basevertex, uint baseinstance)
 		{
-			GetDelegateFor<glDrawElementsInstancedBaseVertexBaseInstanceDelegate>()(mode, count, type, indices, instancecount, basevertex, baseinstance);
+			XWGL.GetDelegateFor<glDrawElementsInstancedBaseVertexBaseInstanceDelegate>()(mode, count, type, indices, instancecount, basevertex, baseinstance);
 		}
 		
 		public static void glGetInternalformativ(uint target, uint internalformat, uint pname, int bufSize, int[] @params)
 		{
-			GetDelegateFor<glGetInternalformativDelegate>()(target, internalformat, pname, bufSize, @params);
+			XWGL.GetDelegateFor<glGetInternalformativDelegate>()(target, internalformat, pname, bufSize, @params);
 		}
 		
 		public static void glGetActiveAtomicCounterBufferiv(uint program, uint bufferIndex, uint pname, int[] @params)
 		{
-			GetDelegateFor<glGetActiveAtomicCounterBufferivDelegate>()(program, bufferIndex, pname, @params);
+			XWGL.GetDelegateFor<glGetActiveAtomicCounterBufferivDelegate>()(program, bufferIndex, pname, @params);
 		}
 		
 		public static void glBindImageTexture(uint unit, uint texture, int level, bool layered, int layer, uint access, uint format)
 		{
-			GetDelegateFor<glBindImageTextureDelegate>()(unit, texture, level, layered, layer, access, format);
+			XWGL.GetDelegateFor<glBindImageTextureDelegate>()(unit, texture, level, layered, layer, access, format);
 		}
 		
 		public static void glMemoryBarrier(uint barriers)
 		{
-			GetDelegateFor<glMemoryBarrierDelegate>()(barriers);
+			XWGL.GetDelegateFor<glMemoryBarrierDelegate>()(barriers);
 		}
 		
 		public static void glTexStorage1D(uint target, int levels, uint internalformat, int width)
 		{
-			GetDelegateFor<glTexStorage1DDelegate>()(target, levels, internalformat, width);
+			XWGL.GetDelegateFor<glTexStorage1DDelegate>()(target, levels, internalformat, width);
 		}
 		
 		public static void glTexStorage2D(uint target, int levels, uint internalformat, int width, int height)
 		{
-			GetDelegateFor<glTexStorage2DDelegate>()(target, levels, internalformat, width, height);
+			XWGL.GetDelegateFor<glTexStorage2DDelegate>()(target, levels, internalformat, width, height);
 		}
 		
 		public static void glTexStorage3D(uint target, int levels, uint internalformat, int width, int height, int depth)
 		{
-			GetDelegateFor<glTexStorage3DDelegate>()(target, levels, internalformat, width, height, depth);
+			XWGL.GetDelegateFor<glTexStorage3DDelegate>()(target, levels, internalformat, width, height, depth);
 		}
 		
 		public static void glDrawTransformFeedbackInstanced(uint mode, uint id, int instancecount)
 		{
-			GetDelegateFor<glDrawTransformFeedbackInstancedDelegate>()(mode, id, instancecount);
+			XWGL.GetDelegateFor<glDrawTransformFeedbackInstancedDelegate>()(mode, id, instancecount);
 		}
 		
 		public static void glDrawTransformFeedbackStreamInstanced(uint mode, uint id, uint stream, int instancecount)
 		{
-			GetDelegateFor<glDrawTransformFeedbackStreamInstancedDelegate>()(mode, id, stream, instancecount);
+			XWGL.GetDelegateFor<glDrawTransformFeedbackStreamInstancedDelegate>()(mode, id, stream, instancecount);
 		}
 		
 		#endregion

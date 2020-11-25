@@ -6,17 +6,7 @@ using System.Runtime.InteropServices;
 namespace Arqan
 {
 	public static class GL12
-	{
-		private static T GetDelegateFor<T>() where T : class
-		{
-			Type delegateType = typeof(T);
-			string name = delegateType.Name.Replace("Delegate","");
-			IntPtr proc = XWGL.GetProcAddress(name);
-			Delegate del = Marshal.GetDelegateForFunctionPointer(proc, delegateType);
-			
-			return del as T;
-		}
-		
+	{		
 		#region Constants
 		
 		public const uint GL_UNSIGNED_BYTE_3_3_2 = 0x8032;
@@ -75,22 +65,22 @@ namespace Arqan
 		
 		public static void glDrawRangeElements(uint mode, uint start, uint end, int count, uint type, IntPtr indices)
 		{
-			GetDelegateFor<glDrawRangeElementsDelegate>()(mode, start, end, count, type, indices);
+			XWGL.GetDelegateFor<glDrawRangeElementsDelegate>()(mode, start, end, count, type, indices);
 		}
 		
 		public static void glTexImage3D(uint target, int level, int internalformat, int width, int height, int depth, int border, uint format, uint type, IntPtr pixels)
 		{
-			GetDelegateFor<glTexImage3DDelegate>()(target, level, internalformat, width, height, depth, border, format, type, pixels);
+			XWGL.GetDelegateFor<glTexImage3DDelegate>()(target, level, internalformat, width, height, depth, border, format, type, pixels);
 		}
 		
 		public static void glTexSubImage3D(uint target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint format, uint type, IntPtr pixels)
 		{
-			GetDelegateFor<glTexSubImage3DDelegate>()(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
+			XWGL.GetDelegateFor<glTexSubImage3DDelegate>()(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
 		}
 		
 		public static void glCopyTexSubImage3D(uint target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
 		{
-			GetDelegateFor<glCopyTexSubImage3DDelegate>()(target, level, xoffset, yoffset, zoffset, x, y, width, height);
+			XWGL.GetDelegateFor<glCopyTexSubImage3DDelegate>()(target, level, xoffset, yoffset, zoffset, x, y, width, height);
 		}
 		
 		#endregion

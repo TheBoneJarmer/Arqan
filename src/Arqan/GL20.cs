@@ -6,17 +6,7 @@ using System.Runtime.InteropServices;
 namespace Arqan
 {
 	public static class GL20
-	{
-		private static T GetDelegateFor<T>() where T : class
-		{
-			Type delegateType = typeof(T);
-			string name = delegateType.Name.Replace("Delegate","");
-			IntPtr proc = XWGL.GetProcAddress(name);
-			Delegate del = Marshal.GetDelegateForFunctionPointer(proc, delegateType);
-			
-			return del as T;
-		}
-		
+	{	
 		#region Constants
 		
 		public const uint GL_BLEND_EQUATION_RGB = 0x8009;
@@ -214,472 +204,472 @@ namespace Arqan
 		
 		public static void glBlendEquationSeparate(uint modeRGB, uint modeAlpha)
 		{
-			GetDelegateFor<glBlendEquationSeparateDelegate>()(modeRGB, modeAlpha);
+			XWGL.GetDelegateFor<glBlendEquationSeparateDelegate>()(modeRGB, modeAlpha);
 		}
 		
 		public static void glDrawBuffers(int n, uint[] bufs)
 		{
-			GetDelegateFor<glDrawBuffersDelegate>()(n, bufs);
+			XWGL.GetDelegateFor<glDrawBuffersDelegate>()(n, bufs);
 		}
 		
 		public static void glStencilOpSeparate(uint face, uint sfail, uint dpfail, uint dppass)
 		{
-			GetDelegateFor<glStencilOpSeparateDelegate>()(face, sfail, dpfail, dppass);
+			XWGL.GetDelegateFor<glStencilOpSeparateDelegate>()(face, sfail, dpfail, dppass);
 		}
 		
 		public static void glStencilFuncSeparate(uint face, uint func, int @ref, uint mask)
 		{
-			GetDelegateFor<glStencilFuncSeparateDelegate>()(face, func, @ref, mask);
+			XWGL.GetDelegateFor<glStencilFuncSeparateDelegate>()(face, func, @ref, mask);
 		}
 		
 		public static void glStencilMaskSeparate(uint face, uint mask)
 		{
-			GetDelegateFor<glStencilMaskSeparateDelegate>()(face, mask);
+			XWGL.GetDelegateFor<glStencilMaskSeparateDelegate>()(face, mask);
 		}
 		
 		public static void glAttachShader(uint program, uint shader)
 		{
-			GetDelegateFor<glAttachShaderDelegate>()(program, shader);
+			XWGL.GetDelegateFor<glAttachShaderDelegate>()(program, shader);
 		}
 		
 		public static void glBindAttribLocation(uint program, uint index, string[] name)
 		{
-			GetDelegateFor<glBindAttribLocationDelegate>()(program, index, name);
+			XWGL.GetDelegateFor<glBindAttribLocationDelegate>()(program, index, name);
 		}
 		
 		public static void glCompileShader(uint shader)
 		{
-			GetDelegateFor<glCompileShaderDelegate>()(shader);
+			XWGL.GetDelegateFor<glCompileShaderDelegate>()(shader);
 		}
 		
 		public static uint glCreateProgram()
 		{
-			return (uint)GetDelegateFor<glCreateProgramDelegate>()();
+			return (uint)XWGL.GetDelegateFor<glCreateProgramDelegate>()();
 		}
 		
 		public static uint glCreateShader(uint type)
 		{
-			return (uint)GetDelegateFor<glCreateShaderDelegate>()(type);
+			return (uint)XWGL.GetDelegateFor<glCreateShaderDelegate>()(type);
 		}
 		
 		public static void glDeleteProgram(uint program)
 		{
-			GetDelegateFor<glDeleteProgramDelegate>()(program);
+			XWGL.GetDelegateFor<glDeleteProgramDelegate>()(program);
 		}
 		
 		public static void glDeleteShader(uint shader)
 		{
-			GetDelegateFor<glDeleteShaderDelegate>()(shader);
+			XWGL.GetDelegateFor<glDeleteShaderDelegate>()(shader);
 		}
 		
 		public static void glDetachShader(uint program, uint shader)
 		{
-			GetDelegateFor<glDetachShaderDelegate>()(program, shader);
+			XWGL.GetDelegateFor<glDetachShaderDelegate>()(program, shader);
 		}
 		
 		public static void glDisableVertexAttribArray(uint index)
 		{
-			GetDelegateFor<glDisableVertexAttribArrayDelegate>()(index);
+			XWGL.GetDelegateFor<glDisableVertexAttribArrayDelegate>()(index);
 		}
 		
 		public static void glEnableVertexAttribArray(uint index)
 		{
-			GetDelegateFor<glEnableVertexAttribArrayDelegate>()(index);
+			XWGL.GetDelegateFor<glEnableVertexAttribArrayDelegate>()(index);
 		}
 		
 		public static void glGetActiveAttrib(uint program, uint index, int bufSize, int[] length, int[] size, uint[] type, string[] name)
 		{
-			GetDelegateFor<glGetActiveAttribDelegate>()(program, index, bufSize, length, size, type, name);
+			XWGL.GetDelegateFor<glGetActiveAttribDelegate>()(program, index, bufSize, length, size, type, name);
 		}
 		
 		public static void glGetActiveUniform(uint program, uint index, int bufSize, int[] length, int[] size, uint[] type, string[] name)
 		{
-			GetDelegateFor<glGetActiveUniformDelegate>()(program, index, bufSize, length, size, type, name);
+			XWGL.GetDelegateFor<glGetActiveUniformDelegate>()(program, index, bufSize, length, size, type, name);
 		}
 		
 		public static void glGetAttachedShaders(uint program, int maxCount, int[] count, uint[] shaders)
 		{
-			GetDelegateFor<glGetAttachedShadersDelegate>()(program, maxCount, count, shaders);
+			XWGL.GetDelegateFor<glGetAttachedShadersDelegate>()(program, maxCount, count, shaders);
 		}
 		
 		public static uint glGetAttribLocation(uint program, string name)
 		{
-			return (uint)GetDelegateFor<glGetAttribLocationDelegate>()(program, name);
+			return (uint)XWGL.GetDelegateFor<glGetAttribLocationDelegate>()(program, name);
 		}
 		
 		public static void glGetProgramiv(uint program, uint pname, int[] @params)
 		{
-			GetDelegateFor<glGetProgramivDelegate>()(program, pname, @params);
+			XWGL.GetDelegateFor<glGetProgramivDelegate>()(program, pname, @params);
 		}
 		
 		public static void glGetProgramInfoLog(uint program, int bufSize, ref int length, byte[] infoLog)
 		{
-			GetDelegateFor<glGetProgramInfoLogDelegate>()(program, bufSize, ref length, infoLog);
+			XWGL.GetDelegateFor<glGetProgramInfoLogDelegate>()(program, bufSize, ref length, infoLog);
 		}
 		
 		public static void glGetShaderiv(uint shader, uint pname, ref int @params)
 		{
-			GetDelegateFor<glGetShaderivDelegate>()(shader, pname, ref @params);
+			XWGL.GetDelegateFor<glGetShaderivDelegate>()(shader, pname, ref @params);
 		}
 		
 		public static void glGetShaderInfoLog(uint shader, int bufSize, ref int length, byte[] infoLog)
 		{
-			GetDelegateFor<glGetShaderInfoLogDelegate>()(shader, bufSize, ref length, infoLog);
+			XWGL.GetDelegateFor<glGetShaderInfoLogDelegate>()(shader, bufSize, ref length, infoLog);
 		}
 		
 		public static void glGetShaderSource(uint shader, int bufSize, int[] length, char[] source)
 		{
-			GetDelegateFor<glGetShaderSourceDelegate>()(shader, bufSize, length, source);
+			XWGL.GetDelegateFor<glGetShaderSourceDelegate>()(shader, bufSize, length, source);
 		}
 		
 		public static uint glGetUniformLocation(uint program, string name)
 		{
-			return (uint)GetDelegateFor<glGetUniformLocationDelegate>()(program, name);
+			return (uint)XWGL.GetDelegateFor<glGetUniformLocationDelegate>()(program, name);
 		}
 		
 		public static void glGetUniformfv(uint program, uint location, float[] @params)
 		{
-			GetDelegateFor<glGetUniformfvDelegate>()(program, location, @params);
+			XWGL.GetDelegateFor<glGetUniformfvDelegate>()(program, location, @params);
 		}
 		
 		public static void glGetUniformiv(uint program, uint location, int[] @params)
 		{
-			GetDelegateFor<glGetUniformivDelegate>()(program, location, @params);
+			XWGL.GetDelegateFor<glGetUniformivDelegate>()(program, location, @params);
 		}
 		
 		public static void glGetVertexAttribdv(uint index, uint pname, double[] @params)
 		{
-			GetDelegateFor<glGetVertexAttribdvDelegate>()(index, pname, @params);
+			XWGL.GetDelegateFor<glGetVertexAttribdvDelegate>()(index, pname, @params);
 		}
 		
 		public static void glGetVertexAttribfv(uint index, uint pname, float[] @params)
 		{
-			GetDelegateFor<glGetVertexAttribfvDelegate>()(index, pname, @params);
+			XWGL.GetDelegateFor<glGetVertexAttribfvDelegate>()(index, pname, @params);
 		}
 		
 		public static void glGetVertexAttribiv(uint index, uint pname, int[] @params)
 		{
-			GetDelegateFor<glGetVertexAttribivDelegate>()(index, pname, @params);
+			XWGL.GetDelegateFor<glGetVertexAttribivDelegate>()(index, pname, @params);
 		}
 		
 		public static void glGetVertexAttribPointerv(uint index, uint pname, IntPtr pointer)
 		{
-			GetDelegateFor<glGetVertexAttribPointervDelegate>()(index, pname, pointer);
+			XWGL.GetDelegateFor<glGetVertexAttribPointervDelegate>()(index, pname, pointer);
 		}
 		
 		public static bool glIsProgram(uint program)
 		{
-			return (bool)GetDelegateFor<glIsProgramDelegate>()(program);
+			return (bool)XWGL.GetDelegateFor<glIsProgramDelegate>()(program);
 		}
 		
 		public static bool glIsShader(uint shader)
 		{
-			return (bool)GetDelegateFor<glIsShaderDelegate>()(shader);
+			return (bool)XWGL.GetDelegateFor<glIsShaderDelegate>()(shader);
 		}
 		
 		public static void glLinkProgram(uint program)
 		{
-			GetDelegateFor<glLinkProgramDelegate>()(program);
+			XWGL.GetDelegateFor<glLinkProgramDelegate>()(program);
 		}
 		
 		public static void glShaderSource(uint shader, int count, string[] @string, int[] length)
 		{
-			GetDelegateFor<glShaderSourceDelegate>()(shader, count, @string, length);
+			XWGL.GetDelegateFor<glShaderSourceDelegate>()(shader, count, @string, length);
 		}
 		
 		public static void glUseProgram(uint program)
 		{
-			GetDelegateFor<glUseProgramDelegate>()(program);
+			XWGL.GetDelegateFor<glUseProgramDelegate>()(program);
 		}
 		
 		public static void glUniform1f(uint location, float v0)
 		{
-			GetDelegateFor<glUniform1fDelegate>()(location, v0);
+			XWGL.GetDelegateFor<glUniform1fDelegate>()(location, v0);
 		}
 		
 		public static void glUniform2f(uint location, float v0, float v1)
 		{
-			GetDelegateFor<glUniform2fDelegate>()(location, v0, v1);
+			XWGL.GetDelegateFor<glUniform2fDelegate>()(location, v0, v1);
 		}
 		
 		public static void glUniform3f(uint location, float v0, float v1, float v2)
 		{
-			GetDelegateFor<glUniform3fDelegate>()(location, v0, v1, v2);
+			XWGL.GetDelegateFor<glUniform3fDelegate>()(location, v0, v1, v2);
 		}
 		
 		public static void glUniform4f(uint location, float v0, float v1, float v2, float v3)
 		{
-			GetDelegateFor<glUniform4fDelegate>()(location, v0, v1, v2, v3);
+			XWGL.GetDelegateFor<glUniform4fDelegate>()(location, v0, v1, v2, v3);
 		}
 		
 		public static void glUniform1i(uint location, int v0)
 		{
-			GetDelegateFor<glUniform1iDelegate>()(location, v0);
+			XWGL.GetDelegateFor<glUniform1iDelegate>()(location, v0);
 		}
 		
 		public static void glUniform2i(uint location, int v0, int v1)
 		{
-			GetDelegateFor<glUniform2iDelegate>()(location, v0, v1);
+			XWGL.GetDelegateFor<glUniform2iDelegate>()(location, v0, v1);
 		}
 		
 		public static void glUniform3i(uint location, int v0, int v1, int v2)
 		{
-			GetDelegateFor<glUniform3iDelegate>()(location, v0, v1, v2);
+			XWGL.GetDelegateFor<glUniform3iDelegate>()(location, v0, v1, v2);
 		}
 		
 		public static void glUniform4i(uint location, int v0, int v1, int v2, int v3)
 		{
-			GetDelegateFor<glUniform4iDelegate>()(location, v0, v1, v2, v3);
+			XWGL.GetDelegateFor<glUniform4iDelegate>()(location, v0, v1, v2, v3);
 		}
 		
 		public static void glUniform1fv(uint location, int count, float[] value)
 		{
-			GetDelegateFor<glUniform1fvDelegate>()(location, count, value);
+			XWGL.GetDelegateFor<glUniform1fvDelegate>()(location, count, value);
 		}
 		
 		public static void glUniform2fv(uint location, int count, float[] value)
 		{
-			GetDelegateFor<glUniform2fvDelegate>()(location, count, value);
+			XWGL.GetDelegateFor<glUniform2fvDelegate>()(location, count, value);
 		}
 		
 		public static void glUniform3fv(uint location, int count, float[] value)
 		{
-			GetDelegateFor<glUniform3fvDelegate>()(location, count, value);
+			XWGL.GetDelegateFor<glUniform3fvDelegate>()(location, count, value);
 		}
 		
 		public static void glUniform4fv(uint location, int count, float[] value)
 		{
-			GetDelegateFor<glUniform4fvDelegate>()(location, count, value);
+			XWGL.GetDelegateFor<glUniform4fvDelegate>()(location, count, value);
 		}
 		
 		public static void glUniform1iv(uint location, int count, int[] value)
 		{
-			GetDelegateFor<glUniform1ivDelegate>()(location, count, value);
+			XWGL.GetDelegateFor<glUniform1ivDelegate>()(location, count, value);
 		}
 		
 		public static void glUniform2iv(uint location, int count, int[] value)
 		{
-			GetDelegateFor<glUniform2ivDelegate>()(location, count, value);
+			XWGL.GetDelegateFor<glUniform2ivDelegate>()(location, count, value);
 		}
 		
 		public static void glUniform3iv(uint location, int count, int[] value)
 		{
-			GetDelegateFor<glUniform3ivDelegate>()(location, count, value);
+			XWGL.GetDelegateFor<glUniform3ivDelegate>()(location, count, value);
 		}
 		
 		public static void glUniform4iv(uint location, int count, int[] value)
 		{
-			GetDelegateFor<glUniform4ivDelegate>()(location, count, value);
+			XWGL.GetDelegateFor<glUniform4ivDelegate>()(location, count, value);
 		}
 		
 		public static void glUniformMatrix2fv(uint location, int count, bool transpose, float[] value)
 		{
-			GetDelegateFor<glUniformMatrix2fvDelegate>()(location, count, transpose, value);
+			XWGL.GetDelegateFor<glUniformMatrix2fvDelegate>()(location, count, transpose, value);
 		}
 		
 		public static void glUniformMatrix3fv(uint location, int count, bool transpose, float[] value)
 		{
-			GetDelegateFor<glUniformMatrix3fvDelegate>()(location, count, transpose, value);
+			XWGL.GetDelegateFor<glUniformMatrix3fvDelegate>()(location, count, transpose, value);
 		}
 		
 		public static void glUniformMatrix4fv(uint location, int count, bool transpose, float[] value)
 		{
-			GetDelegateFor<glUniformMatrix4fvDelegate>()(location, count, transpose, value);
+			XWGL.GetDelegateFor<glUniformMatrix4fvDelegate>()(location, count, transpose, value);
 		}
 		
 		public static void glValidateProgram(uint program)
 		{
-			GetDelegateFor<glValidateProgramDelegate>()(program);
+			XWGL.GetDelegateFor<glValidateProgramDelegate>()(program);
 		}
 		
 		public static void glVertexAttrib1d(uint index, double x)
 		{
-			GetDelegateFor<glVertexAttrib1dDelegate>()(index, x);
+			XWGL.GetDelegateFor<glVertexAttrib1dDelegate>()(index, x);
 		}
 		
 		public static void glVertexAttrib1dv(uint index, double[] v)
 		{
-			GetDelegateFor<glVertexAttrib1dvDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib1dvDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib1f(uint index, float x)
 		{
-			GetDelegateFor<glVertexAttrib1fDelegate>()(index, x);
+			XWGL.GetDelegateFor<glVertexAttrib1fDelegate>()(index, x);
 		}
 		
 		public static void glVertexAttrib1fv(uint index, float[] v)
 		{
-			GetDelegateFor<glVertexAttrib1fvDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib1fvDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib1s(uint index, short x)
 		{
-			GetDelegateFor<glVertexAttrib1sDelegate>()(index, x);
+			XWGL.GetDelegateFor<glVertexAttrib1sDelegate>()(index, x);
 		}
 		
 		public static void glVertexAttrib1sv(uint index, short[] v)
 		{
-			GetDelegateFor<glVertexAttrib1svDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib1svDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib2d(uint index, double x, double y)
 		{
-			GetDelegateFor<glVertexAttrib2dDelegate>()(index, x, y);
+			XWGL.GetDelegateFor<glVertexAttrib2dDelegate>()(index, x, y);
 		}
 		
 		public static void glVertexAttrib2dv(uint index, double[] v)
 		{
-			GetDelegateFor<glVertexAttrib2dvDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib2dvDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib2f(uint index, float x, float y)
 		{
-			GetDelegateFor<glVertexAttrib2fDelegate>()(index, x, y);
+			XWGL.GetDelegateFor<glVertexAttrib2fDelegate>()(index, x, y);
 		}
 		
 		public static void glVertexAttrib2fv(uint index, float[] v)
 		{
-			GetDelegateFor<glVertexAttrib2fvDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib2fvDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib2s(uint index, short x, short y)
 		{
-			GetDelegateFor<glVertexAttrib2sDelegate>()(index, x, y);
+			XWGL.GetDelegateFor<glVertexAttrib2sDelegate>()(index, x, y);
 		}
 		
 		public static void glVertexAttrib2sv(uint index, short[] v)
 		{
-			GetDelegateFor<glVertexAttrib2svDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib2svDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib3d(uint index, double x, double y, double z)
 		{
-			GetDelegateFor<glVertexAttrib3dDelegate>()(index, x, y, z);
+			XWGL.GetDelegateFor<glVertexAttrib3dDelegate>()(index, x, y, z);
 		}
 		
 		public static void glVertexAttrib3dv(uint index, double[] v)
 		{
-			GetDelegateFor<glVertexAttrib3dvDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib3dvDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib3f(uint index, float x, float y, float z)
 		{
-			GetDelegateFor<glVertexAttrib3fDelegate>()(index, x, y, z);
+			XWGL.GetDelegateFor<glVertexAttrib3fDelegate>()(index, x, y, z);
 		}
 		
 		public static void glVertexAttrib3fv(uint index, float[] v)
 		{
-			GetDelegateFor<glVertexAttrib3fvDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib3fvDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib3s(uint index, short x, short y, short z)
 		{
-			GetDelegateFor<glVertexAttrib3sDelegate>()(index, x, y, z);
+			XWGL.GetDelegateFor<glVertexAttrib3sDelegate>()(index, x, y, z);
 		}
 		
 		public static void glVertexAttrib3sv(uint index, short[] v)
 		{
-			GetDelegateFor<glVertexAttrib3svDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib3svDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib4Nbv(uint index, byte[] v)
 		{
-			GetDelegateFor<glVertexAttrib4NbvDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib4NbvDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib4Niv(uint index, int[] v)
 		{
-			GetDelegateFor<glVertexAttrib4NivDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib4NivDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib4Nsv(uint index, short[] v)
 		{
-			GetDelegateFor<glVertexAttrib4NsvDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib4NsvDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib4Nub(uint index, byte x, byte y, byte z, byte w)
 		{
-			GetDelegateFor<glVertexAttrib4NubDelegate>()(index, x, y, z, w);
+			XWGL.GetDelegateFor<glVertexAttrib4NubDelegate>()(index, x, y, z, w);
 		}
 		
 		public static void glVertexAttrib4Nubv(uint index, byte[] v)
 		{
-			GetDelegateFor<glVertexAttrib4NubvDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib4NubvDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib4Nuiv(uint index, uint[] v)
 		{
-			GetDelegateFor<glVertexAttrib4NuivDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib4NuivDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib4Nusv(uint index, ushort[] v)
 		{
-			GetDelegateFor<glVertexAttrib4NusvDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib4NusvDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib4bv(uint index, byte[] v)
 		{
-			GetDelegateFor<glVertexAttrib4bvDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib4bvDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib4d(uint index, double x, double y, double z, double w)
 		{
-			GetDelegateFor<glVertexAttrib4dDelegate>()(index, x, y, z, w);
+			XWGL.GetDelegateFor<glVertexAttrib4dDelegate>()(index, x, y, z, w);
 		}
 		
 		public static void glVertexAttrib4dv(uint index, double[] v)
 		{
-			GetDelegateFor<glVertexAttrib4dvDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib4dvDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib4f(uint index, float x, float y, float z, float w)
 		{
-			GetDelegateFor<glVertexAttrib4fDelegate>()(index, x, y, z, w);
+			XWGL.GetDelegateFor<glVertexAttrib4fDelegate>()(index, x, y, z, w);
 		}
 		
 		public static void glVertexAttrib4fv(uint index, float[] v)
 		{
-			GetDelegateFor<glVertexAttrib4fvDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib4fvDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib4iv(uint index, int[] v)
 		{
-			GetDelegateFor<glVertexAttrib4ivDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib4ivDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib4s(uint index, short x, short y, short z, short w)
 		{
-			GetDelegateFor<glVertexAttrib4sDelegate>()(index, x, y, z, w);
+			XWGL.GetDelegateFor<glVertexAttrib4sDelegate>()(index, x, y, z, w);
 		}
 		
 		public static void glVertexAttrib4sv(uint index, short[] v)
 		{
-			GetDelegateFor<glVertexAttrib4svDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib4svDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib4ubv(uint index, byte[] v)
 		{
-			GetDelegateFor<glVertexAttrib4ubvDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib4ubvDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib4uiv(uint index, uint[] v)
 		{
-			GetDelegateFor<glVertexAttrib4uivDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib4uivDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttrib4usv(uint index, ushort[] v)
 		{
-			GetDelegateFor<glVertexAttrib4usvDelegate>()(index, v);
+			XWGL.GetDelegateFor<glVertexAttrib4usvDelegate>()(index, v);
 		}
 		
 		public static void glVertexAttribPointer(uint index, int size, uint type, bool normalized, int stride, IntPtr pointer)
 		{
-			GetDelegateFor<glVertexAttribPointerDelegate>()(index, size, type, normalized, stride, pointer);
+			XWGL.GetDelegateFor<glVertexAttribPointerDelegate>()(index, size, type, normalized, stride, pointer);
 		}
 
         public static void glReadPixels(float x, float y, float width, float height, uint format, uint type, IntPtr pixels)
         {
-            GetDelegateFor<glReadPixelsDelegate>()(x, y, width, height, format, type, pixels);
+            XWGL.GetDelegateFor<glReadPixelsDelegate>()(x, y, width, height, format, type, pixels);
         }
 		
 		#endregion

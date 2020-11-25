@@ -25,7 +25,25 @@ namespace Arqan
 
 		#endif
 
-		public static IntPtr GetProcAddress(string name)
+		internal static T GetDelegateFor<T>() where T : class
+		{
+			Type delegateType = typeof(T);
+			string name = delegateType.Name.Replace("Delegate","");
+			IntPtr proc = XWGL.GetProcAddress(name);
+			Delegate del = Marshal.GetDelegateForFunctionPointer(proc, delegateType);
+			
+			return del as T;
+		}
+		internal static T GetDelegateFor<T>(string name) where T : class
+		{
+			Type delegateType = typeof(T);
+			IntPtr proc = XWGL.GetProcAddress(name);
+			Delegate del = Marshal.GetDelegateForFunctionPointer(proc, delegateType);
+			
+			return del as T;
+		}
+
+		internal static IntPtr GetProcAddress(string name)
 		{
 			#if Windows
 

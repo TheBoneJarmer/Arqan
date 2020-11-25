@@ -6,17 +6,7 @@ using System.Runtime.InteropServices;
 namespace Arqan
 {
 	public static class GL14
-	{
-		private static T GetDelegateFor<T>() where T : class
-		{
-			Type delegateType = typeof(T);
-			string name = delegateType.Name.Replace("Delegate","");
-			IntPtr proc = XWGL.GetProcAddress(name);
-			Delegate del = Marshal.GetDelegateForFunctionPointer(proc, delegateType);
-			
-			return del as T;
-		}
-		
+	{	
 		#region Constants
 		
 		public const uint GL_BLEND_DST_RGB = 0x80C8;
@@ -125,237 +115,237 @@ namespace Arqan
 		
 		public static void glBlendFuncSeparate(uint sfactorRGB, uint dfactorRGB, uint sfactorAlpha, uint dfactorAlpha)
 		{
-			GetDelegateFor<glBlendFuncSeparateDelegate>()(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha);
+			XWGL.GetDelegateFor<glBlendFuncSeparateDelegate>()(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha);
 		}
 		
 		public static void glMultiDrawArrays(uint mode, int[] first, int[] count, int drawcount)
 		{
-			GetDelegateFor<glMultiDrawArraysDelegate>()(mode, first, count, drawcount);
+			XWGL.GetDelegateFor<glMultiDrawArraysDelegate>()(mode, first, count, drawcount);
 		}
 		
 		public static void glMultiDrawElements(uint mode, int[] count, uint type, IntPtr indices, int drawcount)
 		{
-			GetDelegateFor<glMultiDrawElementsDelegate>()(mode, count, type, indices, drawcount);
+			XWGL.GetDelegateFor<glMultiDrawElementsDelegate>()(mode, count, type, indices, drawcount);
 		}
 		
 		public static void glPointParameterf(uint pname, float param)
 		{
-			GetDelegateFor<glPointParameterfDelegate>()(pname, param);
+			XWGL.GetDelegateFor<glPointParameterfDelegate>()(pname, param);
 		}
 		
 		public static void glPointParameterfv(uint pname, float[] @params)
 		{
-			GetDelegateFor<glPointParameterfvDelegate>()(pname, @params);
+			XWGL.GetDelegateFor<glPointParameterfvDelegate>()(pname, @params);
 		}
 		
 		public static void glPointParameteri(uint pname, int param)
 		{
-			GetDelegateFor<glPointParameteriDelegate>()(pname, param);
+			XWGL.GetDelegateFor<glPointParameteriDelegate>()(pname, param);
 		}
 		
 		public static void glPointParameteriv(uint pname, int[] @params)
 		{
-			GetDelegateFor<glPointParameterivDelegate>()(pname, @params);
+			XWGL.GetDelegateFor<glPointParameterivDelegate>()(pname, @params);
 		}
 		
 		public static void glFogCoordf(float coord)
 		{
-			GetDelegateFor<glFogCoordfDelegate>()(coord);
+			XWGL.GetDelegateFor<glFogCoordfDelegate>()(coord);
 		}
 		
 		public static void glFogCoordfv(float[] coord)
 		{
-			GetDelegateFor<glFogCoordfvDelegate>()(coord);
+			XWGL.GetDelegateFor<glFogCoordfvDelegate>()(coord);
 		}
 		
 		public static void glFogCoordd(double coord)
 		{
-			GetDelegateFor<glFogCoorddDelegate>()(coord);
+			XWGL.GetDelegateFor<glFogCoorddDelegate>()(coord);
 		}
 		
 		public static void glFogCoorddv(double[] coord)
 		{
-			GetDelegateFor<glFogCoorddvDelegate>()(coord);
+			XWGL.GetDelegateFor<glFogCoorddvDelegate>()(coord);
 		}
 		
 		public static void glFogCoordPointer(uint type, int stride, IntPtr pointer)
 		{
-			GetDelegateFor<glFogCoordPointerDelegate>()(type, stride, pointer);
+			XWGL.GetDelegateFor<glFogCoordPointerDelegate>()(type, stride, pointer);
 		}
 		
 		public static void glSecondaryColor3b(byte red, byte green, byte blue)
 		{
-			GetDelegateFor<glSecondaryColor3bDelegate>()(red, green, blue);
+			XWGL.GetDelegateFor<glSecondaryColor3bDelegate>()(red, green, blue);
 		}
 		
 		public static void glSecondaryColor3bv(byte[] v)
 		{
-			GetDelegateFor<glSecondaryColor3bvDelegate>()(v);
+			XWGL.GetDelegateFor<glSecondaryColor3bvDelegate>()(v);
 		}
 		
 		public static void glSecondaryColor3d(double red, double green, double blue)
 		{
-			GetDelegateFor<glSecondaryColor3dDelegate>()(red, green, blue);
+			XWGL.GetDelegateFor<glSecondaryColor3dDelegate>()(red, green, blue);
 		}
 		
 		public static void glSecondaryColor3dv(double[] v)
 		{
-			GetDelegateFor<glSecondaryColor3dvDelegate>()(v);
+			XWGL.GetDelegateFor<glSecondaryColor3dvDelegate>()(v);
 		}
 		
 		public static void glSecondaryColor3f(float red, float green, float blue)
 		{
-			GetDelegateFor<glSecondaryColor3fDelegate>()(red, green, blue);
+			XWGL.GetDelegateFor<glSecondaryColor3fDelegate>()(red, green, blue);
 		}
 		
 		public static void glSecondaryColor3fv(float[] v)
 		{
-			GetDelegateFor<glSecondaryColor3fvDelegate>()(v);
+			XWGL.GetDelegateFor<glSecondaryColor3fvDelegate>()(v);
 		}
 		
 		public static void glSecondaryColor3i(int red, int green, int blue)
 		{
-			GetDelegateFor<glSecondaryColor3iDelegate>()(red, green, blue);
+			XWGL.GetDelegateFor<glSecondaryColor3iDelegate>()(red, green, blue);
 		}
 		
 		public static void glSecondaryColor3iv(int[] v)
 		{
-			GetDelegateFor<glSecondaryColor3ivDelegate>()(v);
+			XWGL.GetDelegateFor<glSecondaryColor3ivDelegate>()(v);
 		}
 		
 		public static void glSecondaryColor3s(short red, short green, short blue)
 		{
-			GetDelegateFor<glSecondaryColor3sDelegate>()(red, green, blue);
+			XWGL.GetDelegateFor<glSecondaryColor3sDelegate>()(red, green, blue);
 		}
 		
 		public static void glSecondaryColor3sv(short[] v)
 		{
-			GetDelegateFor<glSecondaryColor3svDelegate>()(v);
+			XWGL.GetDelegateFor<glSecondaryColor3svDelegate>()(v);
 		}
 		
 		public static void glSecondaryColor3ub(byte red, byte green, byte blue)
 		{
-			GetDelegateFor<glSecondaryColor3ubDelegate>()(red, green, blue);
+			XWGL.GetDelegateFor<glSecondaryColor3ubDelegate>()(red, green, blue);
 		}
 		
 		public static void glSecondaryColor3ubv(byte[] v)
 		{
-			GetDelegateFor<glSecondaryColor3ubvDelegate>()(v);
+			XWGL.GetDelegateFor<glSecondaryColor3ubvDelegate>()(v);
 		}
 		
 		public static void glSecondaryColor3ui(uint red, uint green, uint blue)
 		{
-			GetDelegateFor<glSecondaryColor3uiDelegate>()(red, green, blue);
+			XWGL.GetDelegateFor<glSecondaryColor3uiDelegate>()(red, green, blue);
 		}
 		
 		public static void glSecondaryColor3uiv(uint[] v)
 		{
-			GetDelegateFor<glSecondaryColor3uivDelegate>()(v);
+			XWGL.GetDelegateFor<glSecondaryColor3uivDelegate>()(v);
 		}
 		
 		public static void glSecondaryColor3us(ushort red, ushort green, ushort blue)
 		{
-			GetDelegateFor<glSecondaryColor3usDelegate>()(red, green, blue);
+			XWGL.GetDelegateFor<glSecondaryColor3usDelegate>()(red, green, blue);
 		}
 		
 		public static void glSecondaryColor3usv(ushort[] v)
 		{
-			GetDelegateFor<glSecondaryColor3usvDelegate>()(v);
+			XWGL.GetDelegateFor<glSecondaryColor3usvDelegate>()(v);
 		}
 		
 		public static void glSecondaryColorPointer(int size, uint type, int stride, IntPtr pointer)
 		{
-			GetDelegateFor<glSecondaryColorPointerDelegate>()(size, type, stride, pointer);
+			XWGL.GetDelegateFor<glSecondaryColorPointerDelegate>()(size, type, stride, pointer);
 		}
 		
 		public static void glWindowPos2d(double x, double y)
 		{
-			GetDelegateFor<glWindowPos2dDelegate>()(x, y);
+			XWGL.GetDelegateFor<glWindowPos2dDelegate>()(x, y);
 		}
 		
 		public static void glWindowPos2dv(double[] v)
 		{
-			GetDelegateFor<glWindowPos2dvDelegate>()(v);
+			XWGL.GetDelegateFor<glWindowPos2dvDelegate>()(v);
 		}
 		
 		public static void glWindowPos2f(float x, float y)
 		{
-			GetDelegateFor<glWindowPos2fDelegate>()(x, y);
+			XWGL.GetDelegateFor<glWindowPos2fDelegate>()(x, y);
 		}
 		
 		public static void glWindowPos2fv(float[] v)
 		{
-			GetDelegateFor<glWindowPos2fvDelegate>()(v);
+			XWGL.GetDelegateFor<glWindowPos2fvDelegate>()(v);
 		}
 		
 		public static void glWindowPos2i(int x, int y)
 		{
-			GetDelegateFor<glWindowPos2iDelegate>()(x, y);
+			XWGL.GetDelegateFor<glWindowPos2iDelegate>()(x, y);
 		}
 		
 		public static void glWindowPos2iv(int[] v)
 		{
-			GetDelegateFor<glWindowPos2ivDelegate>()(v);
+			XWGL.GetDelegateFor<glWindowPos2ivDelegate>()(v);
 		}
 		
 		public static void glWindowPos2s(short x, short y)
 		{
-			GetDelegateFor<glWindowPos2sDelegate>()(x, y);
+			XWGL.GetDelegateFor<glWindowPos2sDelegate>()(x, y);
 		}
 		
 		public static void glWindowPos2sv(short[] v)
 		{
-			GetDelegateFor<glWindowPos2svDelegate>()(v);
+			XWGL.GetDelegateFor<glWindowPos2svDelegate>()(v);
 		}
 		
 		public static void glWindowPos3d(double x, double y, double z)
 		{
-			GetDelegateFor<glWindowPos3dDelegate>()(x, y, z);
+			XWGL.GetDelegateFor<glWindowPos3dDelegate>()(x, y, z);
 		}
 		
 		public static void glWindowPos3dv(double[] v)
 		{
-			GetDelegateFor<glWindowPos3dvDelegate>()(v);
+			XWGL.GetDelegateFor<glWindowPos3dvDelegate>()(v);
 		}
 		
 		public static void glWindowPos3f(float x, float y, float z)
 		{
-			GetDelegateFor<glWindowPos3fDelegate>()(x, y, z);
+			XWGL.GetDelegateFor<glWindowPos3fDelegate>()(x, y, z);
 		}
 		
 		public static void glWindowPos3fv(float[] v)
 		{
-			GetDelegateFor<glWindowPos3fvDelegate>()(v);
+			XWGL.GetDelegateFor<glWindowPos3fvDelegate>()(v);
 		}
 		
 		public static void glWindowPos3i(int x, int y, int z)
 		{
-			GetDelegateFor<glWindowPos3iDelegate>()(x, y, z);
+			XWGL.GetDelegateFor<glWindowPos3iDelegate>()(x, y, z);
 		}
 		
 		public static void glWindowPos3iv(int[] v)
 		{
-			GetDelegateFor<glWindowPos3ivDelegate>()(v);
+			XWGL.GetDelegateFor<glWindowPos3ivDelegate>()(v);
 		}
 		
 		public static void glWindowPos3s(short x, short y, short z)
 		{
-			GetDelegateFor<glWindowPos3sDelegate>()(x, y, z);
+			XWGL.GetDelegateFor<glWindowPos3sDelegate>()(x, y, z);
 		}
 		
 		public static void glWindowPos3sv(short[] v)
 		{
-			GetDelegateFor<glWindowPos3svDelegate>()(v);
+			XWGL.GetDelegateFor<glWindowPos3svDelegate>()(v);
 		}
 		
 		public static void glBlendColor(float red, float green, float blue, float alpha)
 		{
-			GetDelegateFor<glBlendColorDelegate>()(red, green, blue, alpha);
+			XWGL.GetDelegateFor<glBlendColorDelegate>()(red, green, blue, alpha);
 		}
 		
 		public static void glBlendEquation(uint mode)
 		{
-			GetDelegateFor<glBlendEquationDelegate>()(mode);
+			XWGL.GetDelegateFor<glBlendEquationDelegate>()(mode);
 		}
 		
 		#endregion

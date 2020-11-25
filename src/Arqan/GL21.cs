@@ -6,17 +6,7 @@ using System.Runtime.InteropServices;
 namespace Arqan
 {
 	public static class GL21
-	{
-		private static T GetDelegateFor<T>() where T : class
-		{
-			Type delegateType = typeof(T);
-			string name = delegateType.Name.Replace("Delegate","");
-			IntPtr proc = XWGL.GetProcAddress(name);
-			Delegate del = Marshal.GetDelegateForFunctionPointer(proc, delegateType);
-			
-			return del as T;
-		}
-		
+	{	
 		#region Constants
 		
 		public const uint GL_PIXEL_PACK_BUFFER = 0x88EB;
@@ -59,32 +49,32 @@ namespace Arqan
 		
 		public static void glUniformMatrix2x3fv(int location, int count, bool transpose, float[] value)
 		{
-			GetDelegateFor<glUniformMatrix2x3fvDelegate>()(location, count, transpose, value);
+			XWGL.GetDelegateFor<glUniformMatrix2x3fvDelegate>()(location, count, transpose, value);
 		}
 		
 		public static void glUniformMatrix3x2fv(int location, int count, bool transpose, float[] value)
 		{
-			GetDelegateFor<glUniformMatrix3x2fvDelegate>()(location, count, transpose, value);
+			XWGL.GetDelegateFor<glUniformMatrix3x2fvDelegate>()(location, count, transpose, value);
 		}
 		
 		public static void glUniformMatrix2x4fv(int location, int count, bool transpose, float[] value)
 		{
-			GetDelegateFor<glUniformMatrix2x4fvDelegate>()(location, count, transpose, value);
+			XWGL.GetDelegateFor<glUniformMatrix2x4fvDelegate>()(location, count, transpose, value);
 		}
 		
 		public static void glUniformMatrix4x2fv(int location, int count, bool transpose, float[] value)
 		{
-			GetDelegateFor<glUniformMatrix4x2fvDelegate>()(location, count, transpose, value);
+			XWGL.GetDelegateFor<glUniformMatrix4x2fvDelegate>()(location, count, transpose, value);
 		}
 		
 		public static void glUniformMatrix3x4fv(int location, int count, bool transpose, float[] value)
 		{
-			GetDelegateFor<glUniformMatrix3x4fvDelegate>()(location, count, transpose, value);
+			XWGL.GetDelegateFor<glUniformMatrix3x4fvDelegate>()(location, count, transpose, value);
 		}
 		
 		public static void glUniformMatrix4x3fv(int location, int count, bool transpose, float[] value)
 		{
-			GetDelegateFor<glUniformMatrix4x3fvDelegate>()(location, count, transpose, value);
+			XWGL.GetDelegateFor<glUniformMatrix4x3fvDelegate>()(location, count, transpose, value);
 		}
 		
 		#endregion

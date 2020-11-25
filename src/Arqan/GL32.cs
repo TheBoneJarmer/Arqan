@@ -6,17 +6,7 @@ using System.Runtime.InteropServices;
 namespace Arqan
 {
 	public static class GL32
-	{
-		private static T GetDelegateFor<T>() where T : class
-		{
-			Type delegateType = typeof(T);
-			string name = delegateType.Name.Replace("Delegate","");
-			IntPtr proc = XWGL.GetProcAddress(name);
-			Delegate del = Marshal.GetDelegateForFunctionPointer(proc, delegateType);
-			
-			return del as T;
-		}
-		
+	{	
 		#region Constants
 		
 		public const uint GL_CONTEXT_CORE_PROFILE_BIT = 0x00000001;
@@ -113,97 +103,97 @@ namespace Arqan
 		
 		public static void glDrawElementsBaseVertex(uint mode, int count, uint type, IntPtr indices, int basevertex)
 		{
-			GetDelegateFor<glDrawElementsBaseVertexDelegate>()(mode, count, type, indices, basevertex);
+			XWGL.GetDelegateFor<glDrawElementsBaseVertexDelegate>()(mode, count, type, indices, basevertex);
 		}
 		
 		public static void glDrawRangeElementsBaseVertex(uint mode, uint start, uint end, int count, uint type, IntPtr indices, int basevertex)
 		{
-			GetDelegateFor<glDrawRangeElementsBaseVertexDelegate>()(mode, start, end, count, type, indices, basevertex);
+			XWGL.GetDelegateFor<glDrawRangeElementsBaseVertexDelegate>()(mode, start, end, count, type, indices, basevertex);
 		}
 		
 		public static void glDrawElementsInstancedBaseVertex(uint mode, int count, uint type, IntPtr indices, int instancecount, int basevertex)
 		{
-			GetDelegateFor<glDrawElementsInstancedBaseVertexDelegate>()(mode, count, type, indices, instancecount, basevertex);
+			XWGL.GetDelegateFor<glDrawElementsInstancedBaseVertexDelegate>()(mode, count, type, indices, instancecount, basevertex);
 		}
 		
 		public static void glMultiDrawElementsBaseVertex(uint mode, int[] count, uint type, IntPtr indices, int drawcount, int[] basevertex)
 		{
-			GetDelegateFor<glMultiDrawElementsBaseVertexDelegate>()(mode, count, type, indices, drawcount, basevertex);
+			XWGL.GetDelegateFor<glMultiDrawElementsBaseVertexDelegate>()(mode, count, type, indices, drawcount, basevertex);
 		}
 		
 		public static void glProvokingVertex(uint mode)
 		{
-			GetDelegateFor<glProvokingVertexDelegate>()(mode);
+			XWGL.GetDelegateFor<glProvokingVertexDelegate>()(mode);
 		}
 		
 		public static IntPtr glFenceSync(uint condition, uint flags)
 		{
-			return (IntPtr)GetDelegateFor<glFenceSyncDelegate>()(condition, flags);
+			return (IntPtr)XWGL.GetDelegateFor<glFenceSyncDelegate>()(condition, flags);
 		}
 		
 		public static bool glIsSync(IntPtr sync)
 		{
-			return (bool)GetDelegateFor<glIsSyncDelegate>()(sync);
+			return (bool)XWGL.GetDelegateFor<glIsSyncDelegate>()(sync);
 		}
 		
 		public static void glDeleteSync(IntPtr sync)
 		{
-			GetDelegateFor<glDeleteSyncDelegate>()(sync);
+			XWGL.GetDelegateFor<glDeleteSyncDelegate>()(sync);
 		}
 		
 		public static uint glClientWaitSync(IntPtr sync, uint flags, UInt64 timeout)
 		{
-			return (uint)GetDelegateFor<glClientWaitSyncDelegate>()(sync, flags, timeout);
+			return (uint)XWGL.GetDelegateFor<glClientWaitSyncDelegate>()(sync, flags, timeout);
 		}
 		
 		public static void glWaitSync(IntPtr sync, uint flags, UInt64 timeout)
 		{
-			GetDelegateFor<glWaitSyncDelegate>()(sync, flags, timeout);
+			XWGL.GetDelegateFor<glWaitSyncDelegate>()(sync, flags, timeout);
 		}
 		
 		public static void glGetInteger64v(uint pname, Int64[] data)
 		{
-			GetDelegateFor<glGetInteger64vDelegate>()(pname, data);
+			XWGL.GetDelegateFor<glGetInteger64vDelegate>()(pname, data);
 		}
 		
 		public static void glGetSynciv(IntPtr sync, uint pname, int bufSize, int[] length, int[] values)
 		{
-			GetDelegateFor<glGetSyncivDelegate>()(sync, pname, bufSize, length, values);
+			XWGL.GetDelegateFor<glGetSyncivDelegate>()(sync, pname, bufSize, length, values);
 		}
 		
 		public static void glGetInteger64i_v(uint target, uint index, Int64[] data)
 		{
-			GetDelegateFor<glGetInteger64i_vDelegate>()(target, index, data);
+			XWGL.GetDelegateFor<glGetInteger64i_vDelegate>()(target, index, data);
 		}
 		
 		public static void glGetBufferParameteri64v(uint target, uint pname, Int64[] @params)
 		{
-			GetDelegateFor<glGetBufferParameteri64vDelegate>()(target, pname, @params);
+			XWGL.GetDelegateFor<glGetBufferParameteri64vDelegate>()(target, pname, @params);
 		}
 		
 		public static void glFramebufferTexture(uint target, uint attachment, uint texture, int level)
 		{
-			GetDelegateFor<glFramebufferTextureDelegate>()(target, attachment, texture, level);
+			XWGL.GetDelegateFor<glFramebufferTextureDelegate>()(target, attachment, texture, level);
 		}
 		
 		public static void glTexImage2DMultisample(uint target, int samples, uint internalformat, int width, int height, bool fixedsamplelocations)
 		{
-			GetDelegateFor<glTexImage2DMultisampleDelegate>()(target, samples, internalformat, width, height, fixedsamplelocations);
+			XWGL.GetDelegateFor<glTexImage2DMultisampleDelegate>()(target, samples, internalformat, width, height, fixedsamplelocations);
 		}
 		
 		public static void glTexImage3DMultisample(uint target, int samples, uint internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
-			GetDelegateFor<glTexImage3DMultisampleDelegate>()(target, samples, internalformat, width, height, depth, fixedsamplelocations);
+			XWGL.GetDelegateFor<glTexImage3DMultisampleDelegate>()(target, samples, internalformat, width, height, depth, fixedsamplelocations);
 		}
 		
 		public static void glGetMultisamplefv(uint pname, uint index, float[] val)
 		{
-			GetDelegateFor<glGetMultisamplefvDelegate>()(pname, index, val);
+			XWGL.GetDelegateFor<glGetMultisamplefvDelegate>()(pname, index, val);
 		}
 		
 		public static void glSampleMaski(uint maskNumber, uint mask)
 		{
-			GetDelegateFor<glSampleMaskiDelegate>()(maskNumber, mask);
+			XWGL.GetDelegateFor<glSampleMaskiDelegate>()(maskNumber, mask);
 		}
 		
 		#endregion

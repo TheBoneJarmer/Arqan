@@ -6,17 +6,7 @@ using System.Runtime.InteropServices;
 namespace Arqan
 {
 	public static class GL13
-	{
-		private static T GetDelegateFor<T>() where T : class
-		{
-			Type delegateType = typeof(T);
-			string name = delegateType.Name.Replace("Delegate","");
-			IntPtr proc = XWGL.GetProcAddress(name);
-			Delegate del = Marshal.GetDelegateForFunctionPointer(proc, delegateType);
-			
-			return del as T;
-		}
-		
+	{	
 		#region Constants
 		
 		public const uint GL_TEXTURE0 = 0x84C0;
@@ -172,232 +162,232 @@ namespace Arqan
 		
 		public static void glActiveTexture(uint texture)
 		{
-			GetDelegateFor<glActiveTextureDelegate>()(texture);
+			XWGL.GetDelegateFor<glActiveTextureDelegate>()(texture);
 		}
 		
 		public static void glSampleCoverage(float value, bool invert)
 		{
-			GetDelegateFor<glSampleCoverageDelegate>()(value, invert);
+			XWGL.GetDelegateFor<glSampleCoverageDelegate>()(value, invert);
 		}
 		
 		public static void glCompressedTexImage3D(uint target, int level, uint internalformat, int width, int height, int depth, int border, int imageSize, IntPtr data)
 		{
-			GetDelegateFor<glCompressedTexImage3DDelegate>()(target, level, internalformat, width, height, depth, border, imageSize, data);
+			XWGL.GetDelegateFor<glCompressedTexImage3DDelegate>()(target, level, internalformat, width, height, depth, border, imageSize, data);
 		}
 		
 		public static void glCompressedTexImage2D(uint target, int level, uint internalformat, int width, int height, int border, int imageSize, IntPtr data)
 		{
-			GetDelegateFor<glCompressedTexImage2DDelegate>()(target, level, internalformat, width, height, border, imageSize, data);
+			XWGL.GetDelegateFor<glCompressedTexImage2DDelegate>()(target, level, internalformat, width, height, border, imageSize, data);
 		}
 		
 		public static void glCompressedTexImage1D(uint target, int level, uint internalformat, int width, int border, int imageSize, IntPtr data)
 		{
-			GetDelegateFor<glCompressedTexImage1DDelegate>()(target, level, internalformat, width, border, imageSize, data);
+			XWGL.GetDelegateFor<glCompressedTexImage1DDelegate>()(target, level, internalformat, width, border, imageSize, data);
 		}
 		
 		public static void glCompressedTexSubImage3D(uint target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint format, int imageSize, IntPtr data)
 		{
-			GetDelegateFor<glCompressedTexSubImage3DDelegate>()(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
+			XWGL.GetDelegateFor<glCompressedTexSubImage3DDelegate>()(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
 		}
 		
 		public static void glCompressedTexSubImage2D(uint target, int level, int xoffset, int yoffset, int width, int height, uint format, int imageSize, IntPtr data)
 		{
-			GetDelegateFor<glCompressedTexSubImage2DDelegate>()(target, level, xoffset, yoffset, width, height, format, imageSize, data);
+			XWGL.GetDelegateFor<glCompressedTexSubImage2DDelegate>()(target, level, xoffset, yoffset, width, height, format, imageSize, data);
 		}
 		
 		public static void glCompressedTexSubImage1D(uint target, int level, int xoffset, int width, uint format, int imageSize, IntPtr data)
 		{
-			GetDelegateFor<glCompressedTexSubImage1DDelegate>()(target, level, xoffset, width, format, imageSize, data);
+			XWGL.GetDelegateFor<glCompressedTexSubImage1DDelegate>()(target, level, xoffset, width, format, imageSize, data);
 		}
 		
 		public static void glGetCompressedTexImage(uint target, int level, IntPtr img)
 		{
-			GetDelegateFor<glGetCompressedTexImageDelegate>()(target, level, img);
+			XWGL.GetDelegateFor<glGetCompressedTexImageDelegate>()(target, level, img);
 		}
 		
 		public static void glClientActiveTexture(uint texture)
 		{
-			GetDelegateFor<glClientActiveTextureDelegate>()(texture);
+			XWGL.GetDelegateFor<glClientActiveTextureDelegate>()(texture);
 		}
 		
 		public static void glMultiTexCoord1d(uint target, double s)
 		{
-			GetDelegateFor<glMultiTexCoord1dDelegate>()(target, s);
+			XWGL.GetDelegateFor<glMultiTexCoord1dDelegate>()(target, s);
 		}
 		
 		public static void glMultiTexCoord1dv(uint target, double[] v)
 		{
-			GetDelegateFor<glMultiTexCoord1dvDelegate>()(target, v);
+			XWGL.GetDelegateFor<glMultiTexCoord1dvDelegate>()(target, v);
 		}
 		
 		public static void glMultiTexCoord1f(uint target, float s)
 		{
-			GetDelegateFor<glMultiTexCoord1fDelegate>()(target, s);
+			XWGL.GetDelegateFor<glMultiTexCoord1fDelegate>()(target, s);
 		}
 		
 		public static void glMultiTexCoord1fv(uint target, float[] v)
 		{
-			GetDelegateFor<glMultiTexCoord1fvDelegate>()(target, v);
+			XWGL.GetDelegateFor<glMultiTexCoord1fvDelegate>()(target, v);
 		}
 		
 		public static void glMultiTexCoord1i(uint target, int s)
 		{
-			GetDelegateFor<glMultiTexCoord1iDelegate>()(target, s);
+			XWGL.GetDelegateFor<glMultiTexCoord1iDelegate>()(target, s);
 		}
 		
 		public static void glMultiTexCoord1iv(uint target, int[] v)
 		{
-			GetDelegateFor<glMultiTexCoord1ivDelegate>()(target, v);
+			XWGL.GetDelegateFor<glMultiTexCoord1ivDelegate>()(target, v);
 		}
 		
 		public static void glMultiTexCoord1s(uint target, short s)
 		{
-			GetDelegateFor<glMultiTexCoord1sDelegate>()(target, s);
+			XWGL.GetDelegateFor<glMultiTexCoord1sDelegate>()(target, s);
 		}
 		
 		public static void glMultiTexCoord1sv(uint target, short[] v)
 		{
-			GetDelegateFor<glMultiTexCoord1svDelegate>()(target, v);
+			XWGL.GetDelegateFor<glMultiTexCoord1svDelegate>()(target, v);
 		}
 		
 		public static void glMultiTexCoord2d(uint target, double s, double t)
 		{
-			GetDelegateFor<glMultiTexCoord2dDelegate>()(target, s, t);
+			XWGL.GetDelegateFor<glMultiTexCoord2dDelegate>()(target, s, t);
 		}
 		
 		public static void glMultiTexCoord2dv(uint target, double[] v)
 		{
-			GetDelegateFor<glMultiTexCoord2dvDelegate>()(target, v);
+			XWGL.GetDelegateFor<glMultiTexCoord2dvDelegate>()(target, v);
 		}
 		
 		public static void glMultiTexCoord2f(uint target, float s, float t)
 		{
-			GetDelegateFor<glMultiTexCoord2fDelegate>()(target, s, t);
+			XWGL.GetDelegateFor<glMultiTexCoord2fDelegate>()(target, s, t);
 		}
 		
 		public static void glMultiTexCoord2fv(uint target, float[] v)
 		{
-			GetDelegateFor<glMultiTexCoord2fvDelegate>()(target, v);
+			XWGL.GetDelegateFor<glMultiTexCoord2fvDelegate>()(target, v);
 		}
 		
 		public static void glMultiTexCoord2i(uint target, int s, int t)
 		{
-			GetDelegateFor<glMultiTexCoord2iDelegate>()(target, s, t);
+			XWGL.GetDelegateFor<glMultiTexCoord2iDelegate>()(target, s, t);
 		}
 		
 		public static void glMultiTexCoord2iv(uint target, int[] v)
 		{
-			GetDelegateFor<glMultiTexCoord2ivDelegate>()(target, v);
+			XWGL.GetDelegateFor<glMultiTexCoord2ivDelegate>()(target, v);
 		}
 		
 		public static void glMultiTexCoord2s(uint target, short s, short t)
 		{
-			GetDelegateFor<glMultiTexCoord2sDelegate>()(target, s, t);
+			XWGL.GetDelegateFor<glMultiTexCoord2sDelegate>()(target, s, t);
 		}
 		
 		public static void glMultiTexCoord2sv(uint target, short[] v)
 		{
-			GetDelegateFor<glMultiTexCoord2svDelegate>()(target, v);
+			XWGL.GetDelegateFor<glMultiTexCoord2svDelegate>()(target, v);
 		}
 		
 		public static void glMultiTexCoord3d(uint target, double s, double t, double r)
 		{
-			GetDelegateFor<glMultiTexCoord3dDelegate>()(target, s, t, r);
+			XWGL.GetDelegateFor<glMultiTexCoord3dDelegate>()(target, s, t, r);
 		}
 		
 		public static void glMultiTexCoord3dv(uint target, double[] v)
 		{
-			GetDelegateFor<glMultiTexCoord3dvDelegate>()(target, v);
+			XWGL.GetDelegateFor<glMultiTexCoord3dvDelegate>()(target, v);
 		}
 		
 		public static void glMultiTexCoord3f(uint target, float s, float t, float r)
 		{
-			GetDelegateFor<glMultiTexCoord3fDelegate>()(target, s, t, r);
+			XWGL.GetDelegateFor<glMultiTexCoord3fDelegate>()(target, s, t, r);
 		}
 		
 		public static void glMultiTexCoord3fv(uint target, float[] v)
 		{
-			GetDelegateFor<glMultiTexCoord3fvDelegate>()(target, v);
+			XWGL.GetDelegateFor<glMultiTexCoord3fvDelegate>()(target, v);
 		}
 		
 		public static void glMultiTexCoord3i(uint target, int s, int t, int r)
 		{
-			GetDelegateFor<glMultiTexCoord3iDelegate>()(target, s, t, r);
+			XWGL.GetDelegateFor<glMultiTexCoord3iDelegate>()(target, s, t, r);
 		}
 		
 		public static void glMultiTexCoord3iv(uint target, int[] v)
 		{
-			GetDelegateFor<glMultiTexCoord3ivDelegate>()(target, v);
+			XWGL.GetDelegateFor<glMultiTexCoord3ivDelegate>()(target, v);
 		}
 		
 		public static void glMultiTexCoord3s(uint target, short s, short t, short r)
 		{
-			GetDelegateFor<glMultiTexCoord3sDelegate>()(target, s, t, r);
+			XWGL.GetDelegateFor<glMultiTexCoord3sDelegate>()(target, s, t, r);
 		}
 		
 		public static void glMultiTexCoord3sv(uint target, short[] v)
 		{
-			GetDelegateFor<glMultiTexCoord3svDelegate>()(target, v);
+			XWGL.GetDelegateFor<glMultiTexCoord3svDelegate>()(target, v);
 		}
 		
 		public static void glMultiTexCoord4d(uint target, double s, double t, double r, double q)
 		{
-			GetDelegateFor<glMultiTexCoord4dDelegate>()(target, s, t, r, q);
+			XWGL.GetDelegateFor<glMultiTexCoord4dDelegate>()(target, s, t, r, q);
 		}
 		
 		public static void glMultiTexCoord4dv(uint target, double[] v)
 		{
-			GetDelegateFor<glMultiTexCoord4dvDelegate>()(target, v);
+			XWGL.GetDelegateFor<glMultiTexCoord4dvDelegate>()(target, v);
 		}
 		
 		public static void glMultiTexCoord4f(uint target, float s, float t, float r, float q)
 		{
-			GetDelegateFor<glMultiTexCoord4fDelegate>()(target, s, t, r, q);
+			XWGL.GetDelegateFor<glMultiTexCoord4fDelegate>()(target, s, t, r, q);
 		}
 		
 		public static void glMultiTexCoord4fv(uint target, float[] v)
 		{
-			GetDelegateFor<glMultiTexCoord4fvDelegate>()(target, v);
+			XWGL.GetDelegateFor<glMultiTexCoord4fvDelegate>()(target, v);
 		}
 		
 		public static void glMultiTexCoord4i(uint target, int s, int t, int r, int q)
 		{
-			GetDelegateFor<glMultiTexCoord4iDelegate>()(target, s, t, r, q);
+			XWGL.GetDelegateFor<glMultiTexCoord4iDelegate>()(target, s, t, r, q);
 		}
 		
 		public static void glMultiTexCoord4iv(uint target, int[] v)
 		{
-			GetDelegateFor<glMultiTexCoord4ivDelegate>()(target, v);
+			XWGL.GetDelegateFor<glMultiTexCoord4ivDelegate>()(target, v);
 		}
 		
 		public static void glMultiTexCoord4s(uint target, short s, short t, short r, short q)
 		{
-			GetDelegateFor<glMultiTexCoord4sDelegate>()(target, s, t, r, q);
+			XWGL.GetDelegateFor<glMultiTexCoord4sDelegate>()(target, s, t, r, q);
 		}
 		
 		public static void glMultiTexCoord4sv(uint target, short[] v)
 		{
-			GetDelegateFor<glMultiTexCoord4svDelegate>()(target, v);
+			XWGL.GetDelegateFor<glMultiTexCoord4svDelegate>()(target, v);
 		}
 		
 		public static void glLoadTransposeMatrixf(float[] m)
 		{
-			GetDelegateFor<glLoadTransposeMatrixfDelegate>()(m);
+			XWGL.GetDelegateFor<glLoadTransposeMatrixfDelegate>()(m);
 		}
 		
 		public static void glLoadTransposeMatrixd(double[] m)
 		{
-			GetDelegateFor<glLoadTransposeMatrixdDelegate>()(m);
+			XWGL.GetDelegateFor<glLoadTransposeMatrixdDelegate>()(m);
 		}
 		
 		public static void glMultTransposeMatrixf(float[] m)
 		{
-			GetDelegateFor<glMultTransposeMatrixfDelegate>()(m);
+			XWGL.GetDelegateFor<glMultTransposeMatrixfDelegate>()(m);
 		}
 		
 		public static void glMultTransposeMatrixd(double[] m)
 		{
-			GetDelegateFor<glMultTransposeMatrixdDelegate>()(m);
+			XWGL.GetDelegateFor<glMultTransposeMatrixdDelegate>()(m);
 		}
 		
 		#endregion

@@ -6,17 +6,7 @@ using System.Runtime.InteropServices;
 namespace Arqan
 {
 	public static class GL43
-	{
-		private static T GetDelegateFor<T>() where T : class
-		{
-			Type delegateType = typeof(T);
-			string name = delegateType.Name.Replace("Delegate","");
-			IntPtr proc = XWGL.GetProcAddress(name);
-			Delegate del = Marshal.GetDelegateForFunctionPointer(proc, delegateType);
-			
-			return del as T;
-		}
-		
+	{		
 		#region Constants
 		
 		public const uint GL_NUM_SHADING_LANGUAGE_VERSIONS = 0x82E9;
@@ -336,222 +326,222 @@ namespace Arqan
 		
 		public static void glClearBufferData(uint target, uint internalformat, uint format, uint type, IntPtr data)
 		{
-			GetDelegateFor<glClearBufferDataDelegate>()(target, internalformat, format, type, data);
+			XWGL.GetDelegateFor<glClearBufferDataDelegate>()(target, internalformat, format, type, data);
 		}
 		
 		public static void glClearBufferSubData(uint target, uint internalformat, IntPtr offset, IntPtr size, uint format, uint type, IntPtr data)
 		{
-			GetDelegateFor<glClearBufferSubDataDelegate>()(target, internalformat, offset, size, format, type, data);
+			XWGL.GetDelegateFor<glClearBufferSubDataDelegate>()(target, internalformat, offset, size, format, type, data);
 		}
 		
 		public static void glDispatchCompute(uint num_groups_x, uint num_groups_y, uint num_groups_z)
 		{
-			GetDelegateFor<glDispatchComputeDelegate>()(num_groups_x, num_groups_y, num_groups_z);
+			XWGL.GetDelegateFor<glDispatchComputeDelegate>()(num_groups_x, num_groups_y, num_groups_z);
 		}
 		
 		public static void glDispatchComputeIndirect(IntPtr indirect)
 		{
-			GetDelegateFor<glDispatchComputeIndirectDelegate>()(indirect);
+			XWGL.GetDelegateFor<glDispatchComputeIndirectDelegate>()(indirect);
 		}
 		
 		public static void glCopyImageSubData(uint srcName, uint srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, uint dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth)
 		{
-			GetDelegateFor<glCopyImageSubDataDelegate>()(srcName, srcTarget, srcLevel, srcX, srcY, srcZ, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, srcWidth, srcHeight, srcDepth);
+			XWGL.GetDelegateFor<glCopyImageSubDataDelegate>()(srcName, srcTarget, srcLevel, srcX, srcY, srcZ, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, srcWidth, srcHeight, srcDepth);
 		}
 		
 		public static void glFramebufferParameteri(uint target, uint pname, int param)
 		{
-			GetDelegateFor<glFramebufferParameteriDelegate>()(target, pname, param);
+			XWGL.GetDelegateFor<glFramebufferParameteriDelegate>()(target, pname, param);
 		}
 		
 		public static void glGetFramebufferParameteriv(uint target, uint pname, int[] @params)
 		{
-			GetDelegateFor<glGetFramebufferParameterivDelegate>()(target, pname, @params);
+			XWGL.GetDelegateFor<glGetFramebufferParameterivDelegate>()(target, pname, @params);
 		}
 		
 		public static void glGetInternalformati64v(uint target, uint internalformat, uint pname, int bufSize, Int64[] @params)
 		{
-			GetDelegateFor<glGetInternalformati64vDelegate>()(target, internalformat, pname, bufSize, @params);
+			XWGL.GetDelegateFor<glGetInternalformati64vDelegate>()(target, internalformat, pname, bufSize, @params);
 		}
 		
 		public static void glInvalidateTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth)
 		{
-			GetDelegateFor<glInvalidateTexSubImageDelegate>()(texture, level, xoffset, yoffset, zoffset, width, height, depth);
+			XWGL.GetDelegateFor<glInvalidateTexSubImageDelegate>()(texture, level, xoffset, yoffset, zoffset, width, height, depth);
 		}
 		
 		public static void glInvalidateTexImage(uint texture, int level)
 		{
-			GetDelegateFor<glInvalidateTexImageDelegate>()(texture, level);
+			XWGL.GetDelegateFor<glInvalidateTexImageDelegate>()(texture, level);
 		}
 		
 		public static void glInvalidateBufferSubData(uint buffer, IntPtr offset, IntPtr length)
 		{
-			GetDelegateFor<glInvalidateBufferSubDataDelegate>()(buffer, offset, length);
+			XWGL.GetDelegateFor<glInvalidateBufferSubDataDelegate>()(buffer, offset, length);
 		}
 		
 		public static void glInvalidateBufferData(uint buffer)
 		{
-			GetDelegateFor<glInvalidateBufferDataDelegate>()(buffer);
+			XWGL.GetDelegateFor<glInvalidateBufferDataDelegate>()(buffer);
 		}
 		
 		public static void glInvalidateFramebuffer(uint target, int numAttachments, uint[] attachments)
 		{
-			GetDelegateFor<glInvalidateFramebufferDelegate>()(target, numAttachments, attachments);
+			XWGL.GetDelegateFor<glInvalidateFramebufferDelegate>()(target, numAttachments, attachments);
 		}
 		
 		public static void glInvalidateSubFramebuffer(uint target, int numAttachments, uint[] attachments, int x, int y, int width, int height)
 		{
-			GetDelegateFor<glInvalidateSubFramebufferDelegate>()(target, numAttachments, attachments, x, y, width, height);
+			XWGL.GetDelegateFor<glInvalidateSubFramebufferDelegate>()(target, numAttachments, attachments, x, y, width, height);
 		}
 		
 		public static void glMultiDrawArraysIndirect(uint mode, IntPtr indirect, int drawcount, int stride)
 		{
-			GetDelegateFor<glMultiDrawArraysIndirectDelegate>()(mode, indirect, drawcount, stride);
+			XWGL.GetDelegateFor<glMultiDrawArraysIndirectDelegate>()(mode, indirect, drawcount, stride);
 		}
 		
 		public static void glMultiDrawElementsIndirect(uint mode, uint type, IntPtr indirect, int drawcount, int stride)
 		{
-			GetDelegateFor<glMultiDrawElementsIndirectDelegate>()(mode, type, indirect, drawcount, stride);
+			XWGL.GetDelegateFor<glMultiDrawElementsIndirectDelegate>()(mode, type, indirect, drawcount, stride);
 		}
 		
 		public static void glGetProgramInterfaceiv(uint program, uint programInterface, uint pname, int[] @params)
 		{
-			GetDelegateFor<glGetProgramInterfaceivDelegate>()(program, programInterface, pname, @params);
+			XWGL.GetDelegateFor<glGetProgramInterfaceivDelegate>()(program, programInterface, pname, @params);
 		}
 		
 		public static uint glGetProgramResourceIndex(uint program, uint programInterface, char[] name)
 		{
-			return (uint)GetDelegateFor<glGetProgramResourceIndexDelegate>()(program, programInterface, name);
+			return (uint)XWGL.GetDelegateFor<glGetProgramResourceIndexDelegate>()(program, programInterface, name);
 		}
 		
 		public static void glGetProgramResourceName(uint program, uint programInterface, uint index, int bufSize, int[] length, char[] name)
 		{
-			GetDelegateFor<glGetProgramResourceNameDelegate>()(program, programInterface, index, bufSize, length, name);
+			XWGL.GetDelegateFor<glGetProgramResourceNameDelegate>()(program, programInterface, index, bufSize, length, name);
 		}
 		
 		public static void glGetProgramResourceiv(uint program, uint programInterface, uint index, int propCount, uint[] props, int bufSize, int[] length, int[] @params)
 		{
-			GetDelegateFor<glGetProgramResourceivDelegate>()(program, programInterface, index, propCount, props, bufSize, length, @params);
+			XWGL.GetDelegateFor<glGetProgramResourceivDelegate>()(program, programInterface, index, propCount, props, bufSize, length, @params);
 		}
 		
 		public static int glGetProgramResourceLocation(uint program, uint programInterface, char[] name)
 		{
-			return (int)GetDelegateFor<glGetProgramResourceLocationDelegate>()(program, programInterface, name);
+			return (int)XWGL.GetDelegateFor<glGetProgramResourceLocationDelegate>()(program, programInterface, name);
 		}
 		
 		public static int glGetProgramResourceLocationIndex(uint program, uint programInterface, char[] name)
 		{
-			return (int)GetDelegateFor<glGetProgramResourceLocationIndexDelegate>()(program, programInterface, name);
+			return (int)XWGL.GetDelegateFor<glGetProgramResourceLocationIndexDelegate>()(program, programInterface, name);
 		}
 		
 		public static void glShaderStorageBlockBinding(uint program, uint storageBlockIndex, uint storageBlockBinding)
 		{
-			GetDelegateFor<glShaderStorageBlockBindingDelegate>()(program, storageBlockIndex, storageBlockBinding);
+			XWGL.GetDelegateFor<glShaderStorageBlockBindingDelegate>()(program, storageBlockIndex, storageBlockBinding);
 		}
 		
 		public static void glTexBufferRange(uint target, uint internalformat, uint buffer, IntPtr offset, IntPtr size)
 		{
-			GetDelegateFor<glTexBufferRangeDelegate>()(target, internalformat, buffer, offset, size);
+			XWGL.GetDelegateFor<glTexBufferRangeDelegate>()(target, internalformat, buffer, offset, size);
 		}
 		
 		public static void glTexStorage2DMultisample(uint target, int samples, uint internalformat, int width, int height, bool fixedsamplelocations)
 		{
-			GetDelegateFor<glTexStorage2DMultisampleDelegate>()(target, samples, internalformat, width, height, fixedsamplelocations);
+			XWGL.GetDelegateFor<glTexStorage2DMultisampleDelegate>()(target, samples, internalformat, width, height, fixedsamplelocations);
 		}
 		
 		public static void glTexStorage3DMultisample(uint target, int samples, uint internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
-			GetDelegateFor<glTexStorage3DMultisampleDelegate>()(target, samples, internalformat, width, height, depth, fixedsamplelocations);
+			XWGL.GetDelegateFor<glTexStorage3DMultisampleDelegate>()(target, samples, internalformat, width, height, depth, fixedsamplelocations);
 		}
 		
 		public static void glTextureView(uint texture, uint target, uint origtexture, uint internalformat, uint minlevel, uint numlevels, uint minlayer, uint numlayers)
 		{
-			GetDelegateFor<glTextureViewDelegate>()(texture, target, origtexture, internalformat, minlevel, numlevels, minlayer, numlayers);
+			XWGL.GetDelegateFor<glTextureViewDelegate>()(texture, target, origtexture, internalformat, minlevel, numlevels, minlayer, numlayers);
 		}
 		
 		public static void glBindVertexBuffer(uint bindingindex, uint buffer, IntPtr offset, int stride)
 		{
-			GetDelegateFor<glBindVertexBufferDelegate>()(bindingindex, buffer, offset, stride);
+			XWGL.GetDelegateFor<glBindVertexBufferDelegate>()(bindingindex, buffer, offset, stride);
 		}
 		
 		public static void glVertexAttribFormat(uint attribindex, int size, uint type, bool normalized, uint relativeoffset)
 		{
-			GetDelegateFor<glVertexAttribFormatDelegate>()(attribindex, size, type, normalized, relativeoffset);
+			XWGL.GetDelegateFor<glVertexAttribFormatDelegate>()(attribindex, size, type, normalized, relativeoffset);
 		}
 		
 		public static void glVertexAttribIFormat(uint attribindex, int size, uint type, uint relativeoffset)
 		{
-			GetDelegateFor<glVertexAttribIFormatDelegate>()(attribindex, size, type, relativeoffset);
+			XWGL.GetDelegateFor<glVertexAttribIFormatDelegate>()(attribindex, size, type, relativeoffset);
 		}
 		
 		public static void glVertexAttribLFormat(uint attribindex, int size, uint type, uint relativeoffset)
 		{
-			GetDelegateFor<glVertexAttribLFormatDelegate>()(attribindex, size, type, relativeoffset);
+			XWGL.GetDelegateFor<glVertexAttribLFormatDelegate>()(attribindex, size, type, relativeoffset);
 		}
 		
 		public static void glVertexAttribBinding(uint attribindex, uint bindingindex)
 		{
-			GetDelegateFor<glVertexAttribBindingDelegate>()(attribindex, bindingindex);
+			XWGL.GetDelegateFor<glVertexAttribBindingDelegate>()(attribindex, bindingindex);
 		}
 		
 		public static void glVertexBindingDivisor(uint bindingindex, uint divisor)
 		{
-			GetDelegateFor<glVertexBindingDivisorDelegate>()(bindingindex, divisor);
+			XWGL.GetDelegateFor<glVertexBindingDivisorDelegate>()(bindingindex, divisor);
 		}
 		
 		public static void glDebugMessageControl(uint source, uint type, uint severity, int count, uint[] ids, bool enabled)
 		{
-			GetDelegateFor<glDebugMessageControlDelegate>()(source, type, severity, count, ids, enabled);
+			XWGL.GetDelegateFor<glDebugMessageControlDelegate>()(source, type, severity, count, ids, enabled);
 		}
 		
 		public static void glDebugMessageInsert(uint source, uint type, uint id, uint severity, int length, char[] buf)
 		{
-			GetDelegateFor<glDebugMessageInsertDelegate>()(source, type, id, severity, length, buf);
+			XWGL.GetDelegateFor<glDebugMessageInsertDelegate>()(source, type, id, severity, length, buf);
 		}
 		
 		public static void glDebugMessageCallback(IntPtr callback, IntPtr userParam)
 		{
-			GetDelegateFor<glDebugMessageCallbackDelegate>()(callback, userParam);
+			XWGL.GetDelegateFor<glDebugMessageCallbackDelegate>()(callback, userParam);
 		}
 		
 		public static uint glGetDebugMessageLog(uint count, int bufSize, uint[] sources, uint[] types, uint[] ids, uint[] severities, int[] lengths, char[] messageLog)
 		{
-			return (uint)GetDelegateFor<glGetDebugMessageLogDelegate>()(count, bufSize, sources, types, ids, severities, lengths, messageLog);
+			return (uint)XWGL.GetDelegateFor<glGetDebugMessageLogDelegate>()(count, bufSize, sources, types, ids, severities, lengths, messageLog);
 		}
 		
 		public static void glPushDebugGroup(uint source, uint id, int length, char[] message)
 		{
-			GetDelegateFor<glPushDebugGroupDelegate>()(source, id, length, message);
+			XWGL.GetDelegateFor<glPushDebugGroupDelegate>()(source, id, length, message);
 		}
 		
 		public static void glPopDebugGroup()
 		{
-			GetDelegateFor<glPopDebugGroupDelegate>()();
+			XWGL.GetDelegateFor<glPopDebugGroupDelegate>()();
 		}
 		
 		public static void glObjectLabel(uint identifier, uint name, int length, char[] label)
 		{
-			GetDelegateFor<glObjectLabelDelegate>()(identifier, name, length, label);
+			XWGL.GetDelegateFor<glObjectLabelDelegate>()(identifier, name, length, label);
 		}
 		
 		public static void glGetObjectLabel(uint identifier, uint name, int bufSize, int[] length, char[] label)
 		{
-			GetDelegateFor<glGetObjectLabelDelegate>()(identifier, name, bufSize, length, label);
+			XWGL.GetDelegateFor<glGetObjectLabelDelegate>()(identifier, name, bufSize, length, label);
 		}
 		
 		public static void glObjectPtrLabel(IntPtr ptr, int length, char[] label)
 		{
-			GetDelegateFor<glObjectPtrLabelDelegate>()(ptr, length, label);
+			XWGL.GetDelegateFor<glObjectPtrLabelDelegate>()(ptr, length, label);
 		}
 		
 		public static void glGetObjectPtrLabel(IntPtr ptr, int bufSize, int[] length, char[] label)
 		{
-			GetDelegateFor<glGetObjectPtrLabelDelegate>()(ptr, bufSize, length, label);
+			XWGL.GetDelegateFor<glGetObjectPtrLabelDelegate>()(ptr, bufSize, length, label);
 		}
 		
 		public static void glGetPointerv(uint pname, IntPtr @params)
 		{
-			GetDelegateFor<glGetPointervDelegate>()(pname, @params);
+			XWGL.GetDelegateFor<glGetPointervDelegate>()(pname, @params);
 		}
 		
 		#endregion

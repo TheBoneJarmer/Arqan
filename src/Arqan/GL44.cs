@@ -6,17 +6,7 @@ using System.Runtime.InteropServices;
 namespace Arqan
 {
 	public static class GL44
-	{
-		private static T GetDelegateFor<T>() where T : class
-		{
-			Type delegateType = typeof(T);
-			string name = delegateType.Name.Replace("Delegate","");
-			IntPtr proc = XWGL.GetProcAddress(name);
-			Delegate del = Marshal.GetDelegateForFunctionPointer(proc, delegateType);
-			
-			return del as T;
-		}
-		
+	{		
 		#region Constants
 		
 		public const uint GL_MAX_VERTEX_ATTRIB_STRIDE = 0x82E5;
@@ -64,47 +54,47 @@ namespace Arqan
 		
 		public static void glBufferStorage(uint target, IntPtr size, IntPtr data, uint flags)
 		{
-			GetDelegateFor<glBufferStorageDelegate>()(target, size, data, flags);
+			XWGL.GetDelegateFor<glBufferStorageDelegate>()(target, size, data, flags);
 		}
 		
 		public static void glClearTexImage(uint texture, int level, uint format, uint type, IntPtr data)
 		{
-			GetDelegateFor<glClearTexImageDelegate>()(texture, level, format, type, data);
+			XWGL.GetDelegateFor<glClearTexImageDelegate>()(texture, level, format, type, data);
 		}
 		
 		public static void glClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint format, uint type, IntPtr data)
 		{
-			GetDelegateFor<glClearTexSubImageDelegate>()(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, data);
+			XWGL.GetDelegateFor<glClearTexSubImageDelegate>()(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, data);
 		}
 		
 		public static void glBindBuffersBase(uint target, uint first, int count, uint[] buffers)
 		{
-			GetDelegateFor<glBindBuffersBaseDelegate>()(target, first, count, buffers);
+			XWGL.GetDelegateFor<glBindBuffersBaseDelegate>()(target, first, count, buffers);
 		}
 		
 		public static void glBindBuffersRange(uint target, uint first, int count, uint[] buffers, IntPtr offsets, IntPtr sizes)
 		{
-			GetDelegateFor<glBindBuffersRangeDelegate>()(target, first, count, buffers, offsets, sizes);
+			XWGL.GetDelegateFor<glBindBuffersRangeDelegate>()(target, first, count, buffers, offsets, sizes);
 		}
 		
 		public static void glBindTextures(uint first, int count, uint[] textures)
 		{
-			GetDelegateFor<glBindTexturesDelegate>()(first, count, textures);
+			XWGL.GetDelegateFor<glBindTexturesDelegate>()(first, count, textures);
 		}
 		
 		public static void glBindSamplers(uint first, int count, uint[] samplers)
 		{
-			GetDelegateFor<glBindSamplersDelegate>()(first, count, samplers);
+			XWGL.GetDelegateFor<glBindSamplersDelegate>()(first, count, samplers);
 		}
 		
 		public static void glBindImageTextures(uint first, int count, uint[] textures)
 		{
-			GetDelegateFor<glBindImageTexturesDelegate>()(first, count, textures);
+			XWGL.GetDelegateFor<glBindImageTexturesDelegate>()(first, count, textures);
 		}
 		
 		public static void glBindVertexBuffers(uint first, int count, uint[] buffers, IntPtr offsets, int[] strides)
 		{
-			GetDelegateFor<glBindVertexBuffersDelegate>()(first, count, buffers, offsets, strides);
+			XWGL.GetDelegateFor<glBindVertexBuffersDelegate>()(first, count, buffers, offsets, strides);
 		}
 		
 		#endregion
