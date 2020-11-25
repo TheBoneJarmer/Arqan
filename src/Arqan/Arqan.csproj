@@ -13,15 +13,15 @@
 	</PropertyGroup>
 	
 	<PropertyGroup>
-		<Version>1.0.3</Version>
+		<Version>1.0.4</Version>
 		<Authors>Ruben Labruyere</Authors>
 		<Company>Ruben Labruyere</Company>
 		<Description>Arqan is a class library contains bindings for OpenGL methods, enums and constants ranging from OpenGL1.0 to openGL4.4. On top of that this library provides bindings for GLFW methods, enums and constants. All the methods are pInvoked and seperated per OpenGL version. So for example, to call glBegin which is a method from OpenGL version 1.0, you need to call GL10.glBegin.
 		</Description>
 		<RepositoryUrl>https://github.com/TheBoneJarmer/arqan.git</RepositoryUrl>
 		<PackageTags>Arqan OpenGL GLFW</PackageTags>
-		<AssemblyVersion>1.0.3.0</AssemblyVersion>
-        <FileVersion>1.0.3.0</FileVersion>
+		<AssemblyVersion>1.0.4.0</AssemblyVersion>
+        <FileVersion>1.0.4.0</FileVersion>
 	</PropertyGroup>
 	
 	<PropertyGroup>
