@@ -15,11 +15,11 @@ Instead of maintaining multiple code sources with each different package referen
 
 ```
 <ItemGroup Condition="'$(OS)' == 'UNIX'">
-    <PackageReference Include="Arqan.Linux" Version="1.0.1" />
+    <PackageReference Include="Arqan.Linux" Version="2.0.0" />
 </ItemGroup>
 <ItemGroup Condition="'$(OS)' == 'Windows_NT'">
-    <PackageReference Include="Arqan.Windows.x64" Version="1.0.1" Condition="'$(Configuration)' == 'x64'" />
-    <PackageReference Include="Arqan.Windows.x86" Version="1.0.1" Condition="'$(Configuration)' == 'x86'" />
+    <PackageReference Include="Arqan.Windows.x64" Version="2.0.0" Condition="'$(Configuration)' == 'x64'" />
+    <PackageReference Include="Arqan.Windows.x86" Version="2.0.0" Condition="'$(Configuration)' == 'x86'" />
 </ItemGroup>
 ```
 
@@ -33,9 +33,9 @@ To build this library you need dotnet core 2.1 or newer. I recommend going with 
 ## Usage
 
 ```C#
-GL10.glColorMask();
-GL10.glFlush();
-GL20.glCreateProgram();
+GL.glColorMask();
+GL.glFlush();
+GL.glCreateProgram();
 GLFW.glfwInit();
 ```
 
