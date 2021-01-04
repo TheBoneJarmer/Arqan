@@ -303,6 +303,9 @@ namespace Arqan
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void GLFWmonitorfun(IntPtr window, int monitorevent);
 
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate void GLFWjoystickfun(int jid, int ev);
+
         #endregion
 
         #region Commands
@@ -396,7 +399,7 @@ namespace Arqan
         [DllImport(XWGL.LIBGLFW, CallingConvention = CallingConvention.Cdecl)]
         public static extern int glfwExtensionSupported(string extension);
         [DllImport(XWGL.LIBGLFW, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr glfwGetJoystickButtons(int joy, ref int count);
+        public static extern IntPtr glfwGetJoystickButtons(int joy, out int count);
         [DllImport(XWGL.LIBGLFW, CallingConvention = CallingConvention.Cdecl)]
         public static extern string glfwGetVersionString();
         [DllImport(XWGL.LIBGLFW, CallingConvention = CallingConvention.Cdecl)]
@@ -428,7 +431,9 @@ namespace Arqan
         [DllImport(XWGL.LIBGLFW, CallingConvention = CallingConvention.Cdecl)]
         public static extern long glfwGetProcAddress(string procname);
         [DllImport(XWGL.LIBGLFW, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr glfwGetJoystickAxes(int joy, ref int count);
+        public static extern IntPtr glfwGetJoystickAxes(int joy, out int count);
+        [DllImport(XWGL.LIBGLFW, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr glfwGetJoystickHats(int joy, out int count);
         [DllImport(XWGL.LIBGLFW, CallingConvention = CallingConvention.Cdecl)]
         public static extern double glfwGetTime();
 
@@ -482,6 +487,9 @@ namespace Arqan
 
         [DllImport(XWGL.LIBGLFW, CallingConvention = CallingConvention.Cdecl)]
         public static extern GLFWdropfun glfwSetDropCallback(IntPtr window, GLFWdropfun cbfun);
+
+        [DllImport(XWGL.LIBGLFW, CallingConvention = CallingConvention.Cdecl)]
+        public static extern GLFWjoystickfun glfwSetJoystickCallback(GLFWjoystickfun cbfun);
 
         #endregion
     }
