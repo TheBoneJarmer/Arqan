@@ -14,7 +14,7 @@ then
 		echo "Pushing package $PKG"
 		dotnet nuget push $PKG -s nuget.org -k $NUGET_API_KEY
 	done
-	dotnet nuget push *.nupkg -s nuget.org -k $NUGET_API_KEY
+	
 	exit
 fi
 
