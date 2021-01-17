@@ -1,14 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <ItemGroup>
-    <ProjectReference Include="..\Arqan\Arqan.csproj" />
-  </ItemGroup>
-
   <PropertyGroup>
     <OutputType Condition="'$(OS)' == 'UNIX'">Exe</OutputType>
     <OutputType Condition="'$(OS)' == 'Windows_NT'">WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Configurations>Debug;Release;x64;x86</Configurations>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+  
+  <ItemGroup Condition="'$(OS)' == 'UNIX'">
+    <PackageReference Include="Arqan.Linux" Version="2.1.0" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(OS)' == 'Windows_NT'">
+    <PackageReference Include="Arqan.Windows.x64" Version="2.1.0" Condition="'$(Configuration)' == 'x64'" />
+    <PackageReference Include="Arqan.Windows.x86" Version="2.1.0" Condition="'$(Configuration)' == 'x86'" />
+  </ItemGroup>
   
 </Project>

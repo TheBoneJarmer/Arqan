@@ -15,11 +15,11 @@ Instead of maintaining multiple code sources with each different package referen
 
 ```
 <ItemGroup Condition="'$(OS)' == 'UNIX'">
-    <PackageReference Include="Arqan.Linux" Version="2.0.0" />
+    <PackageReference Include="Arqan.Linux" Version="2.1.0" />
 </ItemGroup>
 <ItemGroup Condition="'$(OS)' == 'Windows_NT'">
-    <PackageReference Include="Arqan.Windows.x64" Version="2.0.0" Condition="'$(Configuration)' == 'x64'" />
-    <PackageReference Include="Arqan.Windows.x86" Version="2.0.0" Condition="'$(Configuration)' == 'x86'" />
+    <PackageReference Include="Arqan.Windows.x64" Version="2.1.0" Condition="'$(Configuration)' == 'x64'" />
+    <PackageReference Include="Arqan.Windows.x86" Version="2.1.0" Condition="'$(Configuration)' == 'x86'" />
 </ItemGroup>
 ```
 
