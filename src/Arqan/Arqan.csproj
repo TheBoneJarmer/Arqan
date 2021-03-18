@@ -1,10 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 		
 	<PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
-		<PackageId Condition="'$(Configuration)' == 'x64'">Arqan.Windows.x64</PackageId>
-		<PackageId Condition="'$(Configuration)' == 'x86'">Arqan.Windows.x86</PackageId>
-		<Configurations>Debug;Release;x64;x86</Configurations>
-    <DefineConstants>Windows</DefineConstants>
+		<PackageId>Arqan.Windows</PackageId>
+		<Configurations>Debug;Release;x64</Configurations>
+        <DefineConstants>Windows</DefineConstants>
 	</PropertyGroup>
 	
 	<PropertyGroup Condition="'$(OS)' == 'UNIX'">
@@ -30,11 +29,7 @@
 	</PropertyGroup>
 
 	<ItemGroup Condition="'$(OS)' == 'Windows_NT'">
-		<Content Include="x86/glfw3.dll" Condition="'$(Configuration)' == 'x86'">
-            <Pack>True</Pack>
-			<PackagePath>lib/netstandard2.0</PackagePath>
-        </Content>
-		<Content Include="x64/glfw3.dll" Condition="'$(Configuration)' == 'x64'">
+		<Content Include="x64/glfw3.dll">
             <Pack>True</Pack>
 			<PackagePath>lib/netstandard2.0</PackagePath>
         </Content>
