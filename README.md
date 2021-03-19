@@ -2,11 +2,10 @@
 Arqan is a classlib which basically serves as a C# wrapper for OpenGL functions and enums as well as GLFW 3.3.2 functions and enums.
 
 ## Installation
-Due to the differences between how OpenGL works per operating system I maintain two versions of Arqan. One for Windows and one for Linux. And for Windows I maintain a version per architecture. See the commands below.
+Due to the differences between how OpenGL works per operating system I maintain two versions of Arqan. One for Windows and one for Linux.
 
 ```
-dotnet add package Arqan.Windows.x64
-dotnet add package Arqan.Windows.x86
+dotnet add package Arqan.Windows
 dotnet add package Arqan.Linux
 ```
 
@@ -18,8 +17,7 @@ Instead of maintaining multiple code sources with each different package referen
     <PackageReference Include="Arqan.Linux" Version="2.1.0" />
 </ItemGroup>
 <ItemGroup Condition="'$(OS)' == 'Windows_NT'">
-    <PackageReference Include="Arqan.Windows.x64" Version="2.1.0" Condition="'$(Configuration)' == 'x64'" />
-    <PackageReference Include="Arqan.Windows.x86" Version="2.1.0" Condition="'$(Configuration)' == 'x86'" />
+    <PackageReference Include="Arqan.Windows.x64" Version="2.1.0" />
 </ItemGroup>
 ```
 
