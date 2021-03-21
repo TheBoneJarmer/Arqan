@@ -307,6 +307,17 @@ namespace Arqan
         public delegate void GLFWjoystickfun(int jid, int ev);
 
         #endregion
+        
+        #region Structs
+
+        public struct GLFWImage
+        {
+            public int width;
+            public int height;
+            public IntPtr pixels;
+        }
+        
+        #endregion
 
         #region Commands
 
@@ -436,6 +447,8 @@ namespace Arqan
         public static extern IntPtr glfwGetJoystickHats(int joy, out int count);
         [DllImport(XWGL.LIBGLFW, CallingConvention = CallingConvention.Cdecl)]
         public static extern double glfwGetTime();
+        [DllImport(XWGL.LIBGLFW, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void glfwSetWindowIcon(IntPtr window, int count, GLFWImage[] images);
 
         [DllImport(XWGL.LIBGLFW, CallingConvention = CallingConvention.Cdecl)]
         public static extern GLFWerrorfun glfwSetErrorCallback(GLFWerrorfun cbfun);

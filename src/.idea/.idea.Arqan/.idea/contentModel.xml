@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.3/resharper-host/local/Transient/Rider/v203/SolutionCaches/_Arqan.1768344753.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="Arqan" t="IncludeRecursive">
+        <e p="Arqan.csproj" t="IncludeRecursive" />
+        <e p="GL.cs" t="Include" />
+        <e p="GL10.cs" t="Include" />
+        <e p="GL11.cs" t="Include" />
+        <e p="GL12.cs" t="Include" />
+        <e p="GL13.cs" t="Include" />
+        <e p="GL14.cs" t="Include" />
+        <e p="GL15.cs" t="Include" />
+        <e p="GL20.cs" t="Include" />
+        <e p="GL21.cs" t="Include" />
+        <e p="GL30.cs" t="Include" />
+        <e p="GL31.cs" t="Include" />
+        <e p="GL32.cs" t="Include" />
+        <e p="GL33.cs" t="Include" />
+        <e p="GL40.cs" t="Include" />
+        <e p="GL41.cs" t="Include" />
+        <e p="GL42.cs" t="Include" />
+        <e p="GL43.cs" t="Include" />
+        <e p="GL44.cs" t="Include" />
+        <e p="GL45.cs" t="Include" />
+        <e p="GLEX.cs" t="Include" />
+        <e p="GLFW.cs" t="Include" />
+        <e p="XWGL.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="x64" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="Arqan.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="x64" t="Include">
+          <e p="glfw3.dll" t="Include" />
+        </e>
+      </e>
+      <e p="Arqan.Example1" t="IncludeRecursive">
+        <e p="Arqan.Example1.csproj" t="IncludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Window.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="x64" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="Arqan.Example1.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Arqan.Example2" t="IncludeRecursive">
+        <e p="Arqan.Example2.csproj" t="IncludeRecursive" />
+        <e p="Block.cs" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Window.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="x64" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="Arqan.Example2.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Arqan.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
