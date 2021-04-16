@@ -21,8 +21,6 @@ Instead of maintaining multiple code sources with each different package referen
 </ItemGroup>
 ```
 
-This way you could build your application using the command **dotnet build -c x64** or **dotnet build -c x86** if you are targeting _Windows_ or simply **dotnet build** if you are targeting _Linux_.
-
 ## Building
 
 ### Requirements
@@ -70,14 +68,7 @@ sudo apt-get install libglfw3 libglfw3-dev
 
 ## Contributing
 I would highly appreciate it if you would help me polish this library. I have not had the chance yet to test all wrapped methods in the classes. I actually generated
-them based on an XML provided by the Khronos Group a couple of years ago. So probably there are new functions and enums already which have not been integrated yet. So feel free to send in a pull request or open up an issue.
-
-### GitFlow branching model
-I make use of the **GitFlow branching model** in all of my repositories. Please use it if you send in pull requests. Arqan is being built by my own TeamCity server instance, which is configured to respect the GitFlow branching model. If you use a branch name that does not follow the model **the build will fail or simply not start**. Therefore I would like to ask to name your branch like this:
-
-> feature/#issue number#
-
-Where the _#issue number#_ represents the issue number on GitHub. Also please keep all your branch names in **lowercase**. This way the repository will be kept clean and structured.
+them based on an XML provided by the Khronos Group a couple of years ago. So probably there are new functions and enums already which have not been integrated yet. So feel free to send in a pull request or open up an issue. If you do open up a pull request, please target the **develop** branch.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
