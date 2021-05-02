@@ -1998,12 +1998,12 @@ namespace Arqan
 		private delegate void glVertexAttrib4usvDelegate(uint index, ushort[] v);
 		private delegate void glVertexAttribPointerDelegate(uint index, int size, uint type, bool normalized, int stride, IntPtr pointer);
         private delegate void glReadPixelsDelegate(float x, float y, float width, float height, uint format, uint type, IntPtr pixels);
-        private delegate void glUniformMatrix2x3fvDelegate(int location, int count, bool transpose, float[] value);
-		private delegate void glUniformMatrix3x2fvDelegate(int location, int count, bool transpose, float[] value);
-		private delegate void glUniformMatrix2x4fvDelegate(int location, int count, bool transpose, float[] value);
-		private delegate void glUniformMatrix4x2fvDelegate(int location, int count, bool transpose, float[] value);
-		private delegate void glUniformMatrix3x4fvDelegate(int location, int count, bool transpose, float[] value);
-		private delegate void glUniformMatrix4x3fvDelegate(int location, int count, bool transpose, float[] value);
+        private delegate void glUniformMatrix2x3fvDelegate(uint location, int count, bool transpose, float[] value);
+		private delegate void glUniformMatrix3x2fvDelegate(uint location, int count, bool transpose, float[] value);
+		private delegate void glUniformMatrix2x4fvDelegate(uint location, int count, bool transpose, float[] value);
+		private delegate void glUniformMatrix4x2fvDelegate(uint location, int count, bool transpose, float[] value);
+		private delegate void glUniformMatrix3x4fvDelegate(uint location, int count, bool transpose, float[] value);
+		private delegate void glUniformMatrix4x3fvDelegate(uint location, int count, bool transpose, float[] value);
         private delegate void glColorMaskiDelegate(uint index, bool r, bool g, bool b, bool a);
 		private delegate void glGetBooleani_vDelegate(uint target, uint index, bool[] data);
 		private delegate void glGetIntegeri_vDelegate(uint target, uint index, int[] data);
@@ -2042,17 +2042,17 @@ namespace Arqan
 		private delegate void glVertexAttribI4svDelegate(uint index, short[] v);
 		private delegate void glVertexAttribI4ubvDelegate(uint index, byte[] v);
 		private delegate void glVertexAttribI4usvDelegate(uint index, ushort[] v);
-		private delegate void glGetUniformuivDelegate(uint program, int location, uint[] @params);
+		private delegate void glGetUniformuivDelegate(uint program, uint location, uint[] @params);
 		private delegate void glBindFragDataLocationDelegate(uint program, uint color, char[] name);
 		private delegate int glGetFragDataLocationDelegate(uint program, char[] name);
-		private delegate void glUniform1uiDelegate(int location, uint v0);
-		private delegate void glUniform2uiDelegate(int location, uint v0, uint v1);
-		private delegate void glUniform3uiDelegate(int location, uint v0, uint v1, uint v2);
-		private delegate void glUniform4uiDelegate(int location, uint v0, uint v1, uint v2, uint v3);
-		private delegate void glUniform1uivDelegate(int location, int count, uint[] value);
-		private delegate void glUniform2uivDelegate(int location, int count, uint[] value);
-		private delegate void glUniform3uivDelegate(int location, int count, uint[] value);
-		private delegate void glUniform4uivDelegate(int location, int count, uint[] value);
+		private delegate void glUniform1uiDelegate(uint location, uint v0);
+		private delegate void glUniform2uiDelegate(uint location, uint v0, uint v1);
+		private delegate void glUniform3uiDelegate(uint location, uint v0, uint v1, uint v2);
+		private delegate void glUniform4uiDelegate(uint location, uint v0, uint v1, uint v2, uint v3);
+		private delegate void glUniform1uivDelegate(uint location, int count, uint[] value);
+		private delegate void glUniform2uivDelegate(uint location, int count, uint[] value);
+		private delegate void glUniform3uivDelegate(uint location, int count, uint[] value);
+		private delegate void glUniform4uivDelegate(uint location, int count, uint[] value);
 		private delegate void glTexParameterIivDelegate(uint target, uint pname, int[] @params);
 		private delegate void glTexParameterIuivDelegate(uint target, uint pname, uint[] @params);
 		private delegate void glGetTexParameterIivDelegate(uint target, uint pname, int[] @params);
@@ -2238,56 +2238,56 @@ namespace Arqan
 		private delegate void glGenProgramPipelinesDelegate(int n, uint[] pipelines);
 		private delegate bool glIsProgramPipelineDelegate(uint pipeline);
 		private delegate void glGetProgramPipelineivDelegate(uint pipeline, uint pname, int[] @params);
-		private delegate void glProgramUniform1iDelegate(uint program, int location, int v0);
-		private delegate void glProgramUniform1ivDelegate(uint program, int location, int count, int[] value);
-		private delegate void glProgramUniform1fDelegate(uint program, int location, float v0);
-		private delegate void glProgramUniform1fvDelegate(uint program, int location, int count, float[] value);
-		private delegate void glProgramUniform1dDelegate(uint program, int location, double v0);
-		private delegate void glProgramUniform1dvDelegate(uint program, int location, int count, double[] value);
-		private delegate void glProgramUniform1uiDelegate(uint program, int location, uint v0);
-		private delegate void glProgramUniform1uivDelegate(uint program, int location, int count, uint[] value);
-		private delegate void glProgramUniform2iDelegate(uint program, int location, int v0, int v1);
-		private delegate void glProgramUniform2ivDelegate(uint program, int location, int count, int[] value);
-		private delegate void glProgramUniform2fDelegate(uint program, int location, float v0, float v1);
-		private delegate void glProgramUniform2fvDelegate(uint program, int location, int count, float[] value);
-		private delegate void glProgramUniform2dDelegate(uint program, int location, double v0, double v1);
-		private delegate void glProgramUniform2dvDelegate(uint program, int location, int count, double[] value);
-		private delegate void glProgramUniform2uiDelegate(uint program, int location, uint v0, uint v1);
-		private delegate void glProgramUniform2uivDelegate(uint program, int location, int count, uint[] value);
-		private delegate void glProgramUniform3iDelegate(uint program, int location, int v0, int v1, int v2);
-		private delegate void glProgramUniform3ivDelegate(uint program, int location, int count, int[] value);
-		private delegate void glProgramUniform3fDelegate(uint program, int location, float v0, float v1, float v2);
-		private delegate void glProgramUniform3fvDelegate(uint program, int location, int count, float[] value);
-		private delegate void glProgramUniform3dDelegate(uint program, int location, double v0, double v1, double v2);
-		private delegate void glProgramUniform3dvDelegate(uint program, int location, int count, double[] value);
-		private delegate void glProgramUniform3uiDelegate(uint program, int location, uint v0, uint v1, uint v2);
-		private delegate void glProgramUniform3uivDelegate(uint program, int location, int count, uint[] value);
-		private delegate void glProgramUniform4iDelegate(uint program, int location, int v0, int v1, int v2, int v3);
-		private delegate void glProgramUniform4ivDelegate(uint program, int location, int count, int[] value);
-		private delegate void glProgramUniform4fDelegate(uint program, int location, float v0, float v1, float v2, float v3);
-		private delegate void glProgramUniform4fvDelegate(uint program, int location, int count, float[] value);
-		private delegate void glProgramUniform4dDelegate(uint program, int location, double v0, double v1, double v2, double v3);
-		private delegate void glProgramUniform4dvDelegate(uint program, int location, int count, double[] value);
-		private delegate void glProgramUniform4uiDelegate(uint program, int location, uint v0, uint v1, uint v2, uint v3);
-		private delegate void glProgramUniform4uivDelegate(uint program, int location, int count, uint[] value);
-		private delegate void glProgramUniformMatrix2fvDelegate(uint program, int location, int count, bool transpose, float[] value);
-		private delegate void glProgramUniformMatrix3fvDelegate(uint program, int location, int count, bool transpose, float[] value);
-		private delegate void glProgramUniformMatrix4fvDelegate(uint program, int location, int count, bool transpose, float[] value);
-		private delegate void glProgramUniformMatrix2dvDelegate(uint program, int location, int count, bool transpose, double[] value);
-		private delegate void glProgramUniformMatrix3dvDelegate(uint program, int location, int count, bool transpose, double[] value);
-		private delegate void glProgramUniformMatrix4dvDelegate(uint program, int location, int count, bool transpose, double[] value);
-		private delegate void glProgramUniformMatrix2x3fvDelegate(uint program, int location, int count, bool transpose, float[] value);
-		private delegate void glProgramUniformMatrix3x2fvDelegate(uint program, int location, int count, bool transpose, float[] value);
-		private delegate void glProgramUniformMatrix2x4fvDelegate(uint program, int location, int count, bool transpose, float[] value);
-		private delegate void glProgramUniformMatrix4x2fvDelegate(uint program, int location, int count, bool transpose, float[] value);
-		private delegate void glProgramUniformMatrix3x4fvDelegate(uint program, int location, int count, bool transpose, float[] value);
-		private delegate void glProgramUniformMatrix4x3fvDelegate(uint program, int location, int count, bool transpose, float[] value);
-		private delegate void glProgramUniformMatrix2x3dvDelegate(uint program, int location, int count, bool transpose, double[] value);
-		private delegate void glProgramUniformMatrix3x2dvDelegate(uint program, int location, int count, bool transpose, double[] value);
-		private delegate void glProgramUniformMatrix2x4dvDelegate(uint program, int location, int count, bool transpose, double[] value);
-		private delegate void glProgramUniformMatrix4x2dvDelegate(uint program, int location, int count, bool transpose, double[] value);
-		private delegate void glProgramUniformMatrix3x4dvDelegate(uint program, int location, int count, bool transpose, double[] value);
-		private delegate void glProgramUniformMatrix4x3dvDelegate(uint program, int location, int count, bool transpose, double[] value);
+		private delegate void glProgramUniform1iDelegate(uint program, uint location, int v0);
+		private delegate void glProgramUniform1ivDelegate(uint program, uint location, int count, int[] value);
+		private delegate void glProgramUniform1fDelegate(uint program, uint location, float v0);
+		private delegate void glProgramUniform1fvDelegate(uint program, uint location, int count, float[] value);
+		private delegate void glProgramUniform1dDelegate(uint program, uint location, double v0);
+		private delegate void glProgramUniform1dvDelegate(uint program, uint location, int count, double[] value);
+		private delegate void glProgramUniform1uiDelegate(uint program, uint location, uint v0);
+		private delegate void glProgramUniform1uivDelegate(uint program, uint location, int count, uint[] value);
+		private delegate void glProgramUniform2iDelegate(uint program, uint location, int v0, int v1);
+		private delegate void glProgramUniform2ivDelegate(uint program, uint location, int count, int[] value);
+		private delegate void glProgramUniform2fDelegate(uint program, uint location, float v0, float v1);
+		private delegate void glProgramUniform2fvDelegate(uint program, uint location, int count, float[] value);
+		private delegate void glProgramUniform2dDelegate(uint program, uint location, double v0, double v1);
+		private delegate void glProgramUniform2dvDelegate(uint program, uint location, int count, double[] value);
+		private delegate void glProgramUniform2uiDelegate(uint program, uint location, uint v0, uint v1);
+		private delegate void glProgramUniform2uivDelegate(uint program, uint location, int count, uint[] value);
+		private delegate void glProgramUniform3iDelegate(uint program, uint location, int v0, int v1, int v2);
+		private delegate void glProgramUniform3ivDelegate(uint program, uint location, int count, int[] value);
+		private delegate void glProgramUniform3fDelegate(uint program, uint location, float v0, float v1, float v2);
+		private delegate void glProgramUniform3fvDelegate(uint program, uint location, int count, float[] value);
+		private delegate void glProgramUniform3dDelegate(uint program, uint location, double v0, double v1, double v2);
+		private delegate void glProgramUniform3dvDelegate(uint program, uint location, int count, double[] value);
+		private delegate void glProgramUniform3uiDelegate(uint program, uint location, uint v0, uint v1, uint v2);
+		private delegate void glProgramUniform3uivDelegate(uint program, uint location, int count, uint[] value);
+		private delegate void glProgramUniform4iDelegate(uint program, uint location, int v0, int v1, int v2, int v3);
+		private delegate void glProgramUniform4ivDelegate(uint program, uint location, int count, int[] value);
+		private delegate void glProgramUniform4fDelegate(uint program, uint location, float v0, float v1, float v2, float v3);
+		private delegate void glProgramUniform4fvDelegate(uint program, uint location, int count, float[] value);
+		private delegate void glProgramUniform4dDelegate(uint program, uint location, double v0, double v1, double v2, double v3);
+		private delegate void glProgramUniform4dvDelegate(uint program, uint location, int count, double[] value);
+		private delegate void glProgramUniform4uiDelegate(uint program, uint location, uint v0, uint v1, uint v2, uint v3);
+		private delegate void glProgramUniform4uivDelegate(uint program, uint location, int count, uint[] value);
+		private delegate void glProgramUniformMatrix2fvDelegate(uint program, uint location, int count, bool transpose, float[] value);
+		private delegate void glProgramUniformMatrix3fvDelegate(uint program, uint location, int count, bool transpose, float[] value);
+		private delegate void glProgramUniformMatrix4fvDelegate(uint program, uint location, int count, bool transpose, float[] value);
+		private delegate void glProgramUniformMatrix2dvDelegate(uint program, uint location, int count, bool transpose, double[] value);
+		private delegate void glProgramUniformMatrix3dvDelegate(uint program, uint location, int count, bool transpose, double[] value);
+		private delegate void glProgramUniformMatrix4dvDelegate(uint program, uint location, int count, bool transpose, double[] value);
+		private delegate void glProgramUniformMatrix2x3fvDelegate(uint program, uint location, int count, bool transpose, float[] value);
+		private delegate void glProgramUniformMatrix3x2fvDelegate(uint program, uint location, int count, bool transpose, float[] value);
+		private delegate void glProgramUniformMatrix2x4fvDelegate(uint program, uint location, int count, bool transpose, float[] value);
+		private delegate void glProgramUniformMatrix4x2fvDelegate(uint program, uint location, int count, bool transpose, float[] value);
+		private delegate void glProgramUniformMatrix3x4fvDelegate(uint program, uint location, int count, bool transpose, float[] value);
+		private delegate void glProgramUniformMatrix4x3fvDelegate(uint program, uint location, int count, bool transpose, float[] value);
+		private delegate void glProgramUniformMatrix2x3dvDelegate(uint program, uint location, int count, bool transpose, double[] value);
+		private delegate void glProgramUniformMatrix3x2dvDelegate(uint program, uint location, int count, bool transpose, double[] value);
+		private delegate void glProgramUniformMatrix2x4dvDelegate(uint program, uint location, int count, bool transpose, double[] value);
+		private delegate void glProgramUniformMatrix4x2dvDelegate(uint program, uint location, int count, bool transpose, double[] value);
+		private delegate void glProgramUniformMatrix3x4dvDelegate(uint program, uint location, int count, bool transpose, double[] value);
+		private delegate void glProgramUniformMatrix4x3dvDelegate(uint program, uint location, int count, bool transpose, double[] value);
 		private delegate void glValidateProgramPipelineDelegate(uint pipeline);
 		private delegate void glGetProgramPipelineInfoLogDelegate(uint pipeline, int bufSize, int[] length, char[] infoLog);
 		private delegate void glVertexAttribL1dDelegate(uint index, double x);
@@ -2479,10 +2479,10 @@ namespace Arqan
 		private delegate uint glGetGraphicsResetStatusDelegate();
 		private delegate void glGetnCompressedTexImageDelegate(uint target, int lod, int bufSize, IntPtr pixels);
 		private delegate void glGetnTexImageDelegate(uint target, int level, uint format, uint type, int bufSize, IntPtr pixels);
-		private delegate void glGetnUniformdvDelegate(uint program, int location, int bufSize, double[] @params);
-		private delegate void glGetnUniformfvDelegate(uint program, int location, int bufSize, float[] @params);
-		private delegate void glGetnUniformivDelegate(uint program, int location, int bufSize, int[] @params);
-		private delegate void glGetnUniformuivDelegate(uint program, int location, int bufSize, uint[] @params);
+		private delegate void glGetnUniformdvDelegate(uint program, uint location, int bufSize, double[] @params);
+		private delegate void glGetnUniformfvDelegate(uint program, uint location, int bufSize, float[] @params);
+		private delegate void glGetnUniformivDelegate(uint program, uint location, int bufSize, int[] @params);
+		private delegate void glGetnUniformuivDelegate(uint program, uint location, int bufSize, uint[] @params);
 		private delegate void glReadnPixelsDelegate(int x, int y, int width, int height, uint format, uint type, int bufSize, IntPtr data);
 		private delegate void glGetnMapdvDelegate(uint target, uint query, int bufSize, double[] v);
 		private delegate void glGetnMapfvDelegate(uint target, uint query, int bufSize, float[] v);
@@ -4235,32 +4235,32 @@ namespace Arqan
 			XWGL.GetDelegateFor<glVertexAttribPointerDelegate>()(index, size, type, normalized, stride, pointer);
 		}
 
-        public static void glUniformMatrix2x3fv(int location, int count, bool transpose, float[] value)
+        public static void glUniformMatrix2x3fv(uint location, int count, bool transpose, float[] value)
 		{
 			XWGL.GetDelegateFor<glUniformMatrix2x3fvDelegate>()(location, count, transpose, value);
 		}
 		
-		public static void glUniformMatrix3x2fv(int location, int count, bool transpose, float[] value)
+		public static void glUniformMatrix3x2fv(uint location, int count, bool transpose, float[] value)
 		{
 			XWGL.GetDelegateFor<glUniformMatrix3x2fvDelegate>()(location, count, transpose, value);
 		}
 		
-		public static void glUniformMatrix2x4fv(int location, int count, bool transpose, float[] value)
+		public static void glUniformMatrix2x4fv(uint location, int count, bool transpose, float[] value)
 		{
 			XWGL.GetDelegateFor<glUniformMatrix2x4fvDelegate>()(location, count, transpose, value);
 		}
 		
-		public static void glUniformMatrix4x2fv(int location, int count, bool transpose, float[] value)
+		public static void glUniformMatrix4x2fv(uint location, int count, bool transpose, float[] value)
 		{
 			XWGL.GetDelegateFor<glUniformMatrix4x2fvDelegate>()(location, count, transpose, value);
 		}
 		
-		public static void glUniformMatrix3x4fv(int location, int count, bool transpose, float[] value)
+		public static void glUniformMatrix3x4fv(uint location, int count, bool transpose, float[] value)
 		{
 			XWGL.GetDelegateFor<glUniformMatrix3x4fvDelegate>()(location, count, transpose, value);
 		}
 		
-		public static void glUniformMatrix4x3fv(int location, int count, bool transpose, float[] value)
+		public static void glUniformMatrix4x3fv(uint location, int count, bool transpose, float[] value)
 		{
 			XWGL.GetDelegateFor<glUniformMatrix4x3fvDelegate>()(location, count, transpose, value);
 		}
@@ -4455,7 +4455,7 @@ namespace Arqan
 			XWGL.GetDelegateFor<glVertexAttribI4usvDelegate>()(index, v);
 		}
 		
-		public static void glGetUniformuiv(uint program, int location, uint[] @params)
+		public static void glGetUniformuiv(uint program, uint location, uint[] @params)
 		{
 			XWGL.GetDelegateFor<glGetUniformuivDelegate>()(program, location, @params);
 		}
@@ -4470,42 +4470,42 @@ namespace Arqan
 			return (int)XWGL.GetDelegateFor<glGetFragDataLocationDelegate>()(program, name);
 		}
 		
-		public static void glUniform1ui(int location, uint v0)
+		public static void glUniform1ui(uint location, uint v0)
 		{
 			XWGL.GetDelegateFor<glUniform1uiDelegate>()(location, v0);
 		}
 		
-		public static void glUniform2ui(int location, uint v0, uint v1)
+		public static void glUniform2ui(uint location, uint v0, uint v1)
 		{
 			XWGL.GetDelegateFor<glUniform2uiDelegate>()(location, v0, v1);
 		}
 		
-		public static void glUniform3ui(int location, uint v0, uint v1, uint v2)
+		public static void glUniform3ui(uint location, uint v0, uint v1, uint v2)
 		{
 			XWGL.GetDelegateFor<glUniform3uiDelegate>()(location, v0, v1, v2);
 		}
 		
-		public static void glUniform4ui(int location, uint v0, uint v1, uint v2, uint v3)
+		public static void glUniform4ui(uint location, uint v0, uint v1, uint v2, uint v3)
 		{
 			XWGL.GetDelegateFor<glUniform4uiDelegate>()(location, v0, v1, v2, v3);
 		}
 		
-		public static void glUniform1uiv(int location, int count, uint[] value)
+		public static void glUniform1uiv(uint location, int count, uint[] value)
 		{
 			XWGL.GetDelegateFor<glUniform1uivDelegate>()(location, count, value);
 		}
 		
-		public static void glUniform2uiv(int location, int count, uint[] value)
+		public static void glUniform2uiv(uint location, int count, uint[] value)
 		{
 			XWGL.GetDelegateFor<glUniform2uivDelegate>()(location, count, value);
 		}
 		
-		public static void glUniform3uiv(int location, int count, uint[] value)
+		public static void glUniform3uiv(uint location, int count, uint[] value)
 		{
 			XWGL.GetDelegateFor<glUniform3uivDelegate>()(location, count, value);
 		}
 		
-		public static void glUniform4uiv(int location, int count, uint[] value)
+		public static void glUniform4uiv(uint location, int count, uint[] value)
 		{
 			XWGL.GetDelegateFor<glUniform4uivDelegate>()(location, count, value);
 		}
@@ -5160,92 +5160,92 @@ namespace Arqan
 			XWGL.GetDelegateFor<glDrawElementsIndirectDelegate>()(mode, type, indirect);
 		}
 		
-		public static void glUniform1d(int location, double x)
+		public static void glUniform1d(uint location, double x)
 		{
 			XWGL.GetDelegateFor<glUniform1dDelegate>()(location, x);
 		}
 		
-		public static void glUniform2d(int location, double x, double y)
+		public static void glUniform2d(uint location, double x, double y)
 		{
 			XWGL.GetDelegateFor<glUniform2dDelegate>()(location, x, y);
 		}
 		
-		public static void glUniform3d(int location, double x, double y, double z)
+		public static void glUniform3d(uint location, double x, double y, double z)
 		{
 			XWGL.GetDelegateFor<glUniform3dDelegate>()(location, x, y, z);
 		}
 		
-		public static void glUniform4d(int location, double x, double y, double z, double w)
+		public static void glUniform4d(uint location, double x, double y, double z, double w)
 		{
 			XWGL.GetDelegateFor<glUniform4dDelegate>()(location, x, y, z, w);
 		}
 		
-		public static void glUniform1dv(int location, int count, double[] value)
+		public static void glUniform1dv(uint location, int count, double[] value)
 		{
 			XWGL.GetDelegateFor<glUniform1dvDelegate>()(location, count, value);
 		}
 		
-		public static void glUniform2dv(int location, int count, double[] value)
+		public static void glUniform2dv(uint location, int count, double[] value)
 		{
 			XWGL.GetDelegateFor<glUniform2dvDelegate>()(location, count, value);
 		}
 		
-		public static void glUniform3dv(int location, int count, double[] value)
+		public static void glUniform3dv(uint location, int count, double[] value)
 		{
 			XWGL.GetDelegateFor<glUniform3dvDelegate>()(location, count, value);
 		}
 		
-		public static void glUniform4dv(int location, int count, double[] value)
+		public static void glUniform4dv(uint location, int count, double[] value)
 		{
 			XWGL.GetDelegateFor<glUniform4dvDelegate>()(location, count, value);
 		}
 		
-		public static void glUniformMatrix2dv(int location, int count, bool transpose, double[] value)
+		public static void glUniformMatrix2dv(uint location, int count, bool transpose, double[] value)
 		{
 			XWGL.GetDelegateFor<glUniformMatrix2dvDelegate>()(location, count, transpose, value);
 		}
 		
-		public static void glUniformMatrix3dv(int location, int count, bool transpose, double[] value)
+		public static void glUniformMatrix3dv(uint location, int count, bool transpose, double[] value)
 		{
 			XWGL.GetDelegateFor<glUniformMatrix3dvDelegate>()(location, count, transpose, value);
 		}
 		
-		public static void glUniformMatrix4dv(int location, int count, bool transpose, double[] value)
+		public static void glUniformMatrix4dv(uint location, int count, bool transpose, double[] value)
 		{
 			XWGL.GetDelegateFor<glUniformMatrix4dvDelegate>()(location, count, transpose, value);
 		}
 		
-		public static void glUniformMatrix2x3dv(int location, int count, bool transpose, double[] value)
+		public static void glUniformMatrix2x3dv(uint location, int count, bool transpose, double[] value)
 		{
 			XWGL.GetDelegateFor<glUniformMatrix2x3dvDelegate>()(location, count, transpose, value);
 		}
 		
-		public static void glUniformMatrix2x4dv(int location, int count, bool transpose, double[] value)
+		public static void glUniformMatrix2x4dv(uint location, int count, bool transpose, double[] value)
 		{
 			XWGL.GetDelegateFor<glUniformMatrix2x4dvDelegate>()(location, count, transpose, value);
 		}
 		
-		public static void glUniformMatrix3x2dv(int location, int count, bool transpose, double[] value)
+		public static void glUniformMatrix3x2dv(uint location, int count, bool transpose, double[] value)
 		{
 			XWGL.GetDelegateFor<glUniformMatrix3x2dvDelegate>()(location, count, transpose, value);
 		}
 		
-		public static void glUniformMatrix3x4dv(int location, int count, bool transpose, double[] value)
+		public static void glUniformMatrix3x4dv(uint location, int count, bool transpose, double[] value)
 		{
 			XWGL.GetDelegateFor<glUniformMatrix3x4dvDelegate>()(location, count, transpose, value);
 		}
 		
-		public static void glUniformMatrix4x2dv(int location, int count, bool transpose, double[] value)
+		public static void glUniformMatrix4x2dv(uint location, int count, bool transpose, double[] value)
 		{
 			XWGL.GetDelegateFor<glUniformMatrix4x2dvDelegate>()(location, count, transpose, value);
 		}
 		
-		public static void glUniformMatrix4x3dv(int location, int count, bool transpose, double[] value)
+		public static void glUniformMatrix4x3dv(uint location, int count, bool transpose, double[] value)
 		{
 			XWGL.GetDelegateFor<glUniformMatrix4x3dvDelegate>()(location, count, transpose, value);
 		}
 		
-		public static void glGetUniformdv(uint program, int location, double[] @params)
+		public static void glGetUniformdv(uint program, uint location, double[] @params)
 		{
 			XWGL.GetDelegateFor<glGetUniformdvDelegate>()(program, location, @params);
 		}
@@ -5280,7 +5280,7 @@ namespace Arqan
 			XWGL.GetDelegateFor<glUniformSubroutinesuivDelegate>()(shadertype, count, indices);
 		}
 		
-		public static void glGetUniformSubroutineuiv(uint shadertype, int location, uint[] @params)
+		public static void glGetUniformSubroutineuiv(uint shadertype, uint location, uint[] @params)
 		{
 			XWGL.GetDelegateFor<glGetUniformSubroutineuivDelegate>()(shadertype, location, @params);
 		}
@@ -5435,252 +5435,252 @@ namespace Arqan
 			XWGL.GetDelegateFor<glGetProgramPipelineivDelegate>()(pipeline, pname, @params);
 		}
 		
-		public static void glProgramUniform1i(uint program, int location, int v0)
+		public static void glProgramUniform1i(uint program, uint location, int v0)
 		{
 			XWGL.GetDelegateFor<glProgramUniform1iDelegate>()(program, location, v0);
 		}
 		
-		public static void glProgramUniform1iv(uint program, int location, int count, int[] value)
+		public static void glProgramUniform1iv(uint program, uint location, int count, int[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniform1ivDelegate>()(program, location, count, value);
 		}
 		
-		public static void glProgramUniform1f(uint program, int location, float v0)
+		public static void glProgramUniform1f(uint program, uint location, float v0)
 		{
 			XWGL.GetDelegateFor<glProgramUniform1fDelegate>()(program, location, v0);
 		}
 		
-		public static void glProgramUniform1fv(uint program, int location, int count, float[] value)
+		public static void glProgramUniform1fv(uint program, uint location, int count, float[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniform1fvDelegate>()(program, location, count, value);
 		}
 		
-		public static void glProgramUniform1d(uint program, int location, double v0)
+		public static void glProgramUniform1d(uint program, uint location, double v0)
 		{
 			XWGL.GetDelegateFor<glProgramUniform1dDelegate>()(program, location, v0);
 		}
 		
-		public static void glProgramUniform1dv(uint program, int location, int count, double[] value)
+		public static void glProgramUniform1dv(uint program, uint location, int count, double[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniform1dvDelegate>()(program, location, count, value);
 		}
 		
-		public static void glProgramUniform1ui(uint program, int location, uint v0)
+		public static void glProgramUniform1ui(uint program, uint location, uint v0)
 		{
 			XWGL.GetDelegateFor<glProgramUniform1uiDelegate>()(program, location, v0);
 		}
 		
-		public static void glProgramUniform1uiv(uint program, int location, int count, uint[] value)
+		public static void glProgramUniform1uiv(uint program, uint location, int count, uint[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniform1uivDelegate>()(program, location, count, value);
 		}
 		
-		public static void glProgramUniform2i(uint program, int location, int v0, int v1)
+		public static void glProgramUniform2i(uint program, uint location, int v0, int v1)
 		{
 			XWGL.GetDelegateFor<glProgramUniform2iDelegate>()(program, location, v0, v1);
 		}
 		
-		public static void glProgramUniform2iv(uint program, int location, int count, int[] value)
+		public static void glProgramUniform2iv(uint program, uint location, int count, int[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniform2ivDelegate>()(program, location, count, value);
 		}
 		
-		public static void glProgramUniform2f(uint program, int location, float v0, float v1)
+		public static void glProgramUniform2f(uint program, uint location, float v0, float v1)
 		{
 			XWGL.GetDelegateFor<glProgramUniform2fDelegate>()(program, location, v0, v1);
 		}
 		
-		public static void glProgramUniform2fv(uint program, int location, int count, float[] value)
+		public static void glProgramUniform2fv(uint program, uint location, int count, float[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniform2fvDelegate>()(program, location, count, value);
 		}
 		
-		public static void glProgramUniform2d(uint program, int location, double v0, double v1)
+		public static void glProgramUniform2d(uint program, uint location, double v0, double v1)
 		{
 			XWGL.GetDelegateFor<glProgramUniform2dDelegate>()(program, location, v0, v1);
 		}
 		
-		public static void glProgramUniform2dv(uint program, int location, int count, double[] value)
+		public static void glProgramUniform2dv(uint program, uint location, int count, double[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniform2dvDelegate>()(program, location, count, value);
 		}
 		
-		public static void glProgramUniform2ui(uint program, int location, uint v0, uint v1)
+		public static void glProgramUniform2ui(uint program, uint location, uint v0, uint v1)
 		{
 			XWGL.GetDelegateFor<glProgramUniform2uiDelegate>()(program, location, v0, v1);
 		}
 		
-		public static void glProgramUniform2uiv(uint program, int location, int count, uint[] value)
+		public static void glProgramUniform2uiv(uint program, uint location, int count, uint[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniform2uivDelegate>()(program, location, count, value);
 		}
 		
-		public static void glProgramUniform3i(uint program, int location, int v0, int v1, int v2)
+		public static void glProgramUniform3i(uint program, uint location, int v0, int v1, int v2)
 		{
 			XWGL.GetDelegateFor<glProgramUniform3iDelegate>()(program, location, v0, v1, v2);
 		}
 		
-		public static void glProgramUniform3iv(uint program, int location, int count, int[] value)
+		public static void glProgramUniform3iv(uint program, uint location, int count, int[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniform3ivDelegate>()(program, location, count, value);
 		}
 		
-		public static void glProgramUniform3f(uint program, int location, float v0, float v1, float v2)
+		public static void glProgramUniform3f(uint program, uint location, float v0, float v1, float v2)
 		{
 			XWGL.GetDelegateFor<glProgramUniform3fDelegate>()(program, location, v0, v1, v2);
 		}
 		
-		public static void glProgramUniform3fv(uint program, int location, int count, float[] value)
+		public static void glProgramUniform3fv(uint program, uint location, int count, float[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniform3fvDelegate>()(program, location, count, value);
 		}
 		
-		public static void glProgramUniform3d(uint program, int location, double v0, double v1, double v2)
+		public static void glProgramUniform3d(uint program, uint location, double v0, double v1, double v2)
 		{
 			XWGL.GetDelegateFor<glProgramUniform3dDelegate>()(program, location, v0, v1, v2);
 		}
 		
-		public static void glProgramUniform3dv(uint program, int location, int count, double[] value)
+		public static void glProgramUniform3dv(uint program, uint location, int count, double[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniform3dvDelegate>()(program, location, count, value);
 		}
 		
-		public static void glProgramUniform3ui(uint program, int location, uint v0, uint v1, uint v2)
+		public static void glProgramUniform3ui(uint program, uint location, uint v0, uint v1, uint v2)
 		{
 			XWGL.GetDelegateFor<glProgramUniform3uiDelegate>()(program, location, v0, v1, v2);
 		}
 		
-		public static void glProgramUniform3uiv(uint program, int location, int count, uint[] value)
+		public static void glProgramUniform3uiv(uint program, uint location, int count, uint[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniform3uivDelegate>()(program, location, count, value);
 		}
 		
-		public static void glProgramUniform4i(uint program, int location, int v0, int v1, int v2, int v3)
+		public static void glProgramUniform4i(uint program, uint location, int v0, int v1, int v2, int v3)
 		{
 			XWGL.GetDelegateFor<glProgramUniform4iDelegate>()(program, location, v0, v1, v2, v3);
 		}
 		
-		public static void glProgramUniform4iv(uint program, int location, int count, int[] value)
+		public static void glProgramUniform4iv(uint program, uint location, int count, int[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniform4ivDelegate>()(program, location, count, value);
 		}
 		
-		public static void glProgramUniform4f(uint program, int location, float v0, float v1, float v2, float v3)
+		public static void glProgramUniform4f(uint program, uint location, float v0, float v1, float v2, float v3)
 		{
 			XWGL.GetDelegateFor<glProgramUniform4fDelegate>()(program, location, v0, v1, v2, v3);
 		}
 		
-		public static void glProgramUniform4fv(uint program, int location, int count, float[] value)
+		public static void glProgramUniform4fv(uint program, uint location, int count, float[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniform4fvDelegate>()(program, location, count, value);
 		}
 		
-		public static void glProgramUniform4d(uint program, int location, double v0, double v1, double v2, double v3)
+		public static void glProgramUniform4d(uint program, uint location, double v0, double v1, double v2, double v3)
 		{
 			XWGL.GetDelegateFor<glProgramUniform4dDelegate>()(program, location, v0, v1, v2, v3);
 		}
 		
-		public static void glProgramUniform4dv(uint program, int location, int count, double[] value)
+		public static void glProgramUniform4dv(uint program, uint location, int count, double[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniform4dvDelegate>()(program, location, count, value);
 		}
 		
-		public static void glProgramUniform4ui(uint program, int location, uint v0, uint v1, uint v2, uint v3)
+		public static void glProgramUniform4ui(uint program, uint location, uint v0, uint v1, uint v2, uint v3)
 		{
 			XWGL.GetDelegateFor<glProgramUniform4uiDelegate>()(program, location, v0, v1, v2, v3);
 		}
 		
-		public static void glProgramUniform4uiv(uint program, int location, int count, uint[] value)
+		public static void glProgramUniform4uiv(uint program, uint location, int count, uint[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniform4uivDelegate>()(program, location, count, value);
 		}
 		
-		public static void glProgramUniformMatrix2fv(uint program, int location, int count, bool transpose, float[] value)
+		public static void glProgramUniformMatrix2fv(uint program, uint location, int count, bool transpose, float[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniformMatrix2fvDelegate>()(program, location, count, transpose, value);
 		}
 		
-		public static void glProgramUniformMatrix3fv(uint program, int location, int count, bool transpose, float[] value)
+		public static void glProgramUniformMatrix3fv(uint program, uint location, int count, bool transpose, float[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniformMatrix3fvDelegate>()(program, location, count, transpose, value);
 		}
 		
-		public static void glProgramUniformMatrix4fv(uint program, int location, int count, bool transpose, float[] value)
+		public static void glProgramUniformMatrix4fv(uint program, uint location, int count, bool transpose, float[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniformMatrix4fvDelegate>()(program, location, count, transpose, value);
 		}
 		
-		public static void glProgramUniformMatrix2dv(uint program, int location, int count, bool transpose, double[] value)
+		public static void glProgramUniformMatrix2dv(uint program, uint location, int count, bool transpose, double[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniformMatrix2dvDelegate>()(program, location, count, transpose, value);
 		}
 		
-		public static void glProgramUniformMatrix3dv(uint program, int location, int count, bool transpose, double[] value)
+		public static void glProgramUniformMatrix3dv(uint program, uint location, int count, bool transpose, double[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniformMatrix3dvDelegate>()(program, location, count, transpose, value);
 		}
 		
-		public static void glProgramUniformMatrix4dv(uint program, int location, int count, bool transpose, double[] value)
+		public static void glProgramUniformMatrix4dv(uint program, uint location, int count, bool transpose, double[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniformMatrix4dvDelegate>()(program, location, count, transpose, value);
 		}
 		
-		public static void glProgramUniformMatrix2x3fv(uint program, int location, int count, bool transpose, float[] value)
+		public static void glProgramUniformMatrix2x3fv(uint program, uint location, int count, bool transpose, float[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniformMatrix2x3fvDelegate>()(program, location, count, transpose, value);
 		}
 		
-		public static void glProgramUniformMatrix3x2fv(uint program, int location, int count, bool transpose, float[] value)
+		public static void glProgramUniformMatrix3x2fv(uint program, uint location, int count, bool transpose, float[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniformMatrix3x2fvDelegate>()(program, location, count, transpose, value);
 		}
 		
-		public static void glProgramUniformMatrix2x4fv(uint program, int location, int count, bool transpose, float[] value)
+		public static void glProgramUniformMatrix2x4fv(uint program, uint location, int count, bool transpose, float[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniformMatrix2x4fvDelegate>()(program, location, count, transpose, value);
 		}
 		
-		public static void glProgramUniformMatrix4x2fv(uint program, int location, int count, bool transpose, float[] value)
+		public static void glProgramUniformMatrix4x2fv(uint program, uint location, int count, bool transpose, float[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniformMatrix4x2fvDelegate>()(program, location, count, transpose, value);
 		}
 		
-		public static void glProgramUniformMatrix3x4fv(uint program, int location, int count, bool transpose, float[] value)
+		public static void glProgramUniformMatrix3x4fv(uint program, uint location, int count, bool transpose, float[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniformMatrix3x4fvDelegate>()(program, location, count, transpose, value);
 		}
 		
-		public static void glProgramUniformMatrix4x3fv(uint program, int location, int count, bool transpose, float[] value)
+		public static void glProgramUniformMatrix4x3fv(uint program, uint location, int count, bool transpose, float[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniformMatrix4x3fvDelegate>()(program, location, count, transpose, value);
 		}
 		
-		public static void glProgramUniformMatrix2x3dv(uint program, int location, int count, bool transpose, double[] value)
+		public static void glProgramUniformMatrix2x3dv(uint program, uint location, int count, bool transpose, double[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniformMatrix2x3dvDelegate>()(program, location, count, transpose, value);
 		}
 		
-		public static void glProgramUniformMatrix3x2dv(uint program, int location, int count, bool transpose, double[] value)
+		public static void glProgramUniformMatrix3x2dv(uint program, uint location, int count, bool transpose, double[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniformMatrix3x2dvDelegate>()(program, location, count, transpose, value);
 		}
 		
-		public static void glProgramUniformMatrix2x4dv(uint program, int location, int count, bool transpose, double[] value)
+		public static void glProgramUniformMatrix2x4dv(uint program, uint location, int count, bool transpose, double[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniformMatrix2x4dvDelegate>()(program, location, count, transpose, value);
 		}
 		
-		public static void glProgramUniformMatrix4x2dv(uint program, int location, int count, bool transpose, double[] value)
+		public static void glProgramUniformMatrix4x2dv(uint program, uint location, int count, bool transpose, double[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniformMatrix4x2dvDelegate>()(program, location, count, transpose, value);
 		}
 		
-		public static void glProgramUniformMatrix3x4dv(uint program, int location, int count, bool transpose, double[] value)
+		public static void glProgramUniformMatrix3x4dv(uint program, uint location, int count, bool transpose, double[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniformMatrix3x4dvDelegate>()(program, location, count, transpose, value);
 		}
 		
-		public static void glProgramUniformMatrix4x3dv(uint program, int location, int count, bool transpose, double[] value)
+		public static void glProgramUniformMatrix4x3dv(uint program, uint location, int count, bool transpose, double[] value)
 		{
 			XWGL.GetDelegateFor<glProgramUniformMatrix4x3dvDelegate>()(program, location, count, transpose, value);
 		}
@@ -6635,22 +6635,22 @@ namespace Arqan
 			XWGL.GetDelegateFor<glGetnTexImageDelegate>()(target, level, format, type, bufSize, pixels);
 		}
 		
-		public static void glGetnUniformdv(uint program, int location, int bufSize, double[] @params)
+		public static void glGetnUniformdv(uint program, uint location, int bufSize, double[] @params)
 		{
 			XWGL.GetDelegateFor<glGetnUniformdvDelegate>()(program, location, bufSize, @params);
 		}
 		
-		public static void glGetnUniformfv(uint program, int location, int bufSize, float[] @params)
+		public static void glGetnUniformfv(uint program, uint location, int bufSize, float[] @params)
 		{
 			XWGL.GetDelegateFor<glGetnUniformfvDelegate>()(program, location, bufSize, @params);
 		}
 		
-		public static void glGetnUniformiv(uint program, int location, int bufSize, int[] @params)
+		public static void glGetnUniformiv(uint program, uint location, int bufSize, int[] @params)
 		{
 			XWGL.GetDelegateFor<glGetnUniformivDelegate>()(program, location, bufSize, @params);
 		}
 		
-		public static void glGetnUniformuiv(uint program, int location, int bufSize, uint[] @params)
+		public static void glGetnUniformuiv(uint program, uint location, int bufSize, uint[] @params)
 		{
 			XWGL.GetDelegateFor<glGetnUniformuivDelegate>()(program, location, bufSize, @params);
 		}
