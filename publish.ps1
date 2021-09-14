@@ -1,11 +1,11 @@
 ﻿$branch = git branch --show-current;
 
 Remove-Item *.nupkg
-dotnet pack -c Release -p:Platform="x64" -o . ./src/Arqan/Arqan.csproj
+dotnet pack -c Release -o . ./src/TiledCS.csproj
 
 if ($branch -eq "develop")
 {
-    dotnet nuget push -s github *.nupkg
+    dotnet nuget push -s github -k $env:GITHUB_API_KEY *.nupkg
 }
 elseif ($branch -eq "main")
 {
@@ -15,5 +15,3 @@ else
 {
     echo "Can only publish nuget package on develop or main branch";
 }
-
-Remove-Item *.nupkg
