@@ -2583,7 +2583,7 @@ namespace Arqan
 		[DllImport(XWGL.LIBGL, SetLastError = true)]
 		public static extern void glGetIntegerv(uint pname, int[] data);
 		[DllImport(XWGL.LIBGL, SetLastError = true)]
-		public static extern void glGetTexImage(uint target, int level, uint format, uint type, float pixels);
+		public static extern void glGetTexImage(uint target, int level, uint format, uint type, IntPtr pixels);
 		[DllImport(XWGL.LIBGL, SetLastError = true)]
 		public static extern void glGetTexParameterfv(uint target, uint pname, float[] @params);
 		[DllImport(XWGL.LIBGL, SetLastError = true)]
