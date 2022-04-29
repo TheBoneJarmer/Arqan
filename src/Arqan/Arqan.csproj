@@ -6,9 +6,14 @@
         <DefineConstants>Windows</DefineConstants>
 	</PropertyGroup>
 	
-	<PropertyGroup Condition="'$(OS)' == 'UNIX'">
+	<PropertyGroup Condition="$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))">
 		<PackageId>Arqan.Linux</PackageId>
 		<DefineConstants>Linux</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))">
+		<PackageId>Arqan.OSX</PackageId>
+		<DefineConstants>OSX</DefineConstants>
 	</PropertyGroup>
 	
 	<PropertyGroup>

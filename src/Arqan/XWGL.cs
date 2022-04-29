@@ -15,6 +15,14 @@ namespace Arqan
 		[DllImport(XWGL.LIBGL, SetLastError = true)]
 		private static extern IntPtr wglGetProcAddress(string name);
 
+		#elif OSX
+		public const string LIBGL = "libGL.dylib";
+		public const string LIBGLFW = "libglfw.dylib";
+
+		[DllImport(XWGL.LIBGL, SetLastError = true)]
+		private static extern IntPtr glXGetProcAddress(string name);
+
+
 		#else
 
 		public const string LIBGL = "libGL.so";
