@@ -1,8 +1,8 @@
 # Arqan
-Arqan is a classlib which basically serves as a C# wrapper for OpenGL functions and enums as well as GLFW 3.3.2 functions and enums.
+Arqan is a .NET library which basically serves as a C# wrapper for OpenGL functions and enums as well as GLFW functions and enums.
 
 ## Installation
-Due to the differences between how OpenGL works per operating system I maintain two versions of Arqan. One for Windows and one for Linux.
+Due to the differences between how OpenGL works per operating system I maintain two versions of Arqan. One for Windows and one for Linux. OSX support has been implemented by user MythicalSora but because I do not own a MacBook I cannot officially build and publish NuGet packages for it.
 
 ```
 dotnet add package Arqan.Windows
@@ -13,11 +13,14 @@ dotnet add package Arqan.Linux
 Instead of maintaining multiple code sources with each different package references I recommend making use of the Condition attribute in the ItemGroup element of your csproj file like this:
 
 ```
-<ItemGroup Condition="'$(OS)' == 'UNIX'">
-    <PackageReference Include="Arqan.Linux" Version="2.1.0" />
+<PropertyGroup Condition="$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))">
+    <PackageReference Include="Arqan.Linux" Version="2.3.0" />
+</ItemGroup>
+<PropertyGroup Condition="$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))">
+    <PackageReference Include="Arqan.OSX" Version="2.3.0" />
 </ItemGroup>
 <ItemGroup Condition="'$(OS)' == 'Windows_NT'">
-    <PackageReference Include="Arqan.Windows.x64" Version="2.1.0" />
+    <PackageReference Include="Arqan.Windows.x64" Version="2.3.0" />
 </ItemGroup>
 ```
 
@@ -52,7 +55,7 @@ sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev
 ```
 
 ### GLFW
-Arqan supports GLFW version 3.3.2. For the current installation of that version see the instructions below as it differs per operating system.
+Arqan supports GLFW version 3.3.2 and higher. For the current installation of that version see the instructions below as it differs per operating system.
 
 #### Windows
 I included the pre-compiled glfw3 dll files so you won't have to add those manually. You _do not_ need to manually copy and paste it in your bin folder. The dll file is included in the nuget package and will be copied to your output folder upon building your application.
@@ -68,7 +71,12 @@ sudo apt-get install libglfw3 libglfw3-dev
 
 ## Contributing
 I would highly appreciate it if you would help me polish this library. I have not had the chance yet to test all wrapped methods in the classes. I actually generated
-them based on an XML provided by the Khronos Group a couple of years ago. So probably there are new functions and enums already which have not been integrated yet. So feel free to send in a pull request or open up an issue. If you do open up a pull request, please target the **develop** branch.
+them based on an XML provided by the Khronos Group a couple of years ago. So probably there are new functions and enums already which have not been integrated yet. Therefore feel free to open up a pull request anytime.
+
+> I am following the GitFlow model so please use the **develop** branch as both **source** and **target** branch. Do **not** work directly on the _main_ branch.
+
+## Credits
+* First of all a special thanks to user [MythicalSora](https://github.com/MythicalSora) who has been so nice of making Arqan compatible with OSX. I can't as I don't use or own a MacBook for that matter.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
