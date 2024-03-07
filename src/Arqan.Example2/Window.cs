@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Text;
-using System.Threading;
-using Arqan;
 
-namespace Example2
+namespace Arqan.Example2
 {
     public class Window
     {
-        private IntPtr handle;
         private int width;
         private int height;
         private string title;
 
-        private Block[] blocks;
+        private readonly Block[] blocks;
         private bool useDelta;
 
         private GLFW.GLFWerrorfun glfwErrorFunction;
@@ -25,11 +21,7 @@ namespace Example2
         private GLFW.GLFWkeyfun glfwKeyFunction;
         private GLFW.GLFWcharfun glfwCharFunction;
 
-        private IntPtr Handle
-        {
-            get { return handle; }
-            set { handle = value; }
-        }
+        private IntPtr Handle { get; set; }
 
         public int Width
         {
@@ -75,11 +67,11 @@ namespace Example2
 
         public Window(int width, int height, string title)
         {
-            this.Width = width;
-            this.Height = height;
-            this.Title = title;
+            Width = width;
+            Height = height;
+            Title = title;
 
-            this.blocks = new Block[10000];
+            blocks = new Block[10000];
 
             for (var i = 0; i < blocks.Length; i++)
             {
@@ -115,14 +107,7 @@ namespace Example2
 
         private void InitWindow(bool fullscreen)
         {
-            if (fullscreen)
-            {
-                Handle = GLFW.glfwCreateWindow(Width, Height, Encoding.ASCII.GetBytes(Title), GLFW.glfwGetPrimaryMonitor(), IntPtr.Zero);
-            }
-            else
-            {
-                Handle = GLFW.glfwCreateWindow(Width, Height, Encoding.ASCII.GetBytes(Title), IntPtr.Zero, IntPtr.Zero);
-            }
+            Handle = GLFW.glfwCreateWindow(Width, Height, Encoding.ASCII.GetBytes(Title), fullscreen ? GLFW.glfwGetPrimaryMonitor() : IntPtr.Zero, IntPtr.Zero);
 
             if (Handle == IntPtr.Zero)
             {
@@ -135,23 +120,23 @@ namespace Example2
 
         private void InitEvents()
         {
-            this.glfwErrorFunction = new GLFW.GLFWerrorfun(OnErrorFunction);
-            this.glfwCharFunction = new GLFW.GLFWcharfun(OnCharFunction);
-            this.glfwCursorPosFunction = new GLFW.GLFWcursorposfun(OnCursorPositionFunction);
-            this.glfwKeyFunction = new GLFW.GLFWkeyfun(OnKeyFunction);
-            this.glfwMouseButtonFunction = new GLFW.GLFWmousebuttonfun(OnMouseButtonFunction);
-            this.glfwWindowCloseFunction = new GLFW.GLFWwindowclosefun(OnWindowCloseFunction);
-            this.glfwWindowRefreshFunction = new GLFW.GLFWwindowrefreshfun(OnWindowRefreshFunction);
-            this.glfwWindowSizeFunction = new GLFW.GLFWwindowsizefun(OnWindowSizeFunction);
+            glfwErrorFunction = OnErrorFunction;
+            glfwCharFunction = OnCharFunction;
+            glfwCursorPosFunction = OnCursorPositionFunction;
+            glfwKeyFunction = OnKeyFunction;
+            glfwMouseButtonFunction = OnMouseButtonFunction;
+            glfwWindowCloseFunction = OnWindowCloseFunction;
+            glfwWindowRefreshFunction = OnWindowRefreshFunction;
+            glfwWindowSizeFunction = OnWindowSizeFunction;
 
-            GLFW.glfwSetErrorCallback(this.glfwErrorFunction);
-            GLFW.glfwSetWindowSizeCallback(Handle, this.glfwWindowSizeFunction);
-            GLFW.glfwSetWindowCloseCallback(Handle, this.glfwWindowCloseFunction);
-            GLFW.glfwSetWindowRefreshCallback(Handle, this.glfwWindowRefreshFunction);
-            GLFW.glfwSetCursorPosCallback(Handle, this.glfwCursorPosFunction);
-            GLFW.glfwSetMouseButtonCallback(Handle, this.glfwMouseButtonFunction);
-            GLFW.glfwSetKeyCallback(Handle, this.glfwKeyFunction);
-            GLFW.glfwSetCharCallback(Handle, this.glfwCharFunction);
+            GLFW.glfwSetErrorCallback(glfwErrorFunction);
+            GLFW.glfwSetWindowSizeCallback(Handle, glfwWindowSizeFunction);
+            GLFW.glfwSetWindowCloseCallback(Handle, glfwWindowCloseFunction);
+            GLFW.glfwSetWindowRefreshCallback(Handle, glfwWindowRefreshFunction);
+            GLFW.glfwSetCursorPosCallback(Handle, glfwCursorPosFunction);
+            GLFW.glfwSetMouseButtonCallback(Handle, glfwMouseButtonFunction);
+            GLFW.glfwSetKeyCallback(Handle, glfwKeyFunction);
+            GLFW.glfwSetCharCallback(Handle, glfwCharFunction);
         }
 
         private void InitSettings(bool vsync)

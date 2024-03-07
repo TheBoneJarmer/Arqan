@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Text;
-using System.Threading;
-using Arqan;
 
-namespace Example1
+namespace Arqan.Example1
 {
     public class Window
     {
-        private IntPtr handle;
         private int width;
         private int height;
         private string title;
@@ -22,15 +18,11 @@ namespace Example1
         private GLFW.GLFWkeyfun glfwKeyFunction;
         private GLFW.GLFWcharfun glfwCharFunction;
 
-        private IntPtr Handle
-        {
-            get { return handle; }
-            set { handle = value; }
-        }
+        private IntPtr Handle { get; set; }
 
         public int Width
         {
-            get { return width; }
+            get => width;
             set
             {
                 width = value;
@@ -44,7 +36,7 @@ namespace Example1
 
         public int Height
         {
-            get { return height; }
+            get => height;
             set
             {
                 height = value;
@@ -73,9 +65,9 @@ namespace Example1
         public Window(int width, int height, string title)
         {
             // Set the properties
-            this.Width = width;
-            this.Height = height;
-            this.Title = title;
+            Width = width;
+            Height = height;
+            Title = title;
         }
 
         public void Open(bool fullscreen = false, bool vsync = true, bool pollEvents = true)
@@ -85,7 +77,7 @@ namespace Example1
             InitEvents();
             InitSettings(vsync);
 
-            Sync(pollEvents);
+            Sync();
         }
 
         public void Close()
@@ -103,14 +95,7 @@ namespace Example1
 
         private void InitWindow(bool fullscreen)
         {
-            if (fullscreen)
-            {
-                Handle = GLFW.glfwCreateWindow(Width, Height, Encoding.ASCII.GetBytes(Title), GLFW.glfwGetPrimaryMonitor(), IntPtr.Zero);
-            }
-            else
-            {
-                Handle = GLFW.glfwCreateWindow(Width, Height, Encoding.ASCII.GetBytes(Title), IntPtr.Zero, IntPtr.Zero);
-            }
+            Handle = GLFW.glfwCreateWindow(Width, Height, Encoding.ASCII.GetBytes(Title), fullscreen ? GLFW.glfwGetPrimaryMonitor() : IntPtr.Zero, IntPtr.Zero);
 
             if (Handle == IntPtr.Zero)
             {
@@ -123,38 +108,31 @@ namespace Example1
 
         private void InitEvents()
         {
-            this.glfwErrorFunction = new GLFW.GLFWerrorfun(OnErrorFunction);
-            this.glfwCharFunction = new GLFW.GLFWcharfun(OnCharFunction);
-            this.glfwCursorPosFunction = new GLFW.GLFWcursorposfun(OnCursorPositionFunction);
-            this.glfwKeyFunction = new GLFW.GLFWkeyfun(OnKeyFunction);
-            this.glfwMouseButtonFunction = new GLFW.GLFWmousebuttonfun(OnMouseButtonFunction);
-            this.glfwWindowCloseFunction = new GLFW.GLFWwindowclosefun(OnWindowCloseFunction);
-            this.glfwWindowRefreshFunction = new GLFW.GLFWwindowrefreshfun(OnWindowRefreshFunction);
-            this.glfwWindowSizeFunction = new GLFW.GLFWwindowsizefun(OnWindowSizeFunction);
+            glfwErrorFunction = OnErrorFunction;
+            glfwCharFunction = OnCharFunction;
+            glfwCursorPosFunction = OnCursorPositionFunction;
+            glfwKeyFunction = OnKeyFunction;
+            glfwMouseButtonFunction = OnMouseButtonFunction;
+            glfwWindowCloseFunction = OnWindowCloseFunction;
+            glfwWindowRefreshFunction = OnWindowRefreshFunction;
+            glfwWindowSizeFunction = OnWindowSizeFunction;
 
-            GLFW.glfwSetErrorCallback(this.glfwErrorFunction);
-            GLFW.glfwSetWindowSizeCallback(Handle, this.glfwWindowSizeFunction);
-            GLFW.glfwSetWindowCloseCallback(Handle, this.glfwWindowCloseFunction);
-            GLFW.glfwSetWindowRefreshCallback(Handle, this.glfwWindowRefreshFunction);
-            GLFW.glfwSetCursorPosCallback(Handle, this.glfwCursorPosFunction);
-            GLFW.glfwSetMouseButtonCallback(Handle, this.glfwMouseButtonFunction);
-            GLFW.glfwSetKeyCallback(Handle, this.glfwKeyFunction);
-            GLFW.glfwSetCharCallback(Handle, this.glfwCharFunction);
+            GLFW.glfwSetErrorCallback(glfwErrorFunction);
+            GLFW.glfwSetWindowSizeCallback(Handle, glfwWindowSizeFunction);
+            GLFW.glfwSetWindowCloseCallback(Handle, glfwWindowCloseFunction);
+            GLFW.glfwSetWindowRefreshCallback(Handle, glfwWindowRefreshFunction);
+            GLFW.glfwSetCursorPosCallback(Handle, glfwCursorPosFunction);
+            GLFW.glfwSetMouseButtonCallback(Handle, glfwMouseButtonFunction);
+            GLFW.glfwSetKeyCallback(Handle, glfwKeyFunction);
+            GLFW.glfwSetCharCallback(Handle, glfwCharFunction);
         }
 
         private void InitSettings(bool vsync)
         {
-            if (vsync)
-            {
-                GLFW.glfwSwapInterval(1);
-            }
-            else
-            {
-                GLFW.glfwSwapInterval(0);
-            }
+            GLFW.glfwSwapInterval(vsync ? 1 : 0);
         }
 
-        private void Sync(bool pollEvents)
+        private void Sync()
         {
             // Main loop
             while (GLFW.glfwWindowShouldClose(Handle) == 0)
@@ -183,10 +161,10 @@ namespace Example1
             throw new Exception($"{errorCode}: {description}");
         }
 
-        private void OnWindowSizeFunction(IntPtr windowHandle, int width, int height)
+        private void OnWindowSizeFunction(IntPtr windowHandle, int newWidth, int newHeight)
         {
-            this.width = width;
-            this.height = height;
+            width = newWidth;
+            height = newHeight;
         }
 
         private void OnWindowRefreshFunction(IntPtr windowHandle)

@@ -1,9 +1,6 @@
-﻿using Arqan;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
-namespace Example2
+namespace Arqan.Example2
 {
     public class Block
     {
@@ -12,9 +9,9 @@ namespace Example2
         public int Direction { get; set; }
         public bool UseDelta { get; set; }
 
-        private float r;
-        private float g;
-        private float b;
+        private readonly float r;
+        private readonly float g;
+        private readonly float b;
 
         public Block(float x, float y)
         {
@@ -29,26 +26,17 @@ namespace Example2
 
         public void Update(double deltaTime, float windowWidth, float windowHeight)
         {
-            var speed = 0d;
-
-            if (UseDelta)
-            {
-                speed = 60 * deltaTime;
-            }
-            else
-            {
-                speed = 1;
-            }
+            var speed = UseDelta ? 60 * deltaTime : 1;
 
             if (X > windowWidth - 32) Direction = 1;
             if (X < 0) Direction = 0;
             if (Y > windowHeight - 32) Direction = 3;
             if (Y < 0) Direction = 2;
 
-            if (Direction == 0) this.X += speed;
-            if (Direction == 1) this.X -= speed;
-            if (Direction == 2) this.Y += speed;
-            if (Direction == 3) this.Y -= speed;
+            if (Direction == 0) X += speed;
+            if (Direction == 1) X -= speed;
+            if (Direction == 2) Y += speed;
+            if (Direction == 3) Y -= speed;
         }
 
         public void Render()
