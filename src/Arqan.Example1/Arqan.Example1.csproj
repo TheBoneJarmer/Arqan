@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType Condition="'$(OS)' == 'UNIX'">Exe</OutputType>
     <OutputType Condition="'$(OS)' == 'Windows_NT'">WinExe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
   
   <ItemGroup Condition="'$(OS)' == 'UNIX'">

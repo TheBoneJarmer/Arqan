@@ -30,6 +30,7 @@ namespace Example2
             get { return handle; }
             set { handle = value; }
         }
+
         public int Width
         {
             get { return width; }
@@ -43,6 +44,7 @@ namespace Example2
                 }
             }
         }
+
         public int Height
         {
             get { return height; }
@@ -56,6 +58,7 @@ namespace Example2
                 }
             }
         }
+
         public string Title
         {
             get { return title; }
@@ -78,7 +81,7 @@ namespace Example2
 
             this.blocks = new Block[10000];
 
-            for (var i=0; i<blocks.Length; i++)
+            for (var i = 0; i < blocks.Length; i++)
             {
                 var x = new Random().Next(0, width - 32);
                 var y = new Random().Next(0, height - 32);
@@ -96,6 +99,7 @@ namespace Example2
 
             Sync(pollEvents);
         }
+
         public void Close()
         {
             GLFW.glfwSetWindowShouldClose(Handle, 1);
@@ -108,6 +112,7 @@ namespace Example2
                 throw new Exception("Unable to initialize glfw");
             }
         }
+
         private void InitWindow(bool fullscreen)
         {
             if (fullscreen)
@@ -127,6 +132,7 @@ namespace Example2
 
             GLFW.glfwMakeContextCurrent(Handle);
         }
+
         private void InitEvents()
         {
             this.glfwErrorFunction = new GLFW.GLFWerrorfun(OnErrorFunction);
@@ -147,6 +153,7 @@ namespace Example2
             GLFW.glfwSetKeyCallback(Handle, this.glfwKeyFunction);
             GLFW.glfwSetCharCallback(Handle, this.glfwCharFunction);
         }
+
         private void InitSettings(bool vsync)
         {
             if (vsync)
@@ -176,7 +183,7 @@ namespace Example2
                     double deltaTime = Math.Min(frameTime, dt);
                     frameTime -= deltaTime;
 
-                    for (var i=0; i<blocks.Length; i++)
+                    for (var i = 0; i < blocks.Length; i++)
                     {
                         blocks[i].UseDelta = useDelta;
                         blocks[i].Update(deltaTime, width, height);
@@ -214,43 +221,49 @@ namespace Example2
         {
             throw new Exception($"{errorCode}: {description}");
         }
+
         private void OnWindowSizeFunction(IntPtr windowHandle, int width, int height)
         {
             this.width = width;
             this.height = height;
         }
+
         private void OnWindowRefreshFunction(IntPtr windowHandle)
         {
-
         }
+
         private void OnPositionFunction(IntPtr windowHandle, int x, int y)
         {
-
         }
+
         private void OnWindowCloseFunction(IntPtr windowHandle)
         {
-
         }
 
         /* INPUT FUNCTIONS */
         private void OnCursorPositionFunction(IntPtr windowHandle, double x, double y)
         {
-
         }
+
         private void OnMouseButtonFunction(IntPtr windowHandle, int button, int action, int mods)
         {
-
         }
+
         private void OnKeyFunction(IntPtr windowHandle, int key, int scanCode, int action, int mods)
         {
-            if (key == GLFW.GLFW_KEY_SPACE && action == 1)
+            if (key == GLFW.GLFW_KEY_SPACE && action == GLFW.GLFW_PRESS)
             {
                 useDelta = !useDelta;
             }
+
+            if (key == GLFW.GLFW_KEY_ESCAPE && action == GLFW.GLFW_PRESS)
+            {
+                GLFW.glfwSetWindowShouldClose(windowHandle, 1);
+            }
         }
+
         private void OnCharFunction(IntPtr windowHandle, uint codepoint)
         {
-
         }
     }
 }

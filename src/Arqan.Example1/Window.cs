@@ -27,6 +27,7 @@ namespace Example1
             get { return handle; }
             set { handle = value; }
         }
+
         public int Width
         {
             get { return width; }
@@ -40,6 +41,7 @@ namespace Example1
                 }
             }
         }
+
         public int Height
         {
             get { return height; }
@@ -53,6 +55,7 @@ namespace Example1
                 }
             }
         }
+
         public string Title
         {
             get { return title; }
@@ -84,6 +87,7 @@ namespace Example1
 
             Sync(pollEvents);
         }
+
         public void Close()
         {
             GLFW.glfwSetWindowShouldClose(Handle, 1);
@@ -96,6 +100,7 @@ namespace Example1
                 throw new Exception("Unable to initialize glfw");
             }
         }
+
         private void InitWindow(bool fullscreen)
         {
             if (fullscreen)
@@ -115,6 +120,7 @@ namespace Example1
 
             GLFW.glfwMakeContextCurrent(Handle);
         }
+
         private void InitEvents()
         {
             this.glfwErrorFunction = new GLFW.GLFWerrorfun(OnErrorFunction);
@@ -135,6 +141,7 @@ namespace Example1
             GLFW.glfwSetKeyCallback(Handle, this.glfwKeyFunction);
             GLFW.glfwSetCharCallback(Handle, this.glfwCharFunction);
         }
+
         private void InitSettings(bool vsync)
         {
             if (vsync)
@@ -175,40 +182,44 @@ namespace Example1
         {
             throw new Exception($"{errorCode}: {description}");
         }
+
         private void OnWindowSizeFunction(IntPtr windowHandle, int width, int height)
         {
             this.width = width;
             this.height = height;
         }
+
         private void OnWindowRefreshFunction(IntPtr windowHandle)
         {
-            
         }
+
         private void OnPositionFunction(IntPtr windowHandle, int x, int y)
         {
-            
         }
+
         private void OnWindowCloseFunction(IntPtr windowHandle)
         {
-            
         }
 
         /* INPUT FUNCTIONS */
         private void OnCursorPositionFunction(IntPtr windowHandle, double x, double y)
         {
-            
         }
+
         private void OnMouseButtonFunction(IntPtr windowHandle, int button, int action, int mods)
         {
-            
         }
+
         private void OnKeyFunction(IntPtr windowHandle, int key, int scanCode, int action, int mods)
         {
-            
+            if (key == GLFW.GLFW_KEY_ESCAPE && action == GLFW.GLFW_PRESS)
+            {
+                GLFW.glfwSetWindowShouldClose(windowHandle, 1);
+            }
         }
+
         private void OnCharFunction(IntPtr windowHandle, uint codepoint)
         {
-            
         }
     }
 }
