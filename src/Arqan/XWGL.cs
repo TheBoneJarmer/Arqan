@@ -49,7 +49,7 @@ namespace Arqan
 			return del as T;
 		}
 
-		private static IntPtr GetProcAddress(string name)
+		public static IntPtr GetProcAddress(string name)
 		{
 			#if Windows
 
